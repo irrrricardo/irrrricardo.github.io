@@ -105,6 +105,7 @@
 
         /* Note: The following icon classes rely on SVG files in an 'images' folder from the original example. */
         /* They will appear broken if these files are not present. You might want to replace them. */
+        /* For simplicity, these are kept but you should ensure images/apple-logo.svg etc. exist or remove/replace these rules. */
         .link-logo {
             background: url('images/apple-logo.svg'); /* Placeholder: replace or remove if not using Apple-style branding */
             display: block;
@@ -303,9 +304,9 @@
             transition-delay: 180ms;
         }
         /* Adjusted for fewer items if needed */
-        .desktop-nav li:nth-of-type(8), 
-        .desktop-nav.hide li:nth-of-type(3) { 
-            transition-delay: 210ms; 
+        .desktop-nav li:nth-of-type(8),
+        .desktop-nav.hide li:nth-of-type(3) {
+            transition-delay: 210ms;
         }
         .desktop-nav li:nth-of-type(9),
         .desktop-nav.hide li:nth-of-type(2) {
@@ -372,23 +373,23 @@
 
         .search-container .quick-links ul li:nth-of-type(1) {
             transition-delay: 120ms;
-        } 
+        }
 
         .search-container .quick-links ul li:nth-of-type(2) {
             transition-delay: 140ms;
-        } 
+        }
 
         .search-container .quick-links ul li:nth-of-type(3) {
             transition-delay: 160ms;
-        } 
+        }
 
         .search-container .quick-links ul li:nth-of-type(4) {
             transition-delay: 180ms;
-        } 
+        }
 
         .search-container .quick-links ul li:nth-of-type(5) {
             transition-delay: 200ms;
-        } 
+        }
 
 
         /* Hidden Items */
@@ -549,7 +550,7 @@
                 background: #000; /* Match nav background */
                 z-index: 200; /* Below nav menu icon but above content */
             }
-            
+
             .nav-container.active .mobile-search-container {
                 transform: rotateX(0deg);
                 margin-top: 10px; /* Adjust space below nav bar */
@@ -612,7 +613,7 @@
                 pointer-events: none;
             }
 
-            
+
             /* Quick Links for mobile search */
             .mobile-search-container .search-bar.active ~ .quick-links {
                 top: 80px; /* Position below the search bar */
@@ -709,7 +710,7 @@
         }
         #animated-image {
             width: 100%;
-            height: 100%; 
+            height: 100%;
             object-fit: cover;
             transition: all 0.3s ease-in-out;
         }
@@ -746,7 +747,7 @@
         .overflow-hidden::-webkit-scrollbar {
           display: none;
         }
-        
+
         /* Hide scrollbar for IE, Edge and Firefox */
         .overflow-hidden {
           -ms-overflow-style: none;  /* IE and Edge */
@@ -853,15 +854,15 @@
                             </div>
                         </div>
                     </li>
-        
+
                     <li>
                         <a href="#" class="link-logo"></a> </li>
-        
+
                     <li>
-                        <a href="#" class="link-bag"></a> 
+                        <a href="#" class="link-bag"></a>
                     </li>
                 </ul>
-        
+
                 <ul class="desktop-nav">
                     <li>
                         <a href="#home" class="link-logo"></a> </li>
@@ -872,8 +873,7 @@
                     </li>
                     <li>
                         <a href="#skills" class="p-2 hover:text-white transition-all duration-100">
-                            {{ currentLanguage === 'en' ? 'Interests & Skills' : '兴趣与技能' }}
-                        </a>
+                            {{ currentLanguage === 'en' ? 'Interests & Skills' : '兴趣与技能' }} </a>
                     </li>
                     <li>
                         <a href="#projects" class="p-2 hover:text-white transition-all duration-100">
@@ -901,7 +901,7 @@
                         <a href="#" class="link-bag"></a> </li>
                 </ul>
             </nav>
-        
+
             <div class="search-container hide">
                 <div class="link-search"></div> <div class="search-bar">
                     <form action="">
@@ -924,7 +924,7 @@
                     </form>
                 </div>
                 <span class="cancel-btn">{{ currentLanguage === 'en' ? 'Cancel' : '取消' }}</span>
-        
+
                 <div class="quick-links">
                     <h2>{{ currentLanguage === 'en' ? 'Quick Links' : '快速链接' }}</h2>
                     <ul>
@@ -950,15 +950,15 @@
                                 {{ currentLanguage === 'en' ? 'Switch to Chinese' : 'Switch to English' }}
                             </span>
                         </button>
-                        
+
                         <button @click="toggleDarkMode" class="relative flex items-center justify-center focus:outline-none hover:bg-gray-200 dark:hover:bg-gray-600 px-3 py-2 rounded-lg transition-all duration-300 group">
                             <i :class="isDarkMode ? 'fas fa-sun text-yellow-500 text-xl' : 'fas fa-moon text-gray-700 dark:text-gray-300 text-xl'"></i>
                             <span class="tooltip absolute left-0 top-full mt-2 text-sm bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
                             </span>
                         </button>
-                    </div>                
-                    
+                    </div>
+
                 </div>
             </div>
             <section id="home" class="py-20 relative">
@@ -977,8 +977,8 @@
                     <div class="flex flex-row items-center justify-center mb-8">
                         <a href="#contact" class="relative inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-full hover:shadow-xl hover:border-blue-400 dark:hover:border-pink-500 transition-all duration-300 transform hover:-translate-y-1 focus:ring-4 focus:ring-blue-300 dark:focus:ring-pink-300 font-medium text-lg">
                             {{ currentLanguage === 'en' ? 'Contact Me' : '联系我' }}
-                        </a>                        
-                        
+                        </a>
+
                         <a href="resume.pdf" target="_blank" class="ml-4 text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white hover:underline inline-flex items-center transition-all duration-300 group">
                             <span class="mr-2">{{ currentLanguage === 'en' ? 'Download Resume' : '下载简历' }}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1006,7 +1006,7 @@
                     <img id="animated-image" src="./background/aaron-sebastian-bfgEYpS0Znk-unsplash.jpg" alt="Inspiring background image"
                         :style="{ transform: `scale(${imageScale})`, borderRadius: `${borderRadius}px` }"
                         class="absolute w-full h-full object-cover transition-all duration-300 ease-in-out">
-                    
+
                     <div class="relative w-full flex flex-col items-center justify-between h-full text-white transition-all duration-300 py-32 px-8">
                         <div class="text-center">
                             <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mt-12 mb-4 px-4">
@@ -1034,34 +1034,34 @@
                     </div>
                 </div>
             </section>
-            
+
             <section id="about" class="py-20">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="max-w-4xl mx-auto">
-            
+
                         <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12 text-gray-700 dark:text-gray-300">
                             {{ currentLanguage === 'en' ? 'About Me' : '关于我' }}
                         </h2>
-            
+
                         <div class="space-y-12">
-            
+
                             <div class="text-center">
                                 <p class="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                                    {{ currentLanguage === 'en' ? 
-                                        'I am irrrricardo, a student at Peking University\'s School of Basic Medical Sciences, pursuing degrees in Basic Medicine and Economics. My primary research interest lies in the innovative application of deep learning techniques to solve complex challenges in the medical field.' : 
-                                        '我是irrrricardo，就读于北京大学基础医学院，主修基础医学与经济学双学位。我的主要研究兴趣在于将深度学习技术创新性地应用于解决医学领域的复杂挑战。' 
+                                    {{ currentLanguage === 'en' ?
+                                        'I am irrrricardo, a student at Peking University\'s School of Basic Medical Sciences, pursuing degrees in Basic Medicine and Economics. My primary research interest lies in the innovative application of deep learning techniques to solve complex challenges in the medical field.' :
+                                        '我是irrrricardo，就读于北京大学基础医学院，主修基础医学与经济学双学位。我的主要研究兴趣在于将深度学习技术创新性地应用于解决医学领域的复杂挑战。'
                                     }}
                                 </p>
                                 <p class="text-lg text-gray-600 dark:text-gray-400">
-                                    {{ currentLanguage === 'en' ? 
-                                        'Beyond academics and research, I am an avid skier, embracing the thrill and precision of the sport. I am driven by a passion for learning and a commitment to leveraging technology for impactful solutions.' : 
-                                        '学术和研究之余，我是一名滑雪爱好者，享受这项运动带来的刺激与精准。我对学习充满热情，并致力于利用技术创造有影响力的解决方案。' 
+                                    {{ currentLanguage === 'en' ?
+                                        'Beyond academics and research, I am an avid skier, embracing the thrill and precision of the sport. I am driven by a passion for learning and a commitment to leveraging technology for impactful solutions.' :
+                                        '学术和研究之余，我是一名滑雪爱好者，享受这项运动带来的刺激与精准。我对学习充满热情，并致力于利用技术创造有影响力的解决方案。'
                                     }}
                                 </p>
                             </div>
-            
+
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
+
                                 <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:shadow-gray-500/50 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
                                     <h3 class="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-300">
                                         {{ currentLanguage === 'en' ? 'Research Focus' : '研究重点' }}
@@ -1081,83 +1081,71 @@
                                         </li>
                                     </ul>
                                 </div>
-            
+
                                 <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:shadow-gray-500/50 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
                                     <h3 class="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-300">
-                                        {{ currentLanguage === 'en' ? 'Interests & Hobbies' : '兴趣爱好' }}
+                                        {{ currentLanguage === 'en' ? 'Interests' : '兴趣' }}
                                     </h3>
-                                    <li class="flex items-start group">
-                            <svg class="w-6 h-6 text-blue-500 dark:text-blue-300 mr-2 flex-shrink-0 transition-all duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                            <span class="text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{{ currentLanguage === 'en' ? 'Developed scalable microservices architecture' : '开发可扩展的微服务架构' }}</span>
-                            </li>
-                            <li class="flex items-start group">
-                            <svg class="w-6 h-6 text-blue-500 dark:text-blue-300 mr-2 flex-shrink-0 transition-all duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            <span class="text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{{ currentLanguage === 'en' ? 'Implemented CI/CD pipelines for rapid deployment' : '实施CI/CD管道以实现快速部署' }}</span>
-                            </li>
-                            <li class="flex items-start group">
-                            <svg class="w-6 h-6 text-blue-500 dark:text-blue-300 mr-2 flex-shrink-0 transition-all duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                            <span class="text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{{ currentLanguage === 'en' ? 'Optimized database performance, reducing query times by 60%' : '优化数据库性能，查询时间减少60%' }}</span>
-                            </li>
-                        </ul>
+                                    <ul class="space-y-3">
+                                        <li class="flex items-start group">
+                                            <i class="fas fa-brain text-teal-500 dark:text-teal-300 mr-3 fa-fw text-xl transition-all duration-300 group-hover:scale-110 group-hover:text-teal-600"></i>
+                                            <span class="text-gray-700 dark:text-gray-300 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300">
+                                                {{ currentLanguage === 'en' ? 'Application of Deep Learning in Medicine' : '深度学习在医学的应用' }}
+                                            </span>
+                                        </li>
+                                        </ul>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:shadow-gray-500/50 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
+                                <h3 class="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-300">
+                                {{ currentLanguage === 'en' ? 'Education' : '教育背景' }}
+                                </h3>
+                                <div class="flex items-center justify-between flex-wrap">
+                                    <div>
+                                        <p class="text-xl font-medium text-gray-700 dark:text-gray-300">
+                                        {{ currentLanguage === 'en' ? 'Basic Medicine' : '基础医学' }}
+                                        </p>
+                                        <p class="text-lg text-gray-600 dark:text-gray-400">
+                                        {{ currentLanguage === 'en' ? 'Peking University' : '北京大学' }}
+                                        </p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-lg font-medium text-gray-600 dark:text-gray-400">
+                                        {{ currentLanguage === 'en' ? 'Class of 2022' : '2022级' }}
+                                        </p>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-12 text-center">
+                        <a href="#contact" class="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            {{ currentLanguage === 'en' ? 'Let\'s Collaborate' : '让我们合作' }}
+                        </a>
                         </div>
                     </div>
-            
-                    <!-- Education -->
-                    <div class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:shadow-gray-500/50 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
-                        <h3 class="text-2xl font-bold mb-4 text-gray-700 dark:text-gray-300">
-                        {{ currentLanguage === 'en' ? 'Education' : '教育背景' }}
-                        </h3>
-                        <div class="flex items-center justify-between flex-wrap">
-                        <div>
-                            <p class="text-xl font-medium text-gray-700 dark:text-gray-300">
-                            {{ currentLanguage === 'en' ? 'B.Sc. in Computer Science' : '计算机科学学士学位' }}
-                            </p>
-                            <p class="text-lg text-gray-600 dark:text-gray-400">
-                            {{ currentLanguage === 'en' ? 'XYZ University' : 'XYZ大学' }}
-                            </p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-lg font-medium text-gray-600 dark:text-gray-400">
-                            {{ currentLanguage === 'en' ? 'Class of 2020' : '2020届' }}
-                            </p>
-                            <p class="text-gray-600 dark:text-gray-400">
-                            {{ currentLanguage === 'en' ? 'Magna Cum Laude' : '优等毕业' }}
-                            </p>
-                        </div>
-                        </div>
-                    </div>
-            
-                    </div>
-            
-                    <!-- Call to Action -->
-                    <div class="mt-12 text-center">
-                    <a href="#contact" class="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                        {{ currentLanguage === 'en' ? 'Let\'s Collaborate' : '让我们合作' }}
-                    </a>
-                    </div>
-                </div>
                 </div>
             </section>
-  
-            <!-- Skills Section -->
+
             <section id="skills" class="py-20 overflow-hidden">
                 <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12 px-4">
                 <span class="text-gray-700 dark:text-gray-300 ">
                     {{ currentLanguage === 'en' ? 'Skills' : '技能' }}
                 </span>
                 </h2>
-                <div 
+                <div
                 ref="carouselRef"
                 @mouseenter="pauseScroll"
                 @mouseleave="resumeScroll"
                 class="relative w-full overflow-hidden"
                 >
-                <div 
+                <div
                     class="flex transition-transform duration-1000 ease-linear"
                     :style="{ transform: `translateX(${-scrollPosition}px)` }"
                 >
-                    <div 
-                    v-for="(skill, index) in duplicatedSkills" 
+                    <div
+                    v-for="(skill, index) in duplicatedSkills"
                     :key="`${skill.name}-${index}`"
                     class="flex-shrink-0 pb-10 w-48 mx-3"
                     >
@@ -1165,9 +1153,9 @@
                         <div class="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                         <div class="relative z-10">
                         <div class="mb-4 bg-gray-100 dark:bg-gray-700 rounded-full p-4 inline-block">
-                            <i :class="[skill.icon, 'text-5xl', skill.color]"></i>
+                            <i :class="[skill.icon, 'text-5xl', skill.color, skill.darkColor && isDarkMode ? skill.darkColor : '']"></i>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{{ skill.name }}</h3>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{{ skill.name[currentLanguage] }}</h3>
                         <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
                         </div>
                     </div>
@@ -1175,7 +1163,7 @@
                 </div>
                 </div>
             </section>
-            <!-- Projects Section -->
+
             <section id="projects" class="py-20 ">
                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-12">
@@ -1183,14 +1171,18 @@
                             {{ currentLanguage === 'en' ? 'Featured Projects' : '精选项目' }}
                         </span>
                     </h2>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div v-for="(project, index) in projects" :key="project.id" 
+
+                    <div v-if="projects.length === 0" class="text-center text-xl text-gray-500 dark:text-gray-400">
+                        <p>{{ currentLanguage === 'en' ? 'No projects to display yet.' : '暂无项目展示。' }}</p>
+                    </div>
+
+                    <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div v-for="(project, index) in projects" :key="project.id"
                             class="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 transform hover:-translate-y-2"
-                            :class="{'opacity-0': !project.visible}" 
+                            :class="{'opacity-0': !project.visible}"
                             :ref="el => { if (el) projectRefs[index] = el }">
                             <div class="relative h-64 md:h-80">
-                                <img :src="project.image" :alt="project.title[currentLanguage]" 
+                                <img :src="project.image" :alt="project.title[currentLanguage]"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
@@ -1200,20 +1192,20 @@
                                     {{ project.description[currentLanguage] }}
                                 </p>
                                 <div class="flex flex-wrap gap-2 mb-4">
-                                    <span v-for="tech in project.technologies" :key="tech" 
+                                    <span v-for="tech in project.technologies" :key="tech"
                                         class="px-2 py-1 bg-white/20 rounded-full text-xs font-medium backdrop-blur-sm">
                                         {{ tech }}
                                     </span>
                                 </div>
                                 <div class="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
-                                    <a v-if="project.demoLink" :href="project.demoLink" target="_blank" rel="noopener noreferrer" 
+                                    <a v-if="project.demoLink" :href="project.demoLink" target="_blank" rel="noopener noreferrer"
                                     class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 hover:bg-blue-700 transition-colors duration-300">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                         </svg>
                                     </a>
-                                    <a v-if="project.codeLink" :href="project.codeLink" target="_blank" rel="noopener noreferrer" 
+                                    <a v-if="project.codeLink" :href="project.codeLink" target="_blank" rel="noopener noreferrer"
                                     class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors duration-300">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -1223,9 +1215,8 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="mt-12 text-center">
-                        <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 transform hover:-translate-y-1">
+
+                    <div class="mt-12 text-center" v-if="projects.length > 0"> <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 transform hover:-translate-y-1">
                             <span class="mr-2">{{ currentLanguage === 'en' ? 'View All Projects' : '查看所有项目' }}</span>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -1234,7 +1225,7 @@
                     </div>
                 </div>
             </section>
-            <!--scroll image-->
+
             <section id="experience" class="py-20 relative">
                 <div class="relative inset-0 overflow-hidden">
                     <h2 class="text-4xl sm:text-5xl font-extrabold text-center mb-8">
@@ -1242,42 +1233,42 @@
                           {{ currentLanguage === 'en' ? 'Professional Journey' : '职业历程' }}
                         </span>
                     </h2>
-                    <div class="flex justify-center">
-                        <button class="group flex items-center space-x-4 px-4 py-2 text-blue-500 rounded-full transition-all duration-300 ease-in-out">
-                            <div class="p-2 rounded-full border border-blue-500 transition-all duration-300 ease-in-out">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 transform group-hover:translate-x-1 transition-all duration-300">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </div>
-                            <span class="font-semibold text-blue-500 transform hover:translate-x-1 transition-all duration-300">
-                                {{ currentLanguage === 'en' ? 'All Experiences' : '全部经历' }}
-                            </span>
-                        </button>
-                    </div>
-                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-                        <div class="flex justify-center mt-4">
-                            <div class="flex flex-row space-x-8">
-                                <button @click="scroll('left')" class="text-black p-2 focus:outline-none">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                                    </svg>
-                                </button>
-                                <button @click="scroll('right')" class="text-black p-2 focus:outline-none">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div v-if="projects.length > 0"> <div class="flex justify-center">
+                            <button class="group flex items-center space-x-4 px-4 py-2 text-blue-500 rounded-full transition-all duration-300 ease-in-out">
+                                <div class="p-2 rounded-full border border-blue-500 transition-all duration-300 ease-in-out">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 transform group-hover:translate-x-1 transition-all duration-300">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                                     </svg>
-                                </button>
+                                </div>
+                                <span class="font-semibold text-blue-500 transform hover:translate-x-1 transition-all duration-300">
+                                    {{ currentLanguage === 'en' ? 'All Experiences' : '全部经历' }}
+                                </span>
+                            </button>
+                        </div>
+                        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+                            <div class="flex justify-center mt-4">
+                                <div class="flex flex-row space-x-8">
+                                    <button @click="scroll('left')" class="text-black dark:text-white p-2 focus:outline-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                                        </svg>
+                                    </button>
+                                    <button @click="scroll('right')" class="text-black dark:text-white p-2 focus:outline-none">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="scroll-container flex overflow-x-auto py-4 w-screen" ref="scrollContainer">
-                        <div class="flex-shrink-0 w-[5vw]"></div> <!-- Spacer for left overflow -->
-                        <div v-for="(project, index) in projects" :key="index" class="flex-shrink-0 w-[80vw] sm:w-[48vw] md:w-[42vw] lg:w-[36vw] xl:w-[30vw] 2xl:w-[25vw] 3xl:w-[15vw] px-2">
+                        <div class="flex-shrink-0 w-[5vw]"></div> <div v-for="(project, index) in projects" :key="index" class="flex-shrink-0 w-[80vw] sm:w-[48vw] md:w-[42vw] lg:w-[36vw] xl:w-[30vw] 2xl:w-[25vw] 3xl:w-[15vw] px-2">
                           <div class="relative bg-white rounded-3xl overflow-hidden h-[600px] lg:h-[675px] shadow-lg group">
                             <div class="absolute inset-0 overflow-hidden">
-                              <img 
-                                :src="project.image" 
-                                :alt="project.title[currentLanguage]" 
+                              <img
+                                :src="project.image"
+                                :alt="project.title[currentLanguage]"
                                 class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
                               >
                               <div class="absolute inset-0 bg-black opacity-30 transition-opacity duration-300 ease-in-out group-hover:opacity-50"></div>
@@ -1286,9 +1277,9 @@
                               <h3 class="text-2xl font-bold mb-2">{{ project.title[currentLanguage] }}</h3>
                               <p class="mb-4 overflow-y-auto max-h-[150px]">{{ project.description[currentLanguage] }}</p>
                               <div class="flex flex-wrap gap-2 mt-auto">
-                                <span 
-                                  v-for="tech in project.technologies" 
-                                  :key="tech" 
+                                <span
+                                  v-for="tech in project.technologies"
+                                  :key="tech"
                                   class="px-3 py-1 bg-white/20 rounded-full text-sm font-medium backdrop-blur-sm"
                                 >
                                   {{ tech }}
@@ -1297,11 +1288,12 @@
                             </div>
                           </div>
                         </div>
-                        <div class="flex-shrink-0 w-[5vw]"></div> <!-- Spacer for right overflow -->
+                        <div class="flex-shrink-0 w-[5vw]"></div> </div>
+                     <div v-if="projects.length === 0 && jobs.length === 0" class="text-center text-xl text-gray-500 dark:text-gray-400 mt-8"> <p>{{ currentLanguage === 'en' ? 'No professional journey entries yet.' : '暂无职业历程。' }}</p>
                     </div>
                 </div>
             </section>
-            <!--Testimonials-->
+
             <section id="testimonials" class="py-24">
                 <div class="container mx-auto px-6">
                   <h2 class="text-5xl font-extrabold mb-16 text-center animate-fade-in-up">
@@ -1309,7 +1301,10 @@
                       {{ currentLanguage === 'en' ? 'Testimonials' : '推荐语' }}
                     </span>
                   </h2>
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                   <div v-if="testimonials.length === 0" class="text-center text-xl text-gray-500 dark:text-gray-400">
+                        <p>{{ currentLanguage === 'en' ? 'No testimonials yet.' : '暂无推荐语。' }}</p>
+                    </div>
+                  <div v-else class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div v-for="(testimonial, index) in testimonials" :key="index"
                          class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up">
                       <div class="flex items-center mb-6">
@@ -1337,16 +1332,14 @@
                   </div>
                 </div>
             </section>
-            <!--Contact Section-->
+
             <section id="contact" class="container mx-auto px-6 py-20">
                 <h2 class="text-5xl font-extrabold mb-16 text-center animate-fade-in-up">
-                    <span class="text-gray-700 dark;text-gray-300">
-                    {{ currentLanguage === 'en' ? 'Get in Touch' : '联系我' }}
+                    <span class="text-gray-700 dark:text-gray-300"> {{ currentLanguage === 'en' ? 'Get in Touch' : '联系我' }}
                     </span>
                 </h2>
                 <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
-                    <form action="#" method="POST">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <form action="#" method="POST"> <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div>
                                 <label for="name" class="block text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">
                                     {{ currentLanguage === 'en' ? 'Name' : '名字' }}
@@ -1374,7 +1367,7 @@
                     </form>
                 </div>
             </section>
-            
+
         </main>
 
         <footer class="bg-white dark:bg-gray-800 py-10">
@@ -1395,7 +1388,7 @@
                 </div>
             </div>
         </footer>
-        
+
         <button @click="scrollToTop" class="back-to-top bg-black hover:bg-gray-500 text-white p-2 rounded-full transition" :class="{'visible': showBackToTop}">
             <i class="fas fa-arrow-up"></i>
         </button>
@@ -1410,113 +1403,43 @@
                     currentLanguage: 'en',
                     showBackToTop: false,
                     isSearchActive: false,
+                    // MODIFIED: Skills array
                     skills: [
-                        { name: 'JavaScript', icon: 'fab fa-js-square', color: 'text-yellow-500' },
-                        { name: 'React', icon: 'fab fa-react', color: 'text-blue-500' },
-                        { name: 'Node.js', icon: 'fab fa-node-js', color: 'text-green-500' },
-                        { name: 'Python', icon: 'fab fa-python', color: 'text-blue-500' },
-                        { name: 'AWS', icon: 'fab fa-aws', color: 'text-orange-500' },
-                        { name: 'Docker', icon: 'fab fa-docker', color: 'text-blue-500' },
-                        { name: 'Git', icon: 'fab fa-git-alt', color: 'text-red-500' },
-                        { name: 'Sass', icon: 'fab fa-sass', color: 'text-pink-500' },
-                        // Add more skills as needed
+                        { name: { en: 'Python', zh: 'Python' }, icon: 'fab fa-python', color: 'text-yellow-400', darkColor: 'dark:text-yellow-300' },
+                        // Add more skills here if needed in the future
                     ],
                     scrollPosition: 0,
                     scrollInterval: null,
-                    jobs: [
-                        {
-                        company: { en: 'Future Tech Innovations', zh: '未来科技创新' },
-                        role: { en: 'Senior Software Architect', zh: '高级软件架构师' },
-                        duration: '2020 - Present',
-                        responsibilities: {
-                            en: [
-                            'Spearheaded the design and implementation of a cloud-native microservices architecture',
-                            'Led a team of 15 developers in delivering high-impact projects for Fortune 500 clients',
-                            'Pioneered the adoption of AI and machine learning technologies in core products'
-                            ],
-                            zh: [
-                            '带头设计和实施云原生微服务架构',
-                            '领导15人的开发团队为财富500强客户交付高影响力项目',
-                            '在核心产品中率先采用人工智能和机器学习技术'
-                            ]
-                        }
-                        },
-                        {
-                        company: { en: 'Global Systems Corp', zh: '全球系统公司' },
-                        role: { en: 'Full Stack Developer', zh: '全栈开发工程师' },
-                        duration: '2017 - 2020',
-                        responsibilities: {
-                            en: [
-                            'Developed and maintained multiple mission-critical web applications',
-                            'Implemented responsive designs and improved overall UX, increasing user engagement by 40%',
-                            'Optimized database queries and application performance, reducing load times by 60%'
-                            ],
-                            zh: [
-                            '开发和维护多个关键任务的Web应用程序',
-                            '实施响应式设计并改善整体用户体验，使用户参与度提高40%',
-                            '优化数据库查询和应用程序性能，将加载时间减少60%'
-                            ]
-                        }
-                        }
-                    ],
+                    // MODIFIED: Jobs array (used by experience section) - assuming it should also be empty or managed separately.
+                    // For now, I will keep the structure but you might want to clear this if 'Professional Journey' should be truly empty.
+                    // Or, if 'Professional Journey' is different from 'projects', populate this accordingly.
+                    // Given "Professional Journey 删除内容", I will clear this too.
+                    jobs: [],
+                    // MODIFIED: Projects array
                     projects: [
-                        {
-                        id: 1,
-                        title: { 
-                            en: 'AI-Powered Analytics Dashboard',
-                            zh: 'AI驱动的分析仪表板'
-                        },
-                        description: {
-                            en: 'Developed a real-time analytics dashboard using machine learning algorithms to predict market trends and provide actionable insights.',
-                            zh: '开发了一个使用机器学习算法预测市场趋势并提供可操作洞察的实时分析仪表板。'
-                        },
-                        image: './background/yue-ma-7IO4-fLM574-unsplash.jpg',
-                        technologies: ['React', 'TensorFlow.js', 'Node.js', 'MongoDB'],
-                        demoLink: 'https://demo.example.com',
-                        codeLink: 'https://github.com/yourusername/project-repo',
-                        visible: false
-                        },
-                        {
-                        id: 2,
-                        title: { 
-                            en: 'AI-Powered Analytics Dashboard',
-                            zh: 'AI驱动的分析仪表板'
-                        },
-                        description: {
-                            en: 'Developed a real-time analytics dashboard using machine learning algorithms to predict market trends and provide actionable insights.',
-                            zh: '开发了一个使用机器学习算法预测市场趋势并提供可操作洞察的实时分析仪表板。'
-                        },
-                        image: './background/yue-ma--th4TTnX0y0-unsplash.jpg',
-                        technologies: ['React', 'TensorFlow.js', 'Node.js', 'MongoDB'],
-                        demoLink: 'https://demo.example.com',
-                        codeLink: 'https://github.com/yourusername/project-repo',
-                        visible: false
-                        },
-                        // Add more projects here...
+                        // Projects are removed as per request.
+                        // Add new project objects here later. Example:
+                        // {
+                        // id: 1,
+                        // title: { en: 'New Project', zh: '新项目' },
+                        // description: {en: 'Description here.', zh: '项目描述。'},
+                        // image: './path/to/your/image.jpg',
+                        // technologies: ['Vue', 'Tailwind'],
+                        // demoLink: '#',
+                        // codeLink: '#',
+                        // visible: false
+                        // }
                     ],
-                    projectRefs: [],  // Initialize projectRefs as an empty array
+                    projectRefs: [],
                     imageScale: 1,
                     borderRadius: 0,
+                    // MODIFIED: Testimonials array
                     testimonials: [
-                        {
-                            name: { en: 'John Doe', zh: '约翰·多伊' },
-                            position: { en: 'CEO, Future Tech Innovations', zh: '未来科技创新首席执行官' },
-                            content: {
-                            en: 'Kiwi is an exceptional software architect. Their innovative approach to cloud-native microservices has transformed our product infrastructure.',
-                            zh: 'Kiwi是一位杰出的软件架构师。他们对云原生微服务的创新方法彻底改变了我们的产品基础架构。'
-                            }
-                        },
-                        {
-                            name: { en: 'Jane Smith', zh: '简·史密斯' },
-                            position: { en: 'CTO, Global Systems Corp', zh: '全球系统公司首席技术官' },
-                            content: {
-                            en: 'Working with Kiwi was a game-changer for our team. Their full-stack expertise and optimization skills significantly improved our application performance.',
-                            zh: '与Kiwi合作对我们的团队来说是一个转折点。他们的全栈专业知识和优化技能显著提高了我们的应用程序性能。'
-                            }
-                        }
+                        // Testimonials are removed as per request.
                     ],
+                    // cards data seems unused, kept for now but could be removed if not needed.
                     cards: [
-                    { title: 'Card 1', content: 'Content for card 1', image: './background/yue-ma-7IO4-fLM574-unsplash.jpg' },
+                        { title: 'Card 1', content: 'Content for card 1', image: './background/yue-ma-7IO4-fLM574-unsplash.jpg' },
                         { title: 'Card 2', content: 'Content for card 2', image: './background/yue-ma-7IO4-fLM574-unsplash.jpg' },
                         { title: 'Card 3', content: 'Content for card 3', image: './background/yue-ma-7IO4-fLM574-unsplash.jpg' },
                         { title: 'Card 4', content: 'Content for card 4', image: './background/yue-ma-7IO4-fLM574-unsplash.jpg' },
@@ -1531,21 +1454,33 @@
             },
             computed: {
                 duplicatedSkills() {
-                    return [...this.skills, ...this.skills, ...this.skills] // Triple the skills for smoother looping
+                    if (!this.skills || this.skills.length === 0) return [];
+                    // Ensure smoother looping even with few items, duplicate at least to fill a bit more than screen
+                    const baseSkills = this.skills;
+                    let duplicated = [];
+                    let minLengthForLoop = 10; // Adjust if needed
+                    if (baseSkills.length > 0) {
+                        while(duplicated.length < minLengthForLoop) {
+                            duplicated.push(...baseSkills);
+                        }
+                    }
+                    return duplicated;
                 }
             },
             mounted() {
                 this.applyDarkMode();
                 window.addEventListener('scroll', this.checkScroll);
                 this.setupEventListeners();
-                this.startScroll()
+                if (this.skills.length > 0) { // Only start scroll if there are skills
+                    this.startScroll();
+                }
                 window.addEventListener('resize', this.handleResize)
                 this.handleResize() // Initial call to set correct width
                 this.setupIntersectionObserver()
                 this.setupImageAnimation()
             },
             beforeUnmount() {
-                window.removeEventListener('resize', this.checkMobile)
+                window.removeEventListener('resize', this.checkMobile) // checkMobile was not defined, assuming it was for older logic
                 this.stopScroll()
             },
             unmounted() {
@@ -1556,39 +1491,49 @@
             methods: {
                 scroll(direction) {
                     const container = this.$refs.scrollContainer;
-                    const scrollAmount = container.clientWidth * 0.8; // Approximate width of one card
+                    if (!container) return;
+                    const scrollAmount = container.clientWidth * 0.8; 
                     if (direction === 'left') {
                         container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
                     } else {
                         container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                     }
                 },
-                handleScroll() {
-                    this.scrollPosition = this.$refs.scrollContainer.scrollLeft;
+                handleScroll() { // This method isn't explicitly called but might be for future use
+                    if (this.$refs.scrollContainer) {
+                       this.scrollPosition = this.$refs.scrollContainer.scrollLeft;
+                    }
                 },
                 setupImageAnimation() {
                     window.addEventListener('scroll', this.updateImageAnimation)
                     window.addEventListener('resize', this.updateImageAnimation)
-                    this.updateImageAnimation()
+                    this.updateImageAnimation() // Initial call
                 },
                 updateImageAnimation() {
                     const animationSection = this.$refs.animationSection;
                     if (!animationSection) return;
 
                     const rect = animationSection.getBoundingClientRect();
-                    const sectionHeight = animationSection.offsetHeight - window.innerHeight;
+                    // sectionHeight should be the total scrollable distance within the section for the effect
+                    // If the image container is sticky for the whole sectionHeight of animation-section (200vh)
+                    // and the image itself is 100vh, then the scrollable distance for effect is 100vh.
+                    const sectionHeight = animationSection.scrollHeight - window.innerHeight;
 
-                    // Calculate scroll percentage only when the section is scrolled into view
-                    if (rect.top <= 0 && rect.bottom >= 0) {
+
+                    if (rect.top <= 0 && rect.bottom >= window.innerHeight) { // When section is in view and actively being scrolled through
                         let scrollPercentage = Math.min(Math.max(-rect.top / sectionHeight, 0), 1);
                         scrollPercentage = this.easeInOutCubic(scrollPercentage);
 
-                        this.imageScale = 1 - (scrollPercentage * 0.1); // Scale from 100% to 80%
-                        this.borderRadius = Math.min(scrollPercentage * 50, 50); // 0px to 50px
+                        this.imageScale = 1 - (scrollPercentage * 0.2); // Scale from 100% to 80% (was 0.1)
+                        this.borderRadius = Math.min(scrollPercentage * 60, 60); // 0px to 60px (was 50)
                     } else if (rect.top > 0) {
-                        // Reset to the original state when scrolled back to the top
+                        // Section is above the viewport or just entering
                         this.imageScale = 1;
                         this.borderRadius = 0;
+                    } else if (rect.bottom < window.innerHeight) {
+                        // Section has been scrolled past
+                        this.imageScale = 0.8; // Keep it at the final state
+                        this.borderRadius = 60;
                     }
                 },
 
@@ -1677,12 +1622,17 @@
                     this.showBackToTop = window.scrollY > 300;
                 },
                 startScroll() {
+                    if (this.skills.length === 0 || !this.$refs.carouselRef) return; // Don't start if no skills or ref not ready
                     this.scrollInterval = setInterval(() => {
-                        this.scrollPosition += 1
-                        if (this.scrollPosition >= this.$refs.carouselRef.scrollWidth / 2) {
-                            this.scrollPosition = 0
+                        this.scrollPosition += 1;
+                        // Check if carouselRef and scrollWidth are available
+                        if (this.$refs.carouselRef && this.$refs.carouselRef.scrollWidth) {
+                           const duplicatedWidth = this.$refs.carouselRef.scrollWidth / (this.duplicatedSkills.length / this.skills.length);
+                           if (this.scrollPosition >= duplicatedWidth) {
+                                this.scrollPosition = 0;
+                           }
                         }
-                    }, 30)
+                    }, 30);
                 },
                 stopScroll() {
                     clearInterval(this.scrollInterval)
@@ -1691,40 +1641,51 @@
                     this.stopScroll()
                 },
                 resumeScroll() {
-                    if (!this.isMobile) {
-                        this.startScroll()
-                    }
+                    // if (!this.isMobile) { // isMobile not defined, remove check or implement it
+                        if (this.skills.length > 0) this.startScroll();
+                    // }
                 },
                 handleResize() {
-                    // Ensure the scrollPosition is valid after resize
-                    const maxScroll = this.$refs.carouselRef.scrollWidth / 3
-                    if (this.scrollPosition > maxScroll) {
-                        this.scrollPosition = 0
+                    if (!this.$refs.carouselRef || this.skills.length === 0) return;
+                    const actualContentWidth = this.skills.length * (12 * 16 / 4); // Approximation: w-48 is 12rem, 1rem=16px. (12*16 for width + 0.75*16*2 for mx-3)
+                                                                                // This calculation needs to be more robust based on actual rendered widths.
+                                                                                // A simpler approach is to use scrollWidth of a single original set.
+                    const singleSetWidth = this.$refs.carouselRef.scrollWidth / (this.duplicatedSkills.length / this.skills.length);
+                    if (this.scrollPosition >= singleSetWidth) {
+                        this.scrollPosition = 0;
                     }
                 },
                 setupIntersectionObserver() {
                     const options = {
                         root: null,
                         rootMargin: '0px',
-                        threshold: 0.1
+                        threshold: 0.1  // Trigger when 10% of the element is visible
                     };
 
                     const observer = new IntersectionObserver((entries) => {
                         entries.forEach((entry) => {
                         if (entry.isIntersecting) {
                             const index = this.projectRefs.findIndex(ref => ref === entry.target);
-                            if (index !== -1) {
-                            this.projects[index].visible = true;
+                            if (index !== -1 && this.projects[index]) { // Check if project exists
+                               this.projects[index].visible = true;
                             }
                             observer.unobserve(entry.target);
                         }
                         });
                     }, options);
 
-                    this.$nextTick(() => {
-                        this.projectRefs.forEach(ref => {
-                        if (ref) observer.observe(ref);
-                        });
+                    this.$nextTick(() => { // Ensure DOM is updated
+                        this.projectRefs = []; // Clear refs before re-populating
+                        // This part needs to align with how projectRefs are actually collected
+                        // If projects are initially empty, this.projectRefs won't be populated correctly here.
+                        // It's better to populate projectRefs within the v-for in the template.
+                        // The template already does: :ref="el => { if (el) projectRefs[index] = el }"
+                        // So, we just need to observe them if they exist.
+                         if (this.projects.length > 0) {
+                            this.projectRefs.forEach(ref => {
+                                if (ref) observer.observe(ref);
+                            });
+                        }
                     });
                 },
             },
