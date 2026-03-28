@@ -13,11 +13,16 @@
         body { font-family: 'Inter', sans-serif; }
         html { scroll-behavior: smooth; }
         
+        /* 背景图片 */
+        .hero {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)),
+                        url('images/background.jpg') center/cover no-repeat fixed;
+        }
+        
         /* 导航栏 */
         .nav-container {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             height: 60px;
             position: fixed;
             top: 0;
@@ -69,8 +74,7 @@
         .nav-btn:hover { color: #fff; }
         
         /* 深色模式 */
-        .dark body, body.dark { background: #0a0a0a; color: #fff; }
-        .dark, [data-theme="dark"] { background: #0a0a0a; color: #fff; }
+        body.dark { background: #0a0a0a; color: #fff; }
         
         /* Hero 区域 */
         .hero {
@@ -81,10 +85,7 @@
             justify-content: center;
             text-align: center;
             padding: 100px 20px 60px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
-        
-        .dark .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
         
         .hero-avatar {
             width: 160px;
@@ -92,7 +93,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid white;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             margin-bottom: 30px;
         }
         
@@ -100,10 +101,9 @@
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 15px;
-            color: #1a1a1a;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        
-        .dark .hero h1 { color: #fff; }
         
         .hero-subtitle {
             font-size: 1.5rem;
@@ -115,13 +115,12 @@
         
         .hero-desc {
             font-size: 1.2rem;
-            color: #666;
+            color: #ddd;
             max-width: 600px;
             line-height: 1.8;
             margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
-        
-        .dark .hero-desc { color: #aaa; }
         
         .hero-btns {
             display: flex;
@@ -146,8 +145,9 @@
         }
         
         .btn-secondary {
-            border: 2px solid #ddd;
-            color: #666;
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.5);
+            color: white;
             padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
@@ -155,8 +155,10 @@
             transition: all 0.3s;
         }
         
-        .dark .btn-secondary { border-color: #444; color: #aaa; }
-        .btn-secondary:hover { border-color: #667eea; color: #667eea; }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: #667eea;
+        }
         
         .social-links {
             display: flex;
@@ -165,7 +167,7 @@
         }
         
         .social-links a {
-            color: #666;
+            color: white;
             font-size: 28px;
             transition: color 0.3s, transform 0.3s;
         }
@@ -175,16 +177,16 @@
             transform: scale(1.15);
         }
         
-        /* 导航卡片 */
-        .cards-section {
+        /* 内容区域 */
+        .content-section {
             padding: 80px 20px;
             background: white;
         }
         
-        .dark .cards-section { background: #111; }
+        body.dark .content-section { background: #111; }
         
-        .cards-container {
-            max-width: 1200px;
+        .content-container {
+            max-width: 1000px;
             margin: 0 auto;
         }
         
@@ -196,20 +198,23 @@
             color: #1a1a1a;
         }
         
-        .dark .section-title { color: #fff; }
+        body.dark .section-title { color: #fff; }
         
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
         
         .card {
-            padding: 40px;
+            padding: 30px;
             border-radius: 20px;
             text-decoration: none;
             transition: transform 0.3s, box-shadow 0.3s;
+            color: #1a1a1a;
         }
+        
+        body.dark .card { color: #fff; }
         
         .card:hover {
             transform: translateY(-10px);
@@ -219,16 +224,75 @@
         .card-blue { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); }
         .card-purple { background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); }
         .card-green { background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); }
+        .card-orange { background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%); }
         
-        .dark .card-blue { background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%); }
-        .dark .card-purple { background: linear-gradient(135deg, #4c1d95 0%, #6b21a8 100%); }
-        .dark .card-green { background: linear-gradient(135deg, #14532d 0%, #166534 100%); }
+        body.dark .card-blue { background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%); }
+        body.dark .card-purple { background: linear-gradient(135deg, #4c1d95 0%, #6b21a8 100%); }
+        body.dark .card-green { background: linear-gradient(135deg, #14532d 0%, #166534 100%); }
+        body.dark .card-orange { background: linear-gradient(135deg, #7c2d12 0%, #9a3412 100%); }
         
-        .card-icon { font-size: 3rem; margin-bottom: 20px; }
-        .card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; color: #1a1a1a; }
-        .dark .card h3 { color: #fff; }
-        .card p { color: #666; line-height: 1.6; }
-        .dark .card p { color: #ccc; }
+        .card-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
+        .card p { color: #555; line-height: 1.6; font-size: 0.95rem; }
+        body.dark .card p { color: #ccc; }
+        
+        /* 博客文章 */
+        .blog-post {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        body.dark .blog-post { background: #1a1a1a; }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+        }
+        
+        .blog-date {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        body.dark .blog-date { color: #a78bfa; }
+        
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        body.dark .blog-title { color: #fff; }
+        
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        body.dark .blog-excerpt { color: #aaa; }
+        
+        .blog-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .blog-tag {
+            background: #f0f0f0;
+            color: #666;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        body.dark .blog-tag { background: #333; color: #aaa; }
         
         /* Footer */
         footer {
@@ -236,9 +300,10 @@
             text-align: center;
             border-top: 1px solid #eee;
             color: #666;
+            background: white;
         }
         
-        .dark footer { border-color: #333; }
+        body.dark footer { background: #111; border-color: #333; }
         
         /* 响应式 */
         @media (max-width: 768px) {
@@ -247,11 +312,54 @@
             .hero-subtitle { font-size: 1.2rem; }
         }
         
-        /* 语言切换提示 */
         .lang-hint {
             font-size: 12px;
-            color: #888;
+            color: rgba(255,255,255,0.6);
             margin-top: 20px;
+        }
+        
+        /* 关于我详情 */
+        .about-detail {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        body.dark .about-detail { background: #1a1a1a; }
+        
+        .about-detail h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 30px 0 15px;
+            color: #1a1a1a;
+        }
+        
+        body.dark .about-detail h3 { color: #fff; }
+        
+        .about-detail p, .about-detail li {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        body.dark .about-detail p, body.dark .about-detail li { color: #aaa; }
+        
+        .about-detail ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .about-detail li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .about-detail li::before {
+            content: "▸";
+            color: #667eea;
+            position: absolute;
+            left: 0;
         }
     </style>
 </head>
@@ -264,6 +372,7 @@
                 <a href="#home" data-i18n="nav_home">Home</a>
                 <a href="#about" data-i18n="nav_about">About</a>
                 <a href="#projects" data-i18n="nav_projects">Projects</a>
+                <a href="#blog" data-i18n="nav_blog">Blog</a>
                 <a href="#contact" data-i18n="nav_contact">Contact</a>
             </div>
             <div class="nav-controls">
@@ -299,72 +408,124 @@
         <p class="lang-hint" data-i18n="lang_hint">点击右上角地球图标切换中/英文</p>
     </section>
 
-    <!-- 导航卡片 -->
-    <section class="cards-section" id="about">
-        <div class="cards-container">
-            <h2 class="section-title" data-i18n="explore">Explore</h2>
-            <div class="cards-grid">
-                <a href="#about-detail" class="card card-blue">
-                    <div class="card-icon">👨‍🔬</div>
-                    <h3 data-i18n="card_about_title">About Me</h3>
-                    <p data-i18n="card_about_desc">Learn more about my background and research interests.</p>
-                </a>
-                <a href="#projects" class="card card-purple">
-                    <div class="card-icon">🚀</div>
-                    <h3 data-i18n="card_projects_title">Projects</h3>
-                    <p data-i18n="card_projects_desc">Check out my research projects and publications.</p>
-                </a>
-                <a href="#contact" class="card card-green">
-                    <div class="card-icon">📝</div>
-                    <h3 data-i18n="card_contact_title">Blog</h3>
-                    <p data-i18n="card_contact_desc">Read my thoughts on AI, healthcare, and technology.</p>
-                </a>
+    <!-- 关于我 -->
+    <section class="content-section" id="about">
+        <div class="content-container">
+            <h2 class="section-title" data-i18n="about_title">About Me</h2>
+            
+            <div class="about-detail">
+                <p data-i18n="about_intro">I am irrrricardo, a student at Peking University's School of Basic Medical Sciences, pursuing degrees in Basic Medicine and Economics. My primary research interest lies in the innovative application of deep learning techniques to solve complex challenges in the medical field.</p>
+                
+                <h3 data-i18n="research_title">Research Focus</h3>
+                <ul>
+                    <li data-i18n="research_1">Deep Learning in Medical Imaging</li>
+                    <li data-i18n="research_2">AI for Diagnostics & Prognostics</li>
+                    <li data-i18n="research_3">Healthcare Data Analytics</li>
+                </ul>
+                
+                <h3 data-i18n="skills_title">Technical Skills</h3>
+                <ul>
+                    <li>Python, PyTorch, TensorFlow</li>
+                    <li>Deep Learning, Machine Learning</li>
+                    <li>Medical Imaging Analysis</li>
+                    <li>Data Science & Analytics</li>
+                </ul>
+                
+                <h3 data-i18n="education_title">Education</h3>
+                <p><strong>Peking University</strong> - Basic Medicine & Economics</p>
+                <p data-i18n="education_year">Class of 2022</p>
+                
+                <h3 data-i18n="interests_title">Interests</h3>
+                <p data-i18n="interests_desc">Beyond academics and research, I am an avid skier, embracing the thrill and precision of the sport. I am driven by a passion for learning and a commitment to leveraging technology for impactful solutions.</p>
             </div>
         </div>
     </section>
 
     <!-- 项目 -->
-    <section class="cards-section" id="projects" style="background:#f8fafc;">
-        <div class="cards-container">
+    <section class="content-section" id="projects" style="background:#f8fafc;">
+        <div class="content-container">
             <h2 class="section-title" data-i18n="projects_title">Projects</h2>
             <div class="cards-grid">
-                <div class="card card-purple" style="cursor:default;">
+                <div class="card card-purple">
                     <div class="card-icon">👁️</div>
                     <h3>EyeCLIP</h3>
-                    <p>Innovative application of CLIP technology in ophthalmology, focusing on medical image analysis.</p>
-                    <div style="margin-top:20px;">
-                        <a href="https://github.com/irrrricardo/EyeCLIP-main" target="_blank" class="btn-secondary" style="padding:10px 20px;font-size:14px;">
+                    <p>Innovative application of CLIP technology in ophthalmology, focusing on medical image analysis and diagnostic assistance.</p>
+                    <div style="margin-top:15px;">
+                        <a href="https://github.com/irrrricardo/EyeCLIP-main" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:12px;display:inline-block;">
                             <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
                 </div>
-                <div class="card card-blue" style="cursor:default;">
+                <div class="card card-blue">
                     <div class="card-icon">🧠</div>
                     <h3>FundusAge</h3>
-                    <p>Deep learning model for age prediction from fundus images, exploring biomarkers.</p>
-                    <div style="margin-top:20px;">
-                        <a href="https://github.com/irrrricardo/FundusAge" target="_blank" class="btn-secondary" style="padding:10px 20px;font-size:14px;">
+                    <p>Deep learning model for age prediction from fundus images, exploring biomarkers in retinal photography.</p>
+                    <div style="margin-top:15px;">
+                        <a href="https://github.com/irrrricardo/FundusAge" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:12px;display:inline-block;">
                             <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
                 </div>
-                <div class="card card-green" style="cursor:default;">
+                <div class="card card-green">
                     <div class="card-icon">🔬</div>
                     <h3>RRWN</h3>
-                    <p>Recurrent Residual Weight Network for medical image segmentation.</p>
-                    <div style="margin-top:20px;">
-                        <a href="https://github.com/irrrricardo/rrwnet-main" target="_blank" class="btn-secondary" style="padding:10px 20px;font-size:14px;">
+                    <p>Recurrent Residual Weight Network for medical image segmentation and analysis.</p>
+                    <div style="margin-top:15px;">
+                        <a href="https://github.com/irrrricardo/rrwnet-main" target="_blank" class="btn-secondary" style="padding:8px 16px;font-size:12px;display:inline-block;">
                             <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 博客 -->
+    <section class="content-section" id="blog">
+        <div class="content-container">
+            <h2 class="section-title" data-i18n="blog_title">Blog</h2>
+            
+            <!-- 博客文章 1 -->
+            <div class="blog-post">
+                <p class="blog-date">2024-01-15</p>
+                <h3 class="blog-title" data-i18n="blog1_title">Getting Started with Deep Learning in Medical Imaging</h3>
+                <p class="blog-excerpt" data-i18n="blog1_excerpt">A comprehensive guide to applying deep learning techniques in medical imaging analysis.</p>
+                <div class="blog-tags">
+                    <span class="blog-tag">Deep Learning</span>
+                    <span class="blog-tag">Medical Imaging</span>
+                    <span class="blog-tag">Tutorial</span>
+                </div>
+            </div>
+            
+            <!-- 博客文章 2 -->
+            <div class="blog-post">
+                <p class="blog-date">2024-01-10</p>
+                <h3 class="blog-title" data-i18n="blog2_title">My Journey at Peking University</h3>
+                <p class="blog-excerpt" data-i18n="blog2_excerpt">Sharing my experiences and insights from studying at PKU.</p>
+                <div class="blog-tags">
+                    <span class="blog-tag">Life</span>
+                    <span class="blog-tag">Education</span>
+                    <span class="blog-tag">Experience</span>
+                </div>
+            </div>
+            
+            <!-- 博客文章 3 -->
+            <div class="blog-post">
+                <p class="blog-date">2024-01-05</p>
+                <h3 class="blog-title" data-i18n="blog3_title">The Future of AI in Healthcare</h3>
+                <p class="blog-excerpt" data-i18n="blog3_excerpt">Exploring the potential and challenges of AI in modern healthcare.</p>
+                <div class="blog-tags">
+                    <span class="blog-tag">AI</span>
+                    <span class="blog-tag">Healthcare</span>
+                    <span class="blog-tag">Future</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 联系方式 -->
-    <section class="cards-section" id="contact">
-        <div class="cards-container" style="max-width:800px;">
+    <section class="content-section" id="contact">
+        <div class="content-container" style="max-width:800px;">
             <h2 class="section-title" data-i18n="contact_title">Get in Touch</h2>
             <div style="text-align:center;">
                 <p style="color:#666;font-size:1.1rem;margin-bottom:40px;" data-i18n="contact_desc">I'd love to hear from you. Feel free to reach out!</p>
@@ -395,19 +556,31 @@
                 nav_home: 'Home',
                 nav_about: 'About',
                 nav_projects: 'Projects',
+                nav_blog: 'Blog',
                 nav_contact: 'Contact',
                 hero_desc: 'Exploring the intersection of AI and healthcare. Passionate about applying deep learning techniques to solve complex challenges in the medical field.',
                 btn_contact: 'Contact Me',
                 btn_resume: 'Download Resume',
                 lang_hint: 'Click the globe icon to switch language',
-                explore: 'Explore',
-                card_about_title: 'About Me',
-                card_about_desc: 'Learn more about my background and research interests.',
-                card_projects_title: 'Projects',
-                card_projects_desc: 'Check out my research projects and publications.',
-                card_contact_title: 'Blog',
-                card_contact_desc: "Read my thoughts on AI, healthcare, and technology.",
+                about_title: 'About Me',
+                about_intro: 'I am irrrricardo, a student at Peking University\'s School of Basic Medical Sciences, pursuing degrees in Basic Medicine and Economics. My primary research interest lies in the innovative application of deep learning techniques to solve complex challenges in the medical field.',
+                research_title: 'Research Focus',
+                research_1: 'Deep Learning in Medical Imaging',
+                research_2: 'AI for Diagnostics & Prognostics',
+                research_3: 'Healthcare Data Analytics',
+                skills_title: 'Technical Skills',
+                education_title: 'Education',
+                education_year: 'Class of 2022',
+                interests_title: 'Interests',
+                interests_desc: 'Beyond academics and research, I am an avid skier, embracing the thrill and precision of the sport. I am driven by a passion for learning and a commitment to leveraging technology for impactful solutions.',
                 projects_title: 'Projects',
+                blog_title: 'Blog',
+                blog1_title: 'Getting Started with Deep Learning in Medical Imaging',
+                blog1_excerpt: 'A comprehensive guide to applying deep learning techniques in medical imaging analysis.',
+                blog2_title: 'My Journey at Peking University',
+                blog2_excerpt: 'Sharing my experiences and insights from studying at PKU.',
+                blog3_title: 'The Future of AI in Healthcare',
+                blog3_excerpt: 'Exploring the potential and challenges of AI in modern healthcare.',
                 contact_title: 'Get in Touch',
                 contact_desc: "I'd love to hear from you. Feel free to reach out!"
             },
@@ -415,19 +588,31 @@
                 nav_home: '首页',
                 nav_about: '关于',
                 nav_projects: '项目',
+                nav_blog: '博客',
                 nav_contact: '联系',
                 hero_desc: '探索人工智能与医疗健康的交叉领域。热衷于将深度学习技术应用于解决医学领域的复杂挑战。',
                 btn_contact: '联系我',
                 btn_resume: '下载简历',
                 lang_hint: '点击右上角地球图标切换中/英文',
-                explore: '探索',
-                card_about_title: '关于我',
-                card_about_desc: '了解更多关于我的背景和研究兴趣。',
-                card_projects_title: '项目',
-                card_projects_desc: '查看我的研究项目和发表成果。',
-                card_contact_title: '博客',
-                card_contact_desc: '阅读我关于人工智能、医疗健康和技术的思考。',
+                about_title: '关于我',
+                about_intro: '我是irrrricardo，就读于北京大学基础医学院，主修基础医学与经济学双学位。我的主要研究兴趣在于将深度学习技术创新性地应用于解决医学领域的复杂挑战。',
+                research_title: '研究重点',
+                research_1: '深度学习在医学影像中的应用',
+                research_2: '人工智能辅助诊断与预后',
+                research_3: '医疗健康数据分析',
+                skills_title: '技术技能',
+                education_title: '教育背景',
+                education_year: '2022级',
+                interests_title: '兴趣爱好',
+                interests_desc: '学术和研究之余，我是一名滑雪爱好者，享受这项运动带来的刺激与精准。我对学习充满热情，并致力于利用技术创造有影响力的解决方案。',
                 projects_title: '项目',
+                blog_title: '博客',
+                blog1_title: '医学影像深度学习入门',
+                blog1_excerpt: '医学影像分析中应用深度学习技术的综合指南。',
+                blog2_title: '我在北大的求学之路',
+                blog2_excerpt: '分享我在北大求学的经历和感悟。',
+                blog3_title: '人工智能在医疗领域的未来',
+                blog3_excerpt: '探讨人工智能在现代医疗中的潜力与挑战。',
                 contact_title: '联系我',
                 contact_desc: '期待您的来信，随时联系我！'
             }
@@ -460,25 +645,9 @@
         function applyTheme() {
             if (isDark) {
                 document.body.classList.add('dark');
-                document.querySelectorAll('.card, section, .cards-section').forEach(el => {
-                    if (el.classList.contains('hero')) {
-                        el.style.background = 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)';
-                    } else if (el.id === 'projects' || el.style?.background?.includes('f8fafc')) {
-                        el.style.background = '#111';
-                    } else if (el.tagName === 'SECTION') {
-                        el.style.background = '#111';
-                    }
-                });
                 document.getElementById('theme-icon').className = 'fas fa-sun';
             } else {
                 document.body.classList.remove('dark');
-                document.querySelectorAll('section').forEach(el => {
-                    if (el.id === 'projects') {
-                        el.style.background = '#f8fafc';
-                    } else if (el.classList.contains('hero')) {
-                        el.style.background = 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)';
-                    }
-                });
                 document.getElementById('theme-icon').className = 'fas fa-moon';
             }
         }
