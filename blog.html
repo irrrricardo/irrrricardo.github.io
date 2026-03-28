@@ -373,26 +373,12 @@
             <div class="loading">Loading articles...</div>
         </div>
         
-        <!-- 文章详情（显示单篇 Notion 文章） -->
+        <!-- 文章详情 -->
         <div class="article-viewer" id="articleViewer">
             <button class="back-btn" onclick="showArticlesList()">
                 ← 返回文章列表
             </button>
-            <div id="articleContent">
-                <div style="text-align:center;padding:40px;">
-                    <p style="color:#666;margin-bottom:20px;">在 Notion 中打开这篇文章，然后点击右上角 Share → Publish → 复制链接，粘贴到这里：</p>
-                    <input type="text" id="notionArticleUrl" 
-                           placeholder="粘贴单篇文章的公开链接..." 
-                           style="width:100%;max-width:600px;padding:15px;border-radius:10px;border:2px solid #e0e0e0;font-size:14px;">
-                    <br><br>
-                    <button onclick="loadNotionArticle()" 
-                            style="padding:12px 30px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;border:none;border-radius:50px;font-weight:600;cursor:pointer;">
-                        加载文章
-                    </button>
-                </div>
-                <iframe id="notionArticleFrame" width="100%" height="800px" frameborder="0" 
-                        style="border-radius:15px;display:none;"></iframe>
-            </div>
+            <div id="articleContent"></div>
         </div>
     </div>
 
@@ -579,8 +565,10 @@
             `).join('');
         }
         
+        let allPosts = [];
+        
         function showArticle(id) {
-            const post = samplePosts.find(p => p.id === id);
+            const post = allPosts.find(p => p.id === id);
             if (post) {
                 document.getElementById('articlesList').classList.add('hidden');
                 document.getElementById('articleViewer').classList.add('active');
@@ -588,7 +576,15 @@
                     <div class="notion-badge">📄 Notion Article</div>
                     <h1 class="blog-title" style="font-size:2rem;margin-bottom:20px;">${post.title}</h1>
                     <p class="blog-date" style="margin-bottom:30px;">${post.date}</p>
-                    <div class="article-content">${post.content}</div>
+                    <div class="article-content">
+                        <p style="text-align:center;padding:60px 20px;color:#666;">
+                            📖 文章内容在 Notion 中查看<br><br>
+                            <a href="${post.notionUrl}" target="_blank" 
+                               style="display:inline-block;padding:15px 35px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;text-decoration:none;border-radius:50px;font-weight:600;">
+                                在 Notion 中打开这篇文章
+                            </a>
+                        </p>
+                    </div>
                     <div class="blog-tags" style="margin-top:40px;">
                         ${post.tags.map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
                     </div>
@@ -603,16 +599,44 @@
         }
         
         // ============================================
+        // 加载文章数据
+        // ============================================
+        
+        async function loadPosts() {
+            try {
+                const response = await fetch('posts.json');
+                const data = await response.json();
+                
+                if (data.results && data.results.length > 0) {
+                    allPosts = data.results.map(page => {
+                        const props = page.properties;
+                        return {
+                            id: page.id,
+                            title: props.Name?.title?.[0]?.plain_text || 'Untitled',
+                            date: props.Date?.date?.start || '',
+                            excerpt: props.Excerpt?.rich_text?.[0]?.plain_text || '',
+                            tags: props.Tags?.multi_select?.map(t => t.name) || [],
+                            notionUrl: `https://www.notion.so/${page.id.replace(/-/g, '')}`
+                        };
+                    });
+                    renderArticles(allPosts);
+                } else {
+                    allPosts = samplePosts;
+                    renderArticles(samplePosts);
+                }
+            } catch (error) {
+                console.log('posts.json not found or error, using sample posts');
+                allPosts = samplePosts;
+                renderArticles(samplePosts);
+            }
+        }
+        
+        // ============================================
         // 初始化
         // ============================================
         
         async function init() {
-            if (USE_NOTION_API && NOTION_TOKEN !== 'YOUR_NOTION_INTEGRATION_TOKEN') {
-                const posts = await fetchFromNotion();
-                renderArticles(posts);
-            } else {
-                renderArticles(samplePosts);
-            }
+            await loadPosts();
         }
         
         // 语言切换
