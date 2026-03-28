@@ -10,7 +10,7 @@ export const translations = {
     home: {
       title: 'Renxiang (Ricardo) Chu',
       subtitle: 'Peking University | Basic Medicine & Economics',
-      description: 'Interest in AI4Med/Bio. Passionate about applying deep learning techniques to solve complex challenges in the medical field.',
+      description: 'Interest in AI4Med/Bio and Agentic AI for Med. Passionate about applying deep learning techniques to solve complex challenges in the medical field.',
       contactBtn: 'Contact Me',
       resumeBtn: 'Download Resume',
       explore: 'Explore',
@@ -56,7 +56,7 @@ export const translations = {
     home: {
       title: 'Renxiang (Ricardo) Chu',
       subtitle: '北京大学 | 基础医学 & 经济学',
-      description: 'Interest in AI4Med/Bio. 热衷于将深度学习技术应用于解决医学领域的复杂挑战。',
+      description: 'Interest in AI4Med/Bio and Agentic AI for Med. 热衷于将深度学习技术应用于解决医学领域的复杂挑战。',
       contactBtn: '联系我',
       resumeBtn: '下载简历',
       explore: '探索',
