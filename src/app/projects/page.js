@@ -27,9 +27,18 @@ export default function ProjectsPage() {
 
   const projects = [
     {
-      title: 'Coming soon...',
-      description: 'More projects to be added.',
-      tags: [],
+      period: '2024.08 - Present',
+      lab: 'Lu Lab @PKU IACM',
+      title: 'Artificial Intelligence & Deep Learning Analysis of Retinal Images',
+      description: 'Developing deep learning frameworks for retinal image analysis, with applications in neuroscience research.',
+      tags: ['Deep Learning', 'Retinal Imaging', 'Neuroscience'],
+    },
+    {
+      period: '2026.03 - Present',
+      lab: 'Wang Lab @PKU BMS',
+      title: 'Machine Learning in Systems Biology',
+      description: 'Applying machine learning techniques to systems biology research.',
+      tags: ['Machine Learning', 'Systems Biology'],
     },
   ];
 
@@ -93,12 +102,30 @@ export default function ProjectsPage() {
                   key={index} 
                   className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm border border-gray-100 dark:border-gray-700"
                 >
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-2">
+                    <span className="text-xs font-medium px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full w-fit">
+                      {project.lab}
+                    </span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                      {project.period}
+                    </span>
+                  </div>
                   <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400 mb-3">
                     {project.description}
                   </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span 
+                        key={tag} 
+                        className="px-3 py-1 text-xs font-medium bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
