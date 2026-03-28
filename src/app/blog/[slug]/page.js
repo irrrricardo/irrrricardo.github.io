@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import PasswordGate from '@/components/PasswordGate';
 
 const postsContent = {
   'first-post': {
@@ -75,23 +78,14 @@ I am simultaneously studying **Basic Medicine** and **Economics**. This interdis
   },
 };
 
-export async function generateStaticParams() {
-  return Object.keys(postsContent).map((slug) => ({ slug }));
-}
-
-export async function generateMetadata({ params }) {
-  const post = postsContent[params?.slug];
-  return { title: post?.title || 'Post Not Found' };
-}
-
-export default function BlogPostPage({ params }) {
-  const post = postsContent[params?.slug];
+function BlogPostContent({ slug }) {
+  const post = postsContent[slug];
 
   if (!post) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Post Not Found</h1>
+          <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Post Not Found</h1>
           <Link href="/blog" className="text-primary hover:underline">← Back to Blog</Link>
         </div>
       </div>
@@ -131,5 +125,26 @@ export default function BlogPostPage({ params }) {
         </div>
       </div>
     </article>
+  );
+}
+
+export default function BlogPostPage({ params }) {
+  const slug = params?.slug;
+  
+  if (!slug || !postsContent[slug]) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Post Not Found</h1>
+          <Link href="/blog" className="text-primary hover:underline">← Back to Blog</Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <PasswordGate>
+      <BlogPostContent slug={slug} />
+    </PasswordGate>
   );
 }

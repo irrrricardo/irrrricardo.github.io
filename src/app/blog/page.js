@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { translations } from '@/lib/translations';
 import BlogCard from '@/components/BlogCard';
+import PasswordGate from '@/components/PasswordGate';
 
 const blogPosts = [
   {
@@ -47,7 +48,7 @@ export default function BlogPage() {
   const t = translations[lang].blog;
 
   return (
-    <>
+    <PasswordGate>
       <section className="py-20 px-4 bg-gradient-to-r from-primary to-secondary text-white text-center">
         <h1 className="text-4xl sm:text-5xl font-bold mb-4">{t.title}</h1>
         <p className="text-lg text-white/90">{t.subtitle}</p>
@@ -66,6 +67,6 @@ export default function BlogPage() {
           )}
         </div>
       </section>
-    </>
+    </PasswordGate>
   );
 }
