@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { translations } from '@/lib/translations';
 
 export default function Home() {
@@ -23,23 +24,49 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/background.jpg"
+            alt="Background"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/70" />
+        </div>
+
+        <div className="relative z-10 max-w-3xl mx-auto">
+          {/* Profile Photo */}
+          <div className="mb-8">
+            <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-white/30 shadow-2xl">
+              <Image
+                src="/images/github_selfie.jpeg"
+                alt="Profile Photo"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-white drop-shadow-lg">
             {t.title}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 mb-8">
+          <p className="text-lg sm:text-xl text-gray-200 mb-8 drop-shadow">
             {t.subtitle}
           </p>
-          <p className="text-base sm:text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto mb-10">
+          <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10 drop-shadow">
             {t.description}
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <Link
               href="/contact"
-              className="px-8 py-3 rounded-full font-semibold bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+              className="px-8 py-3 rounded-full font-semibold bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity shadow-lg"
             >
               {t.contactBtn}
             </Link>
@@ -47,19 +74,19 @@ export default function Home() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 rounded-full font-semibold border-2 border-white/30 hover:bg-white/10 transition-colors"
+              className="px-8 py-3 rounded-full font-semibold border-2 border-white/50 bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-sm"
             >
               {t.resumeBtn}
             </a>
           </div>
 
           <div className="flex justify-center gap-6 mb-16">
-            <a href="https://github.com/irrrricardo" target="_blank" rel="noopener noreferrer" className="text-3xl hover:scale-110 transition-transform">🐙</a>
-            <a href="https://www.linkedin.com/in/renxiang-chu-386322333/" target="_blank" rel="noopener noreferrer" className="text-3xl hover:scale-110 transition-transform">💼</a>
-            <a href="mailto:r1card0chu1208@gmail.com" className="text-3xl hover:scale-110 transition-transform">📧</a>
+            <a href="https://github.com/irrrricardo" target="_blank" rel="noopener noreferrer" className="text-3xl hover:scale-110 transition-transform drop-shadow">🐙</a>
+            <a href="https://www.linkedin.com/in/renxiang-chu-386322333/" target="_blank" rel="noopener noreferrer" className="text-3xl hover:scale-110 transition-transform drop-shadow">💼</a>
+            <a href="mailto:r1card0chu1208@gmail.com" className="text-3xl hover:scale-110 transition-transform drop-shadow">📧</a>
           </div>
 
-          <p className="text-sm text-gray-500">{t.langHint}</p>
+          <p className="text-sm text-gray-300">{t.langHint}</p>
         </div>
       </section>
 
