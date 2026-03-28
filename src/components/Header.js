@@ -43,6 +43,7 @@ export default function Header() {
     { href: '/about', label: t.about },
     { href: '/projects', label: t.projects },
     { href: '/blog', label: t.blog },
+    { href: '/resume', label: 'Resume' },
     { href: '/contact', label: t.contact },
   ];
 
