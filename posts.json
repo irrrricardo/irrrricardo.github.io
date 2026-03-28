@@ -2,7 +2,7 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Host api.notion.com:443 was resolved.
-* IPv6: 2602:f79a::1, 2602:f79a::2
+* IPv6: 2602:f79a::2, 2602:f79a::1
 * IPv4: 208.103.161.1, 208.103.161.2
 *   Trying 208.103.161.1:443...
 * Connected to api.notion.com (208.103.161.1) port 443
@@ -20,7 +20,7 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 * TLSv1.3 (IN), TLS handshake, Certificate (11):
 { [2527 bytes data]
 * TLSv1.3 (IN), TLS handshake, CERT verify (15):
-{ [80 bytes data]
+{ [79 bytes data]
 * TLSv1.3 (IN), TLS handshake, Finished (20):
 { [52 bytes data]
 * TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
@@ -69,13 +69,13 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 { [230 bytes data]
 * old SSL session ID is stale, removing
 { [5 bytes data]
-< HTTP/2 400 
-< date: Sat, 28 Mar 2026 12:49:27 GMT
+< HTTP/2 401 
+< date: Sat, 28 Mar 2026 12:52:31 GMT
 < content-type: application/json; charset=utf-8
-< content-length: 231
-< cf-ray: 9e36c13f9871e5d2-DFW
+< content-length: 139
+< cf-ray: 9e36c5bd7d184b6f-SJC
 < cf-cache-status: DYNAMIC
-< etag: W/"e7-cU0GBkLxoNwSOMpuNwkPfrf2SBg"
+< etag: W/"8b-fUbb9TCtQ11XCdVJRW8a0D11luc"
 < server: cloudflare
 < strict-transport-security: max-age=31536000; includeSubDomains; preload
 < vary: Accept-Encoding
@@ -85,13 +85,13 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 < x-dns-prefetch-control: off
 < x-download-options: noopen
 < x-frame-options: SAMEORIGIN
-< x-notion-request-id: 7bff9f6c-111f-4d21-9d03-25c085523a51
+< x-notion-request-id: 3ff4ebc1-eef7-4c39-82a8-dffa9910b84d
 < x-permitted-cross-domain-policies: none
 < x-xss-protection: 0
-< set-cookie: __cf_bm=WNjK7Y3Nw0Jb3so61oKMRF18OAP_tUUoNMgkBEjuHUU-1774702166.9774477-1.0.1.1-9Y0qwUuWE8mWxZ6JLbBZ1mCJLyKPQ0cFrA9PS1GF3atTx4UNrD3addn_Wfoelw4ehAcIx5D_i9KcfxbV37wL3JSUaf00CleegAm_sACAG7OHYiHsXebAbP_k9rQLByeq; HttpOnly; Secure; Path=/; Domain=notion.com; Expires=Sat, 28 Mar 2026 13:19:27 GMT
+< set-cookie: __cf_bm=4iUiqhnTsY25fkrhZASw9e8ODVwxCSM6_myr.EL9s48-1774702350.9547038-1.0.1.1-oCsMw6ReLtxjpjbPK0U9AY27v9HO5xllpW7dfAOGBPZmSGnzYPl8yBdHFcfaGP7hUc.zepS8c0sLLLzkuCaoDXzb6D6kqFK0dG4WjgwsiCOTBKg1nSHh_KLiz.XDfHbW; HttpOnly; Secure; Path=/; Domain=notion.com; Expires=Sat, 28 Mar 2026 13:22:31 GMT
 < alt-svc: h3=":443"; ma=86400
 < 
-{ [231 bytes data]
-100   291  100   231  100    60    748    194 --:--:-- --:--:-- --:--:--   944
+{ [139 bytes data]
+100   199  100   139  100    60   1077    465 --:--:-- --:--:-- --:--:--  1554
 * Connection #0 to host api.notion.com left intact
-{"object":"error","status":400,"code":"validation_error","message":"Provided ID 33168b52-78b9-8013-8404-ee80c766fa8c is a page, not a database. Use the retrieve page API instead","request_id":"7bff9f6c-111f-4d21-9d03-25c085523a51"}
+{"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"3ff4ebc1-eef7-4c39-82a8-dffa9910b84d"}
