@@ -170,11 +170,23 @@
             color: white;
             font-size: 28px;
             transition: color 0.3s, transform 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
         }
         
         .social-links a:hover {
             color: #667eea;
             transform: scale(1.15);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        body.dark .social-links a {
+            background: rgba(255,255,255,0.15);
         }
         
         /* 内容区域 */
@@ -597,8 +609,8 @@
                 about_title: '关于我',
                 about_intro: '我是irrrricardo，就读于北京大学基础医学院，主修基础医学与经济学双学位。我的主要研究兴趣在于将深度学习技术创新性地应用于解决医学领域的复杂挑战。',
                 research_title: '研究重点',
-                research_1: '深度学习在医学影像中的应用',
-                research_2: '人工智能辅助诊断与预后',
+                research_1: '深度学习在医学领域中的应用',
+                research_2: 'AI for Biomedicine',
                 research_3: '医疗健康数据分析',
                 skills_title: '技术技能',
                 education_title: '教育背景',
@@ -609,7 +621,7 @@
                 blog_title: '博客',
                 blog1_title: '医学影像深度学习入门',
                 blog1_excerpt: '医学影像分析中应用深度学习技术的综合指南。',
-                blog2_title: '我在北大的求学之路',
+                blog2_title: 'Life at PKU & BJMU',
                 blog2_excerpt: '分享我在北大求学的经历和感悟。',
                 blog3_title: '人工智能在医疗领域的未来',
                 blog3_excerpt: '探讨人工智能在现代医疗中的潜力与挑战。',
