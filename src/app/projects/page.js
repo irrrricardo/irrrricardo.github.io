@@ -19,6 +19,7 @@ export default function ProjectsPage() {
   const publications = [
     {
       title: 'Disentangling physiological heterogeneity in retinal aging using a deep learning–based biological age framework',
+      authors: 'Renxiang Chu*, Aimin Sun*, Jinfeng Qu, Meng Lu',
       doi: 'https://doi.org/10.64898/2026.02.13.26346265',
       year: '2026',
       tags: ['Deep Learning', 'Aging', 'Retinal Imaging', 'AI4Med'],
@@ -65,6 +66,9 @@ export default function ProjectsPage() {
                   <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
                     {pub.title}
                   </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                    {pub.authors}
+                  </p>
                   <div className="flex flex-wrap gap-2 mb-3">
                     {pub.tags.map((tag) => (
                       <span 
