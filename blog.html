@@ -367,10 +367,37 @@
         <p data-i18n="blog_subtitle">Thoughts on AI, Healthcare & Technology</p>
     </div>
 
-    <div class="content-section">
-        <!-- 文章列表 -->
-        <div class="articles-list" id="articlesList">
-            <div class="loading" id="loading">Loading articles...</div>
+        <div class="content-section">
+        <!-- Notion 嵌入模式 -->
+        <div class="notion-embed-section" id="notionEmbedSection">
+            <div class="embed-instructions" id="embedInstructions">
+                <div class="setup-guide">
+                    <h3>📝 连接到 Notion</h3>
+                    <p>要显示你的博客文章，请将你的 Notion Database 页面设置为公开并嵌入。</p>
+                    <ol>
+                        <li>打开你的 Notion Database 页面</li>
+                        <li>点击右上角 <strong>Share</strong> 按钮</li>
+                        <li>开启 <strong>Share to web</strong> 选项</li>
+                        <li>复制页面链接，粘贴到下面的输入框中</li>
+                    </ol>
+                </div>
+                <div style="margin-top:20px;">
+                    <input type="text" id="notionUrl" placeholder="粘贴 Notion Database 链接..." 
+                           style="width:100%;padding:15px;border-radius:10px;border:2px solid #e0e0e0;font-size:16px;">
+                    <button onclick="loadNotionEmbed()" 
+                            style="margin-top:15px;padding:12px 30px;background:linear-gradient(135deg,#667eea,#764ba2);color:white;border:none;border-radius:50px;font-weight:600;cursor:pointer;">
+                        加载博客
+                    </button>
+                </div>
+            </div>
+            <div class="notion-iframe-container" id="notionIframeContainer" style="display:none;">
+                <button onclick="showEmbedInstructions()" 
+                        style="margin-bottom:20px;padding:10px 20px;background:#f0f0f0;border:none;border-radius:50px;cursor:pointer;">
+                    ← 重新设置
+                </button>
+                <iframe id="notionFrame" width="100%" height="800px" frameborder="0" 
+                        style="border-radius:20px;"></iframe>
+            </div>
         </div>
         
         <!-- 文章详情 -->
@@ -641,10 +668,49 @@
             document.body.classList.toggle('dark', isDark);
         }
 
+        // ============================================
+        // Notion iFrame 嵌入功能
+        // ============================================
+        
+        function loadNotionEmbed() {
+            const url = document.getElementById('notionUrl').value;
+            if (url && url.includes('notion.so')) {
+                // 转换为 embed URL
+                let embedUrl = url;
+                if (!url.includes('?')) {
+                    embedUrl = url + '?embed=true';
+                }
+                
+                // 保存到 localStorage
+                localStorage.setItem('notionBlogUrl', embedUrl);
+                
+                // 显示 iframe
+                document.getElementById('embedInstructions').style.display = 'none';
+                document.getElementById('notionIframeContainer').style.display = 'block';
+                document.getElementById('notionFrame').src = embedUrl;
+            } else {
+                alert('请输入有效的 Notion 链接！');
+            }
+        }
+        
+        function showEmbedInstructions() {
+            document.getElementById('embedInstructions').style.display = 'block';
+            document.getElementById('notionIframeContainer').style.display = 'none';
+            document.getElementById('notionFrame').src = '';
+        }
+        
         // 启动
         applyLanguage();
         if (isDark) document.body.classList.add('dark');
-        init();
+        
+        // 检查是否有保存的 Notion URL
+        const savedUrl = localStorage.getItem('notionBlogUrl');
+        if (savedUrl) {
+            document.getElementById('notionUrl').value = savedUrl;
+            loadNotionEmbed();
+        } else {
+            init();
+        }
     </script>
 </body>
 </html>
