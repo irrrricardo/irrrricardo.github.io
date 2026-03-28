@@ -89,7 +89,7 @@
         }
         
         .content-section {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 60px 20px;
         }
@@ -101,6 +101,7 @@
             margin-bottom: 30px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
         
         body.dark .blog-post {
@@ -151,6 +152,130 @@
         
         body.dark .blog-tag { background: #333; color: #aaa; }
         
+        /* 文章详情页 */
+        .article-viewer {
+            display: none;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        body.dark .article-viewer {
+            background: #1a1a1a;
+        }
+        
+        .article-viewer.active {
+            display: block;
+        }
+        
+        .articles-list.hidden {
+            display: none;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .article-content {
+            color: #333;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        body.dark .article-content { color: #ddd; }
+        
+        .article-content h1, .article-content h2, .article-content h3 {
+            margin: 30px 0 15px;
+            color: #1a1a1a;
+        }
+        
+        body.dark .article-content h1, 
+        body.dark .article-content h2, 
+        body.dark .article-content h3 {
+            color: #fff;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+        }
+        
+        .article-content img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .article-content code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        body.dark .article-content code {
+            background: #333;
+        }
+        
+        .article-content pre {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        body.dark .article-content pre {
+            background: #222;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #555;
+            font-style: italic;
+        }
+        
+        body.dark .article-content blockquote {
+            color: #aaa;
+        }
+        
+        .notion-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f0f0f0;
+            color: #666;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+        
+        body.dark .notion-badge {
+            background: #333;
+            color: #aaa;
+        }
+        
         footer {
             padding: 40px 20px;
             text-align: center;
@@ -161,9 +286,61 @@
         
         body.dark footer { background: #111; border-color: #333; }
         
+        .loading {
+            text-align: center;
+            padding: 60px;
+            color: #666;
+        }
+        
+        .error-msg {
+            text-align: center;
+            padding: 40px;
+            background: #fef2f2;
+            border-radius: 20px;
+            color: #dc2626;
+        }
+        
+        body.dark .error-msg {
+            background: #450a0a;
+        }
+        
+        .setup-guide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .setup-guide h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .setup-guide ol {
+            padding-left: 20px;
+        }
+        
+        .setup-guide li {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .setup-guide code {
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .setup-guide a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .blog-post { padding: 30px; }
+            .article-viewer { padding: 25px; }
         }
     </style>
 </head>
@@ -191,37 +368,17 @@
     </div>
 
     <div class="content-section">
-        <div class="blog-post">
-            <p class="blog-date">2024-01-15</p>
-            <h2 class="blog-title" data-i18n="blog1_title">Getting Started with Deep Learning in Medical Imaging</h2>
-            <p class="blog-excerpt" data-i18n="blog1_excerpt">A comprehensive guide to applying deep learning techniques in medical imaging analysis.</p>
-            <div class="blog-tags">
-                <span class="blog-tag">Deep Learning</span>
-                <span class="blog-tag">Medical Imaging</span>
-                <span class="blog-tag">Tutorial</span>
-            </div>
+        <!-- 文章列表 -->
+        <div class="articles-list" id="articlesList">
+            <div class="loading" id="loading">Loading articles...</div>
         </div>
-
-        <div class="blog-post">
-            <p class="blog-date">2024-01-10</p>
-            <h2 class="blog-title" data-i18n="blog2_title">My Journey at Peking University</h2>
-            <p class="blog-excerpt" data-i18n="blog2_excerpt">Sharing my experiences and insights from studying at PKU.</p>
-            <div class="blog-tags">
-                <span class="blog-tag">Life</span>
-                <span class="blog-tag">Education</span>
-                <span class="blog-tag">Experience</span>
-            </div>
-        </div>
-
-        <div class="blog-post">
-            <p class="blog-date">2024-01-05</p>
-            <h2 class="blog-title" data-i18n="blog3_title">The Future of AI in Healthcare</h2>
-            <p class="blog-excerpt" data-i18n="blog3_excerpt">Exploring the potential and challenges of AI in modern healthcare.</p>
-            <div class="blog-tags">
-                <span class="blog-tag">AI</span>
-                <span class="blog-tag">Healthcare</span>
-                <span class="blog-tag">Future</span>
-            </div>
+        
+        <!-- 文章详情 -->
+        <div class="article-viewer" id="articleViewer">
+            <button class="back-btn" onclick="showArticlesList()">
+                ← <span data-i18n="back">Back to Articles</span>
+            </button>
+            <div id="articleContent"></div>
         </div>
     </div>
 
@@ -230,26 +387,231 @@
     </footer>
 
     <script>
+        // ============================================
+        // Notion API 配置
+        // 请将下面的 NOTION_TOKEN 替换为你的 Notion Integration Token
+        // 请将 NOTION_DATABASE_ID 替换为你的 Notion Database ID
+        // ============================================
+        
+        // ⚠️ 在这里设置你的 Notion API Token (格式: secret_xxxxx)
+        const NOTION_TOKEN = 'YOUR_NOTION_INTEGRATION_TOKEN';
+        
+        // ⚠️ 在这里设置你的 Notion Database ID (从数据库URL中获取)
+        const NOTION_DATABASE_ID = 'YOUR_NOTION_DATABASE_ID';
+        
+        // 是否使用 Notion API (设为 true 启用)
+        const USE_NOTION_API = false; // 暂时设为 false，先显示示例
+        
+        // ============================================
+        // 博客文章数据结构
+        // ============================================
+        
+        const samplePosts = [
+            {
+                id: 1,
+                title: 'Getting Started with Deep Learning in Medical Imaging',
+                date: '2024-01-15',
+                excerpt: 'A comprehensive guide to applying deep learning techniques in medical imaging analysis. Learn about convolutional neural networks, data preprocessing, and common architectures used in healthcare AI.',
+                tags: ['Deep Learning', 'Medical Imaging', 'Tutorial'],
+                content: `
+                    <h2>Introduction</h2>
+                    <p>Deep learning has revolutionized the field of medical imaging, enabling automated diagnosis and analysis with unprecedented accuracy. In this article, we'll explore the fundamentals of applying deep learning to medical images.</p>
+                    
+                    <h2>Key Concepts</h2>
+                    <p>When working with medical images, several key considerations must be addressed:</p>
+                    <ul>
+                        <li><strong>Data Preprocessing:</strong> Medical images often require normalization and standardization</li>
+                        <li><strong>Data Augmentation:</strong> Techniques like rotation, flipping, and scaling help increase dataset diversity</li>
+                        <li><strong>Transfer Learning:</strong> Pre-trained models can accelerate development significantly</li>
+                    </ul>
+                    
+                    <h2>Popular Architectures</h2>
+                    <p>Several CNN architectures have proven effective for medical imaging:</p>
+                    <blockquote>U-Net remains one of the most popular architectures for medical image segmentation due to its encoder-decoder structure with skip connections.</blockquote>
+                    
+                    <h2>Conclusion</h2>
+                    <p>The intersection of deep learning and medical imaging holds tremendous promise for improving healthcare outcomes. As technology advances, we can expect even more sophisticated applications in clinical settings.</p>
+                `
+            },
+            {
+                id: 2,
+                title: 'My Journey at Peking University',
+                date: '2024-01-10',
+                excerpt: 'Sharing my experiences and insights from studying at Peking University, balancing Basic Medicine and Economics studies while pursuing deep learning research.',
+                tags: ['Life', 'Education', 'Experience'],
+                content: `
+                    <h2>Why Peking University?</h2>
+                    <p>When I received my admission letter from Peking University, I knew this would be the beginning of an incredible journey. The opportunity to study at one of China's most prestigious institutions while pursuing a unique combination of Basic Medicine and Economics was truly remarkable.</p>
+                    
+                    <h2>The Dual Degree Experience</h2>
+                    <p>Balancing two demanding majors isn't easy, but the intellectual synergies between medicine and economics have proven invaluable. Understanding healthcare systems from both clinical and economic perspectives provides a unique worldview.</p>
+                    
+                    <h2>Discovering Deep Learning</h2>
+                    <p>My introduction to deep learning came through a chance encounter with a research group working on medical AI. The possibility of applying machine learning to solve real-world medical challenges immediately captured my interest.</p>
+                    
+                    <h2>Looking Forward</h2>
+                    <p>As I continue my academic journey, I'm excited about the potential to contribute to healthcare innovation through technology. The future lies at the intersection of multiple disciplines.</p>
+                `
+            },
+            {
+                id: 3,
+                title: 'The Future of AI in Healthcare',
+                date: '2024-01-05',
+                excerpt: 'Exploring the potential and challenges of AI in modern healthcare, from diagnostics to drug discovery and personalized medicine.',
+                tags: ['AI', 'Healthcare', 'Future'],
+                content: `
+                    <h2>AI is Transforming Healthcare</h2>
+                    <p>Artificial intelligence is reshaping every aspect of healthcare, from early disease detection to treatment optimization. The integration of AI technologies promises to address some of the most pressing challenges in modern medicine.</p>
+                    
+                    <h2>Key Application Areas</h2>
+                    <p>Several areas are seeing significant AI integration:</p>
+                    <ul>
+                        <li><strong>Medical Imaging:</strong> AI algorithms can detect anomalies with remarkable precision</li>
+                        <li><strong>Drug Discovery:</strong> AI accelerates the identification of potential drug candidates</li>
+                        <li><strong>Personalized Medicine:</strong> Tailoring treatments based on individual patient data</li>
+                        <li><strong>Operational Efficiency:</strong> Optimizing hospital workflows and resource allocation</li>
+                    </ul>
+                    
+                    <h2>Challenges Ahead</h2>
+                    <p>Despite the promise, significant challenges remain:</p>
+                    <blockquote>Data privacy, algorithmic bias, and regulatory frameworks must be carefully addressed to ensure responsible AI deployment in healthcare.</blockquote>
+                    
+                    <h2>A Vision for Tomorrow</h2>
+                    <p>The next decade will see AI becoming an indispensable tool for healthcare professionals. By augmenting human expertise with machine intelligence, we can achieve better outcomes for patients worldwide.</p>
+                `
+            }
+        ];
+        
+        // ============================================
+        // Notion API 函数
+        // ============================================
+        
+        async function fetchFromNotion() {
+            try {
+                const response = await fetch(`https://api.notion.com/v1/databases/${NOTION_DATABASE_ID}/query`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${NOTION_TOKEN}`,
+                        'Notion-Version': '2022-06-28',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        sorts: [{ property: 'Date', direction: 'descending' }]
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.results) {
+                    return data.results.map(page => {
+                        const props = page.properties;
+                        return {
+                            id: page.id,
+                            title: props.Name?.title?.[0]?.plain_text || 'Untitled',
+                            date: props.Date?.date?.start || '',
+                            excerpt: props.Excerpt?.rich_text?.[0]?.plain_text || '',
+                            tags: props.Tags?.multi_select?.map(t => t.name) || []
+                        };
+                    });
+                }
+                
+                return [];
+            } catch (error) {
+                console.error('Error fetching from Notion:', error);
+                return null;
+            }
+        }
+        
+        // ============================================
+        // UI 函数
+        // ============================================
+        
+        function renderArticles(posts) {
+            const container = document.getElementById('articlesList');
+            
+            if (!posts || posts.length === 0) {
+                container.innerHTML = `
+                    <div class="setup-guide">
+                        <h3>📝 设置 Notion 博客</h3>
+                        <ol>
+                            <li>创建一个 Notion Database，包含以下属性：
+                                <ul>
+                                    <li><code>Name</code> (Title) - 文章标题</li>
+                                    <li><code>Date</code> (Date) - 发布日期</li>
+                                    <li><code>Excerpt</code> (Text) - 文章摘要</li>
+                                    <li><code>Tags</code> (Multi-select) - 标签</li>
+                                </ul>
+                            </li>
+                            <li>在 <a href="https://www.notion.so/my-integrations" target="_blank">Notion Integrations</a> 创建一个新的 Integration，复制 Token</li>
+                            <li>将你的 Database 分享给这个 Integration</li>
+                            <li>复制 Database ID（从 URL 中获取）</li>
+                            <li>编辑 <code>blog.html</code>，修改 <code>NOTION_TOKEN</code> 和 <code>NOTION_DATABASE_ID</code></li>
+                            <li>将 <code>USE_NOTION_API</code> 设为 <code>true</code></li>
+                        </ol>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = posts.map(post => `
+                <div class="blog-post" onclick="showArticle(${post.id})">
+                    <p class="blog-date">${post.date}</p>
+                    <h2 class="blog-title">${post.title}</h2>
+                    <p class="blog-excerpt">${post.excerpt}</p>
+                    <div class="blog-tags">
+                        ${post.tags.map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function showArticle(id) {
+            const post = samplePosts.find(p => p.id === id);
+            if (post) {
+                document.getElementById('articlesList').classList.add('hidden');
+                document.getElementById('articleViewer').classList.add('active');
+                document.getElementById('articleContent').innerHTML = `
+                    <div class="notion-badge">📄 Notion Article</div>
+                    <h1 class="blog-title" style="font-size:2rem;margin-bottom:20px;">${post.title}</h1>
+                    <p class="blog-date" style="margin-bottom:30px;">${post.date}</p>
+                    <div class="article-content">${post.content}</div>
+                    <div class="blog-tags" style="margin-top:40px;">
+                        ${post.tags.map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
+                    </div>
+                `;
+                window.scrollTo(0, 0);
+            }
+        }
+        
+        function showArticlesList() {
+            document.getElementById('articlesList').classList.remove('hidden');
+            document.getElementById('articleViewer').classList.remove('active');
+        }
+        
+        // ============================================
+        // 初始化
+        // ============================================
+        
+        async function init() {
+            if (USE_NOTION_API && NOTION_TOKEN !== 'YOUR_NOTION_INTEGRATION_TOKEN') {
+                const posts = await fetchFromNotion();
+                renderArticles(posts);
+            } else {
+                renderArticles(samplePosts);
+            }
+        }
+        
+        // 语言切换
         const translations = {
             en: {
                 blog_title: 'Blog',
                 blog_subtitle: 'Thoughts on AI, Healthcare & Technology',
-                blog1_title: 'Getting Started with Deep Learning in Medical Imaging',
-                blog1_excerpt: 'A comprehensive guide to applying deep learning techniques in medical imaging analysis.',
-                blog2_title: 'My Journey at Peking University',
-                blog2_excerpt: 'Sharing my experiences and insights from studying at PKU.',
-                blog3_title: 'The Future of AI in Healthcare',
-                blog3_excerpt: 'Exploring the potential and challenges of AI in modern healthcare.'
+                back: 'Back to Articles'
             },
             zh: {
                 blog_title: '博客',
                 blog_subtitle: '关于人工智能、医疗健康与技术的思考',
-                blog1_title: '医学影像深度学习入门',
-                blog1_excerpt: '医学影像分析中应用深度学习技术的综合指南。',
-                blog2_title: 'Life at PKU & BJMU',
-                blog2_excerpt: '分享我在北大求学的经历和感悟。',
-                blog3_title: '人工智能在医疗领域的未来',
-                blog3_excerpt: '探讨人工智能在现代医疗中的潜力与挑战。'
+                back: '返回文章列表'
             }
         };
 
@@ -279,8 +641,10 @@
             document.body.classList.toggle('dark', isDark);
         }
 
+        // 启动
         applyLanguage();
         if (isDark) document.body.classList.add('dark');
+        init();
     </script>
 </body>
 </html>
