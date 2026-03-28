@@ -373,6 +373,36 @@
             position: absolute;
             left: 0;
         }
+        
+        /* 联系页面图标 */
+        .contact-icons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .contact-icons .social-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+        
+        .contact-icons .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        body.dark .contact-icons .social-icon {
+            background: linear-gradient(135deg, #4c1d95 0%, #6b21a8 100%);
+        }
     </style>
 </head>
 <body>
@@ -541,15 +571,20 @@
             <h2 class="section-title" data-i18n="contact_title">Get in Touch</h2>
             <div style="text-align:center;">
                 <p style="color:#666;font-size:1.1rem;margin-bottom:40px;" data-i18n="contact_desc">I'd love to hear from you. Feel free to reach out!</p>
-                <div style="display:flex;gap:30px;justify-content:center;flex-wrap:wrap;">
+                <div class="contact-buttons">
                     <a href="mailto:irrrricardo@example.com" class="btn-primary">
                         <i class="fas fa-envelope"></i> Email Me
                     </a>
-                    <a href="https://github.com/irrrricardo" target="_blank" class="btn-secondary">
-                        <i class="fab fa-github"></i> GitHub
+                </div>
+                <div class="contact-icons" style="margin-top:40px;">
+                    <a href="https://github.com/irrrricardo" target="_blank" class="social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://linkedin.com/in/irrrricardo" target="_blank" class="btn-secondary">
-                        <i class="fab fa-linkedin"></i> LinkedIn
+                    <a href="https://linkedin.com/in/irrrricardo" target="_blank" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/irrrricardo" target="_blank" class="social-icon" title="Twitter">
+                        <i class="fab fa-twitter"></i>
                     </a>
                 </div>
             </div>
