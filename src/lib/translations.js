@@ -5,6 +5,7 @@ export const translations = {
       about: 'About',
       projects: 'Projects',
       blog: 'Blog',
+      resume: 'CV',
       contact: 'Contact',
     },
     home: {
@@ -42,7 +43,7 @@ export const translations = {
       subtitle: 'Get in touch',
     },
     footer: {
-      copyright: '© 2024 irrrricardo. All rights reserved.',
+      copyright: '© 2026. Academic portfolio and research notes.',
     },
   },
   zh: {
@@ -51,6 +52,7 @@ export const translations = {
       about: '关于',
       projects: '项目',
       blog: '博客',
+      resume: '简历',
       contact: '联系',
     },
     home: {
@@ -88,7 +90,7 @@ export const translations = {
       subtitle: '期待与您交流',
     },
     footer: {
-      copyright: '© 2024 irrrricardo. 保留所有权利。',
+      copyright: '© 2026. 学术主页与研究笔记。',
     },
   },
 };

@@ -40,11 +40,11 @@ export default function PasswordGate({ children }) {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 px-4">
-        <div className="w-full max-w-md bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+      <div className="min-h-screen flex items-center justify-center bg-paper px-4 dark:bg-gray-950">
+        <div className="w-full max-w-md border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 dark:bg-gray-900">
           <div className="text-center mb-8">
-            <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center">
-              <span className="text-3xl">🔒</span>
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center border border-primary/25 bg-primary/10 text-sm font-semibold text-primary dark:text-teal-300">
+              Blog
             </div>
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
               Password Required
@@ -84,25 +84,16 @@ export default function PasswordGate({ children }) {
 
             <button
               type="submit"
-              className="w-full py-3 px-4 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg transition-colors focus:ring-2 focus:ring-primary/50 focus:outline-none"
+              className="w-full py-3 px-4 bg-primary hover:bg-primary/90 text-white font-medium transition-colors focus:ring-2 focus:ring-primary/50 focus:outline-none"
             >
               Access Blog
             </button>
           </form>
 
-          <div className="mt-6 text-center space-y-2">
+          <div className="mt-6 text-center">
             <a href="/" className="block text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors">
               ← Back to Home
             </a>
-            <button 
-              onClick={() => {
-                sessionStorage.removeItem('blog_auth');
-                window.location.reload();
-              }}
-              className="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-500 transition-colors"
-            >
-              Reset password (for testing)
-            </button>
           </div>
         </div>
       </div>

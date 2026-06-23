@@ -1,34 +1,32 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
+import { profile } from '@/lib/profile';
 
 export default function ResumePage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 px-4">
-      <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-6">
+    <div className="min-h-screen bg-paper py-8 dark:bg-gray-950">
+      <div className="section-shell max-w-5xl">
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link 
             href="/" 
-            className="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
+            className="text-sm font-semibold text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-teal-300"
           >
-            ← Back to Home
+            Back to Home
           </Link>
           <a 
-            href="/resume.pdf" 
+            href={profile.resumePdf}
             target="_blank" 
             rel="noopener noreferrer"
-            className="px-6 py-2 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg transition-colors"
+            className="focus-ring inline-flex min-h-10 items-center justify-center border border-gray-950 px-4 py-2 text-sm font-semibold text-gray-950 transition-colors hover:bg-gray-950 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-gray-950"
           >
             Download PDF
           </a>
         </div>
 
-        {/* PDF Viewer */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+        <div className="overflow-hidden border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900">
           <iframe 
-            src="/resume.pdf" 
+            src={profile.resumePdf}
             className="w-full h-[calc(100vh-120px)]"
             title="Resume"
           />

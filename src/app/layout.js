@@ -4,10 +4,10 @@ import Footer from '@/components/Footer';
 
 export const metadata = {
   title: {
-    default: 'irrrricardo | Deep Learning Researcher',
-    template: '%s | irrrricardo',
+    default: 'Renxiang Chu | AI for Medicine',
+    template: '%s | Renxiang Chu',
   },
-  description: 'Peking University | Basic Medicine & Economics | Deep Learning Researcher - Exploring the intersection of AI and healthcare.',
+  description: 'Renxiang Chu is a Peking University student working on AI for medicine, medical imaging, biological aging, and agentic AI for research.',
 };
 
 export default function RootLayout({ children }) {
