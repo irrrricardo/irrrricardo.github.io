@@ -37,6 +37,9 @@ export default function Footer() {
           <a className="text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-teal-300" href={`mailto:${profile.email}`}>
             Email
           </a>
+          <span className="text-gray-600 dark:text-gray-300">
+            WeChat: {profile.wechat}
+          </span>
           <a className="text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-teal-300" href={profile.github} target="_blank" rel="noopener noreferrer">
             GitHub
           </a>

@@ -4,10 +4,10 @@ import Footer from '@/components/Footer';
 
 export const metadata = {
   title: {
-    default: 'Renxiang Chu | AI for Medicine',
+    default: 'Renxiang Chu | Medical Imaging and Aging Research',
     template: '%s | Renxiang Chu',
   },
-  description: 'Renxiang Chu is a Peking University student working on AI for medicine, medical imaging, biological aging, and agentic AI for research.',
+  description: 'Renxiang Chu is an undergraduate at Peking University studying Basic Medical Sciences with a dual degree in Economics, working on medical imaging, biological aging, and interpretable representation learning.',
 };
 
 export default function RootLayout({ children }) {

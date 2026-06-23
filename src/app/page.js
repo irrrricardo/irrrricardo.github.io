@@ -3,7 +3,15 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { profile, projects, publications, quickStats, researchDirections, writing } from '@/lib/profile';
+import {
+  profile,
+  projects,
+  publications,
+  quickStats,
+  researchApproach,
+  researchDirections,
+  writing,
+} from '@/lib/profile';
 
 function useLanguage() {
   const [lang, setLang] = useState('en');
@@ -33,7 +41,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative min-h-[86svh] overflow-hidden bg-gray-950 text-white">
+      <section className="relative overflow-hidden bg-gray-950 text-white">
         <Image
           src="/images/background.jpg"
           alt="Peking University campus"
@@ -42,19 +50,20 @@ export default function Home() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gray-950/70" />
+        <div className="absolute inset-0 bg-gray-950/72" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-gray-950 to-transparent" />
 
-        <div className="section-shell relative z-10 flex min-h-[86svh] items-center py-16">
-          <div className="grid w-full items-center gap-10 lg:grid-cols-[1fr_300px]">
-            <div className="max-w-3xl">
+        <div className="section-shell relative z-10 min-h-[92svh] pt-28 pb-10">
+          <div className="grid min-h-[68svh] items-center gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
+            <div className="max-w-4xl">
               <p className="eyebrow text-teal-200">{text(profile.status, lang)}</p>
-              <h1 className="mt-5 text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
+              <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
                 {profile.name}
               </h1>
-              <p className="mt-5 max-w-2xl text-lg leading-8 text-gray-200 sm:text-xl">
+              <p className="mt-5 max-w-3xl text-xl leading-8 text-gray-100 sm:text-2xl">
                 {text(profile.headline, lang)}
               </p>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-gray-300">
+              <p className="mt-6 max-w-3xl text-base leading-8 text-gray-300">
                 {text(profile.intro, lang)}
               </p>
 
@@ -82,68 +91,74 @@ export default function Home() {
                   PODE
                 </a>
               </div>
-
-              <div className="mt-10 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
-                {quickStats.map((item) => (
-                  <div key={item.value} className="border-l border-white/25 pl-4">
-                    <p className="text-lg font-semibold text-white">{item.value}</p>
-                    <p className="mt-1 text-sm leading-5 text-gray-300">{text(item.label, lang)}</p>
-                  </div>
-                ))}
-              </div>
             </div>
 
-            <div className="hidden justify-self-end lg:block">
-              <div className="relative h-[380px] w-[280px] overflow-hidden border border-white/25 bg-white/10 shadow-2xl">
+            <aside className="border border-white/20 bg-white/10 p-4 shadow-2xl backdrop-blur-md">
+              <div className="relative h-[320px] overflow-hidden border border-white/20 bg-gray-900 sm:h-[360px]">
                 <Image
                   src="/images/github_selfie.jpeg"
                   alt={profile.name}
                   fill
                   className="object-cover"
-                  sizes="280px"
+                  sizes="360px"
                   priority
                 />
               </div>
-              <p className="mt-4 text-sm text-gray-300">{text(profile.affiliation, lang)}</p>
-            </div>
+              <div className="mt-5 border-l border-teal-200/60 pl-4">
+                <p className="text-sm font-semibold text-white">{text(profile.affiliation, lang)}</p>
+                <p className="mt-2 text-sm text-gray-300">{text(profile.location, lang)}</p>
+              </div>
+            </aside>
+          </div>
+
+          <div className="mt-10 grid gap-3 border-t border-white/15 pt-6 sm:grid-cols-3">
+            {quickStats.map((item) => (
+              <div key={item.value} className="flex items-start gap-3">
+                <span className="mt-2 h-px w-8 bg-teal-200" />
+                <div>
+                  <p className="text-lg font-semibold text-white">{item.value}</p>
+                  <p className="mt-1 text-sm leading-5 text-gray-300">{text(item.label, lang)}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-gray-200 bg-white py-14 dark:border-gray-800 dark:bg-gray-950">
+      <section className="border-b border-gray-200 bg-white py-16 dark:border-gray-800 dark:bg-gray-950">
         <div className="section-shell">
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.3fr]">
+          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
-              <p className="eyebrow">{lang === 'zh' ? '重点成果' : 'Featured Work'}</p>
-              <h2 className="mt-3 text-3xl font-semibold text-gray-950 dark:text-white">
-                {featuredProject.title}
+              <p className="eyebrow">{lang === 'zh' ? '当前主线' : 'Current Thread'}</p>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
+                {lang === 'zh' ? '从视网膜年龄钟残差看系统性异质性' : 'Reading systemic heterogeneity from retinal age-clock residuals'}
               </h2>
-              <p className="mt-4 max-w-xl text-base leading-7 text-gray-600 dark:text-gray-300">
-                {text(featuredProject.description, lang)}
+              <p className="mt-5 text-base leading-7 text-gray-600 dark:text-gray-300">
+                {lang === 'zh'
+                  ? '我现在最主要的工作是 PODE：把单一 age gap 拆解为更细的生理相关维度，并用医学影像和临床表型去检验这些维度是否有意义。'
+                  : 'My main current work is PODE: moving from a single age gap toward physiology-linked residual components that can be checked with imaging and clinical phenotypes.'}
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <article className="panel p-6">
-                <p className="text-sm font-semibold text-primary dark:text-teal-300">
+            <div className="grid gap-4 md:grid-cols-2">
+              <article className="panel-accent p-6">
+                <p className="text-sm font-semibold text-secondary dark:text-rose-300">
                   {text(featuredProject.eyebrow, lang)}
                 </p>
-                <h3 className="mt-3 text-xl font-semibold text-gray-950 dark:text-white">
-                  {lang === 'zh' ? '公开代码与权重' : 'Code and Model Weights'}
+                <h3 className="mt-3 text-2xl font-semibold text-gray-950 dark:text-white">
+                  {featuredProject.title}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
-                  {lang === 'zh'
-                    ? 'PODE 已整理为论文配套代码库，包含文档、示例 schema、CI、模型卡和权重入口。'
-                    : 'PODE is organized as a manuscript companion release with docs, schema examples, CI, model-card metadata, and checkpoint references.'}
+                <p className="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                  {text(featuredProject.description, lang)}
                 </p>
-                <div className="mt-5 flex flex-wrap gap-3">
+                <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold">
                   {featuredProject.links.map((link) => (
                     <a
                       key={link.href}
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-semibold text-primary hover:underline dark:text-teal-300"
+                      className="text-primary hover:underline dark:text-teal-300"
                     >
                       {link.label}
                     </a>
@@ -169,11 +184,47 @@ export default function Home() {
 
       <section className="bg-paper py-16 dark:bg-gray-950">
         <div className="section-shell">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+            <div>
+              <p className="eyebrow">{lang === 'zh' ? '研究视角' : 'Research Lens'}</p>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
+                {lang === 'zh' ? '医学问题、影像表征与可复现发布' : 'Medical questions, imaging representations, and reproducible releases'}
+              </h2>
+              <p className="mt-5 text-base leading-7 text-gray-600 dark:text-gray-300">
+                {lang === 'zh'
+                  ? '基础医学训练让我更关注问题本身，经济学双学位则让我对异质性、群体结构和解释边界更敏感。'
+                  : 'Basic medical training keeps the biological question in view, while economics gives me a useful language for heterogeneity, population structure, and limits of interpretation.'}
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {researchApproach.map((item, index) => (
+                <article key={text(item.title, 'en')} className="grid gap-4 border-l border-gray-300 pl-5 dark:border-gray-700 sm:grid-cols-[72px_1fr]">
+                  <p className="text-sm font-semibold text-secondary dark:text-rose-300">
+                    {String(index + 1).padStart(2, '0')}
+                  </p>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
+                      {text(item.title, lang)}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                      {text(item.body, lang)}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-gray-200 bg-white py-16 dark:border-gray-800 dark:bg-gray-950">
+        <div className="section-shell">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="eyebrow">{lang === 'zh' ? '研究方向' : 'Research Directions'}</p>
               <h2 className="mt-3 text-3xl font-semibold text-gray-950 dark:text-white">
-                {lang === 'zh' ? '医学、影像与智能系统' : 'Medicine, imaging, and intelligent systems'}
+                {lang === 'zh' ? '目前关心的几个问题' : 'Questions I keep returning to'}
               </h2>
             </div>
             <Link href="/about" className="text-sm font-semibold text-primary hover:underline dark:text-teal-300">
@@ -183,7 +234,7 @@ export default function Home() {
 
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {researchDirections.map((direction) => (
-              <article key={text(direction.title, 'en')} className="panel min-h-[210px] p-6">
+              <article key={text(direction.title, 'en')} className="panel min-h-[230px] p-6">
                 <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
                   {text(direction.title, lang)}
                 </h3>
@@ -196,13 +247,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-gray-200 bg-white py-16 dark:border-gray-800 dark:bg-gray-950">
+      <section className="bg-white py-16 dark:bg-gray-950">
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.2fr]">
             <div>
               <p className="eyebrow">{lang === 'zh' ? '写作与笔记' : 'Writing'}</p>
               <h2 className="mt-3 text-3xl font-semibold text-gray-950 dark:text-white">
-                {lang === 'zh' ? '研究之外的学习记录' : 'Notes beyond the lab'}
+                {lang === 'zh' ? '科研之外的学习记录' : 'Notes beyond the lab'}
               </h2>
             </div>
             <div className="divide-y divide-gray-200 border-y border-gray-200 dark:divide-gray-800 dark:border-gray-800">

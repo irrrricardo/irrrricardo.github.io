@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { education, profile, researchDirections } from '@/lib/profile';
+import { education, profile, researchApproach, researchDirections } from '@/lib/profile';
 import { translations } from '@/lib/translations';
 
 function useLanguage() {
@@ -30,44 +30,11 @@ export default function AboutPage() {
   const lang = useLanguage();
   const t = translations[lang].about;
 
-  const principles = [
-    {
-      title: {
-        en: 'Clinical signal first',
-        zh: '临床信号优先',
-      },
-      body: {
-        en: 'I am interested in models whose outputs can be related back to measurable phenotypes, disease burden, or reproducible biological hypotheses.',
-        zh: '我关注能够回到可测量表型、疾病负担或可复现生物学假设的模型输出。',
-      },
-    },
-    {
-      title: {
-        en: 'Interdisciplinary training',
-        zh: '交叉学科训练',
-      },
-      body: {
-        en: 'My medical training anchors the biological questions, while economics gives me a stronger language for heterogeneity, incentives, and population-level structure.',
-        zh: '医学训练帮助我锚定生物学问题，经济学训练则提供了理解异质性、激励和群体结构的另一套语言。',
-      },
-    },
-    {
-      title: {
-        en: 'Reproducible release',
-        zh: '可复现发布',
-      },
-      body: {
-        en: 'I prefer research artifacts that include clear documentation, code boundaries, model metadata, and honest notes about what public users can and cannot reproduce.',
-        zh: '我倾向于发布包含清晰文档、代码边界、模型元数据，并明确说明公开用户可复现范围的研究产物。',
-      },
-    },
-  ];
-
   return (
     <>
-      <section className="bg-white py-16 dark:bg-gray-950">
+      <section className="bg-white pt-20 pb-16 dark:bg-gray-950">
         <div className="section-shell grid gap-10 lg:grid-cols-[320px_1fr] lg:items-center">
-          <div className="relative mx-auto h-[360px] w-full max-w-[280px] overflow-hidden border border-gray-200 bg-gray-100 shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:mx-0">
+          <div className="relative mx-auto h-[370px] w-full max-w-[280px] overflow-hidden border border-gray-200 bg-gray-100 shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:mx-0">
             <Image
               src="/images/github_selfie.jpeg"
               alt={profile.name}
@@ -79,7 +46,7 @@ export default function AboutPage() {
           </div>
           <div>
             <p className="eyebrow">{t.subtitle}</p>
-            <h1 className="mt-3 text-4xl font-semibold text-gray-950 dark:text-white sm:text-5xl">
+            <h1 className="mt-3 text-4xl font-semibold leading-tight text-gray-950 dark:text-white sm:text-5xl">
               {t.title}
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-600 dark:text-gray-300">
@@ -99,12 +66,17 @@ export default function AboutPage() {
 
       <section className="border-y border-gray-200 bg-paper py-16 dark:border-gray-800 dark:bg-gray-950">
         <div className="section-shell">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
               <p className="eyebrow">{lang === 'zh' ? '教育背景' : 'Education'}</p>
-              <h2 className="mt-3 text-3xl font-semibold text-gray-950 dark:text-white">
-                {lang === 'zh' ? '医学与经济学的双重训练' : 'Training across medicine and economics'}
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
+                {lang === 'zh' ? '基础医学为主线，经济学作为第二视角' : 'Basic medicine as the main training, economics as a second lens'}
               </h2>
+              <p className="mt-4 text-base leading-7 text-gray-600 dark:text-gray-300">
+                {lang === 'zh'
+                  ? '医学训练帮助我把问题落在组织、系统和疾病机制上；经济学训练则让我在看待异质性、群体结构和因果解释时更谨慎。'
+                  : 'Medical training helps me keep questions grounded in tissues, systems, and disease mechanisms; economics makes me more careful about heterogeneity, population structure, and causal interpretation.'}
+              </p>
             </div>
             <div className="space-y-4">
               {education.map((item) => (
@@ -129,16 +101,16 @@ export default function AboutPage() {
 
       <section className="bg-white py-16 dark:bg-gray-950">
         <div className="section-shell">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
               <p className="eyebrow">{lang === 'zh' ? '研究兴趣' : 'Research Interests'}</p>
-              <h2 className="mt-3 text-3xl font-semibold text-gray-950 dark:text-white">
-                {lang === 'zh' ? '从影像模型到可解释医学信号' : 'From imaging models to interpretable medical signals'}
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
+                {lang === 'zh' ? '从影像模型到可解释的医学信号' : 'From imaging models to interpretable medical signals'}
               </h2>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {researchDirections.map((direction) => (
-                <article key={text(direction.title, 'en')} className="panel min-h-[230px] p-6">
+                <article key={text(direction.title, 'en')} className="panel min-h-[240px] p-6">
                   <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
                     {text(direction.title, lang)}
                   </h3>
@@ -154,15 +126,15 @@ export default function AboutPage() {
 
       <section className="border-t border-gray-200 bg-paper py-16 dark:border-gray-800 dark:bg-gray-950">
         <div className="section-shell">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
-              <p className="eyebrow">{lang === 'zh' ? '工作方式' : 'How I Work'}</p>
-              <h2 className="mt-3 text-3xl font-semibold text-gray-950 dark:text-white">
-                {lang === 'zh' ? '把模型结果放回医学问题中' : 'Putting model outputs back into medical questions'}
+              <p className="eyebrow">{lang === 'zh' ? '方法与态度' : 'Working Principles'}</p>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
+                {lang === 'zh' ? '让模型结果回到医学问题里' : 'Putting model outputs back into medical questions'}
               </h2>
             </div>
-            <div className="space-y-4">
-              {principles.map((item) => (
+            <div className="space-y-5">
+              {researchApproach.map((item) => (
                 <article key={text(item.title, 'en')} className="border-l border-gray-300 pl-5 dark:border-gray-700">
                   <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
                     {text(item.title, lang)}

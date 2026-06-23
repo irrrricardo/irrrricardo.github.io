@@ -38,6 +38,10 @@
     @apply border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900;
   }
 
+  .panel-accent {
+    @apply border border-gray-200 border-l-4 border-l-secondary bg-white shadow-sm dark:border-gray-800 dark:border-l-rose-300 dark:bg-gray-900;
+  }
+
   .focus-ring {
     @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-950;
   }

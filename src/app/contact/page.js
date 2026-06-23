@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { profile, researchDirections } from '@/lib/profile';
+import { collaborationTopics, profile, researchDirections } from '@/lib/profile';
 import { translations } from '@/lib/translations';
 
 function useLanguage() {
@@ -31,33 +31,34 @@ export default function ContactPage() {
 
   const links = [
     { label: 'Email', href: `mailto:${profile.email}`, value: profile.email },
+    { label: lang === 'zh' ? '微信' : 'WeChat', value: profile.wechat },
     { label: 'GitHub', href: profile.github, value: 'github.com/irrrricardo' },
     { label: 'LinkedIn', href: profile.linkedin, value: 'linkedin.com/in/renxiang-chu' },
-    { label: 'CV', href: profile.resumePdf, value: lang === 'zh' ? '下载 PDF' : 'Download PDF' },
+    { label: 'CV', href: profile.resumePdf, value: lang === 'zh' ? 'PDF 简历' : 'PDF CV' },
   ];
 
   return (
     <>
-      <section className="bg-white py-16 dark:bg-gray-950">
+      <section className="bg-white pt-20 pb-16 dark:bg-gray-950">
         <div className="section-shell grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
             <p className="eyebrow">{t.subtitle}</p>
-            <h1 className="mt-3 text-4xl font-semibold text-gray-950 dark:text-white sm:text-5xl">
+            <h1 className="mt-3 text-4xl font-semibold leading-tight text-gray-950 dark:text-white sm:text-5xl">
               {t.title}
             </h1>
           </div>
           <p className="max-w-2xl text-base leading-7 text-gray-600 dark:text-gray-300">
             {lang === 'zh'
-              ? '如果你对医学影像、AI4Med、AI4Bio、Agentic AI 或可复现科研工具感兴趣，可以通过以下方式联系我。'
-              : 'Reach out for conversations around medical imaging, AI4Med, AI4Bio, agentic AI, or reproducible research tooling.'}
+              ? '如果你对医学影像、生物年龄、视网膜表型、可解释表征或论文代码发布感兴趣，欢迎联系。我也很愿意交流基础医学训练与计算方法结合时遇到的具体问题。'
+              : 'I am happy to talk about medical imaging, biological age, retinal phenotypes, interpretable representations, and manuscript companion code releases.'}
           </p>
         </div>
       </section>
 
       <section className="border-y border-gray-200 bg-paper py-16 dark:border-gray-800 dark:bg-gray-950">
-        <div className="section-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="section-shell grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <p className="eyebrow">{lang === 'zh' ? '联系方式' : 'Contact Links'}</p>
+            <p className="eyebrow">{lang === 'zh' ? '联系信息' : 'Contact Links'}</p>
             <h2 className="mt-3 text-3xl font-semibold text-gray-950 dark:text-white">
               {profile.name}
             </h2>
@@ -67,18 +68,27 @@ export default function ContactPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {links.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith('http') || link.href.endsWith('.pdf') ? '_blank' : undefined}
-                rel={link.href.startsWith('http') || link.href.endsWith('.pdf') ? 'noopener noreferrer' : undefined}
-                className="panel group block p-6 transition-colors hover:border-primary dark:hover:border-teal-300"
-              >
+              link.href ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith('http') || link.href.endsWith('.pdf') ? '_blank' : undefined}
+                  rel={link.href.startsWith('http') || link.href.endsWith('.pdf') ? 'noopener noreferrer' : undefined}
+                  className="panel group block p-6 transition-colors hover:border-primary dark:hover:border-teal-300"
+                >
+                  <p className="text-sm font-semibold text-primary dark:text-teal-300">{link.label}</p>
+                  <p className="mt-3 break-words text-lg font-semibold text-gray-950 group-hover:text-primary dark:text-white dark:group-hover:text-teal-300">
+                    {link.value}
+                  </p>
+                </a>
+              ) : (
+                <div key={link.label} className="panel p-6">
                 <p className="text-sm font-semibold text-primary dark:text-teal-300">{link.label}</p>
-                <p className="mt-3 break-words text-lg font-semibold text-gray-950 group-hover:text-primary dark:text-white dark:group-hover:text-teal-300">
+                <p className="mt-3 break-words text-lg font-semibold text-gray-950 dark:text-white">
                   {link.value}
                 </p>
-              </a>
+              </div>
+              )
             ))}
           </div>
         </div>
@@ -86,11 +96,33 @@ export default function ContactPage() {
 
       <section className="bg-white py-16 dark:bg-gray-950">
         <div className="section-shell">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
               <p className="eyebrow">{lang === 'zh' ? '适合交流的话题' : 'Good Topics'}</p>
-              <h2 className="mt-3 text-3xl font-semibold text-gray-950 dark:text-white">
-                {lang === 'zh' ? '我目前最关注的问题' : 'Questions I am currently thinking about'}
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
+                {lang === 'zh' ? '我最近主要在想这些问题' : 'Questions I am currently thinking about'}
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {collaborationTopics.map((topic) => (
+                <article key={text(topic, 'en')} className="panel-accent p-5">
+                  <p className="text-sm leading-6 text-gray-700 dark:text-gray-300">
+                    {text(topic, lang)}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-gray-200 bg-paper py-16 dark:border-gray-800 dark:bg-gray-950">
+        <div className="section-shell">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <p className="eyebrow">{lang === 'zh' ? '研究线索' : 'Research Lines'}</p>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
+                {lang === 'zh' ? '如果你想先了解我的方向' : 'If you want to understand my work first'}
               </h2>
             </div>
             <div className="space-y-4">
