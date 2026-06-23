@@ -20,12 +20,16 @@ export const profile = {
     zh: '我关注医学影像如何反映衰老、疾病异质性和可测量的生理状态。',
   },
   intro: {
-    en: 'I am an undergraduate at Peking University majoring in Basic Medical Sciences and pursuing a dual degree in Economics. My current work centers on retinal imaging, biological aging, and representation learning, with an emphasis on models that can be checked against clinical phenotypes rather than treated as black boxes.',
-    zh: '我目前就读于北京大学医学部基础医学专业，并在国家发展研究院修读经济学双学位。现在的研究主要围绕视网膜影像、生物年龄与表征学习展开，更关心模型结果能否回到临床表型和生理机制中被检验，而不是停留在黑箱预测。',
+    en: 'I am an undergraduate at Peking University majoring in Basic Medical Sciences and pursuing a dual degree in Economics. My current work centers on retinal imaging, biological aging, and representation learning. I am also exploring agentic AI systems for clinical medicine, self-evolving agents, and AI co-scientist workflows. I hope to tell a grounded story about how AI can connect with real-world medicine and biology.',
+    zh: '我目前就读于北京大学医学部基础医学专业，并在国家发展研究院修读经济学双学位。现在的研究主要围绕视网膜影像、生物年龄与表征学习展开，也在探索面向临床医学的 Agentic AI System、self-evolving agents 与 co-scientist。我希望能讲好 AI 与真实世界医学和生物学结合的故事。',
   },
   status: {
     en: 'Undergraduate research | Basic Medical Sciences',
     zh: '本科生科研 | 基础医学',
+  },
+  seeking: {
+    en: 'Looking for 2027 Fall PhD/Master positions around the world',
+    zh: 'Looking for 2027 Fall PhD/Master positions around the world',
   },
 };
 
@@ -45,10 +49,10 @@ export const quickStats = [
     },
   },
   {
-    value: 'PODE',
+    value: '2027 Fall',
     label: {
-      en: 'Public research code',
-      zh: '公开研究代码',
+      en: 'PhD/Master search',
+      zh: 'PhD/Master 申请',
     },
   },
 ];
@@ -56,32 +60,32 @@ export const quickStats = [
 export const researchDirections = [
   {
     title: {
-      en: 'Retinal Imaging and Biological Age',
-      zh: '视网膜影像与生物年龄',
+      en: 'Agentic AI Systems for Clinical Medicine',
+      zh: '面向临床医学的 Agentic AI System',
     },
     description: {
-      en: 'Using fundus images to study aging-related signals, disease-associated deviations, and how visual features connect with measurable clinical phenotypes.',
-      zh: '基于眼底影像研究衰老相关信号、疾病相关偏离，以及影像特征如何与可测量的临床表型相联系。',
+      en: 'Exploring agentic systems that can work with clinical context, evidence, uncertainty, and real medical workflows rather than isolated benchmark tasks.',
+      zh: '探索能够处理临床语境、证据、不确定性和真实医学流程的 agentic system，而不是只停留在孤立的 benchmark 任务上。',
     },
   },
   {
     title: {
-      en: 'Physiology-Linked Representation Learning',
-      zh: '面向生理机制的表征学习',
+      en: 'Self-Evolving Agents and Co-Scientist Workflows',
+      zh: 'Self-evolving agents 与 co-scientist',
     },
     description: {
-      en: 'Building representations that separate age-clock residuals into interpretable axes related to hemodynamics, metabolism, renal function, blood traits, immunity, and neurobiology.',
-      zh: '尝试把年龄钟残差分解为更可解释的轴，例如血流动力学、代谢、肾功能、血液指标、免疫状态和神经生物学相关表征。',
+      en: 'Thinking about agents that can plan, critique, revise, and improve their own research trajectories while staying grounded in evidence and domain constraints.',
+      zh: '关注能够规划、反思、修正并改进自身研究路径的智能体，同时让它们始终受到证据和领域约束的限制。',
     },
   },
   {
     title: {
-      en: 'Reproducible Biomedical Research Tools',
-      zh: '可复现的生物医学研究工具',
+      en: 'AI, Medical Imaging, and Biological Signals',
+      zh: 'AI、医学影像与生物信号',
     },
     description: {
-      en: 'Maintaining code releases, metadata, and analysis boundaries carefully enough that other researchers can understand what is reproducible and what still depends on restricted data.',
-      zh: '整理代码、元数据和分析边界，让读者清楚知道哪些部分可以复现，哪些部分仍依赖受限数据或研究环境。',
+      en: 'Using retinal imaging and biological age as one concrete line of work, while asking the broader question of how AI can connect with real-world medicine and biology.',
+      zh: '以视网膜影像和生物年龄作为一个具体研究线索，同时追问更大的问题：AI 如何真正连接真实世界的医学和生物学。',
     },
   },
 ];
@@ -89,12 +93,12 @@ export const researchDirections = [
 export const researchApproach = [
   {
     title: {
-      en: 'Start from a medical question',
-      zh: '从医学问题出发',
+      en: 'Start from real medical questions',
+      zh: '从真实医学问题出发',
     },
     body: {
-      en: 'The model is useful only when its output can be related back to disease burden, physiology, or a testable biological explanation.',
-      zh: '模型结果只有能回到疾病负担、生理状态或可检验的生物学解释时，才真正有意义。',
+      en: 'I am interested in AI systems whose value can be discussed in terms of patients, biology, clinical evidence, or scientific discovery.',
+      zh: '我更关注那些能回到患者、生物学、临床证据或科学发现中被讨论的 AI 系统。',
     },
   },
   {
@@ -109,12 +113,12 @@ export const researchApproach = [
   },
   {
     title: {
-      en: 'Keep releases honest',
-      zh: '诚实说明可复现边界',
+      en: 'Tell a grounded AI-medicine story',
+      zh: '讲好 AI 与医学结合的故事',
     },
     body: {
-      en: 'For public code, I care about clear manifests, model metadata, example schemas, and explicit notes about what cannot be fully reproduced without private cohorts.',
-      zh: '对于公开代码，我更在意清楚的 manifest、模型元数据、示例 schema，以及对私有队列限制的明确说明。',
+      en: 'The technical work matters, but I also care about whether the story is faithful to medicine, biology, and the limits of current AI systems.',
+      zh: '技术本身很重要，但我同样在意这个故事是否忠实于医学、生物学，以及当前 AI 系统真实的边界。',
     },
   },
 ];
@@ -168,11 +172,11 @@ export const publications = [
     authors: 'Renxiang Chu*, Aimin Sun*, Jinfeng Qu, Meng Lu',
     year: '2026',
     venue: {
-      en: 'Research release',
-      zh: '研究发布',
+      en: 'Research note',
+      zh: '研究记录',
     },
     description: {
-      en: 'A related release focused on physiological heterogeneity in retinal biological aging and clinically interpretable age-clock signals.',
+      en: 'A related project focused on physiological heterogeneity in retinal biological aging and clinically interpretable age-clock signals.',
       zh: '围绕视网膜生物年龄中的生理异质性展开，重点关注年龄钟信号的临床可解释性。',
     },
     links: [
@@ -235,16 +239,16 @@ export const projects = [
 
 export const collaborationTopics = [
   {
-    en: 'Retinal imaging, biological aging, and clinical phenotyping',
-    zh: '视网膜影像、生物年龄与临床表型分析',
+    en: 'Agentic AI systems for clinical medicine',
+    zh: '面向临床医学的 Agentic AI System',
   },
   {
-    en: 'Reproducible code releases for manuscript-stage biomedical research',
-    zh: '论文阶段生物医学研究代码的可复现发布',
+    en: 'Self-evolving agents and AI co-scientist workflows',
+    zh: 'Self-evolving agents 与 AI co-scientist 工作流',
   },
   {
-    en: 'Representation learning for heterogeneous biomedical signals',
-    zh: '面向异质性生物医学信号的表征学习',
+    en: 'Connecting AI with real-world medicine and biology',
+    zh: 'AI 与真实世界医学、生物学的结合',
   },
 ];
 

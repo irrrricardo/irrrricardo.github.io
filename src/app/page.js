@@ -66,6 +66,9 @@ export default function Home() {
               <p className="mt-6 max-w-3xl text-base leading-8 text-gray-300">
                 {text(profile.intro, lang)}
               </p>
+              <p className="mt-5 inline-flex border border-teal-200/50 bg-teal-200/10 px-3 py-2 text-sm font-semibold text-teal-100">
+                {text(profile.seeking, lang)}
+              </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -81,14 +84,6 @@ export default function Home() {
                   className="focus-ring inline-flex min-h-11 items-center justify-center border border-white/35 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
                 >
                   {lang === 'zh' ? '下载简历' : 'Download CV'}
-                </a>
-                <a
-                  href="https://github.com/LuMengLab/PODE"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="focus-ring inline-flex min-h-11 items-center justify-center border border-white/35 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
-                >
-                  PODE
                 </a>
               </div>
             </div>
@@ -131,12 +126,12 @@ export default function Home() {
             <div>
               <p className="eyebrow">{lang === 'zh' ? '当前主线' : 'Current Thread'}</p>
               <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
-                {lang === 'zh' ? '从视网膜年龄钟残差看系统性异质性' : 'Reading systemic heterogeneity from retinal age-clock residuals'}
+                {lang === 'zh' ? '把 AI 系统放回真实医学和生物学语境' : 'Putting AI systems back into real medical and biological contexts'}
               </h2>
               <p className="mt-5 text-base leading-7 text-gray-600 dark:text-gray-300">
                 {lang === 'zh'
-                  ? '我现在最主要的工作是 PODE：把单一 age gap 拆解为更细的生理相关维度，并用医学影像和临床表型去检验这些维度是否有意义。'
-                  : 'My main current work is PODE: moving from a single age gap toward physiology-linked residual components that can be checked with imaging and clinical phenotypes.'}
+                  ? 'PODE 是一个基本完成的论文阶段项目。接下来我更想沿着临床医学 Agentic AI、self-evolving agents 和 co-scientist 的方向，思考 AI 如何真正进入医学和生物研究。'
+                  : 'PODE is now largely a manuscript-stage project. I am moving toward agentic AI systems for clinical medicine, self-evolving agents, and co-scientist workflows, with the broader question of how AI can genuinely enter medicine and biology.'}
               </p>
             </div>
 
@@ -151,19 +146,9 @@ export default function Home() {
                 <p className="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">
                   {text(featuredProject.description, lang)}
                 </p>
-                <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold">
-                  {featuredProject.links.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline dark:text-teal-300"
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
+                <Link href="/projects" className="mt-5 inline-flex text-sm font-semibold text-primary hover:underline dark:text-teal-300">
+                  {lang === 'zh' ? '在项目页查看详情' : 'Open project details'}
+                </Link>
               </article>
 
               <article className="panel p-6">
@@ -188,12 +173,12 @@ export default function Home() {
             <div>
               <p className="eyebrow">{lang === 'zh' ? '研究视角' : 'Research Lens'}</p>
               <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
-                {lang === 'zh' ? '医学问题、影像表征与可复现发布' : 'Medical questions, imaging representations, and reproducible releases'}
+                {lang === 'zh' ? '医学问题、智能体系统与生物学证据' : 'Medical questions, agentic systems, and biological evidence'}
               </h2>
               <p className="mt-5 text-base leading-7 text-gray-600 dark:text-gray-300">
                 {lang === 'zh'
-                  ? '基础医学训练让我更关注问题本身，经济学双学位则让我对异质性、群体结构和解释边界更敏感。'
-                  : 'Basic medical training keeps the biological question in view, while economics gives me a useful language for heterogeneity, population structure, and limits of interpretation.'}
+                  ? '基础医学训练让我更关注真实问题和生物学解释，经济学双学位则让我对异质性、群体结构和决策语境更敏感。'
+                  : 'Basic medical training keeps real biological questions in view, while economics gives me a useful language for heterogeneity, population structure, and decision contexts.'}
               </p>
             </div>
 

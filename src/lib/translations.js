@@ -18,7 +18,7 @@ export const translations = {
       aboutTitle: 'Background',
       aboutDesc: 'Basic medical sciences, economics, and research interests.',
       projectsTitle: 'Research',
-      projectsDesc: 'Research systems, manuscript-stage releases, and ongoing work.',
+      projectsDesc: 'Research systems, manuscript-stage work, and ongoing questions.',
       blogTitle: 'Blog',
       blogDesc: 'Notes on learning, research, and technology.',
       langHint: 'Switch language/theme',
@@ -36,7 +36,7 @@ export const translations = {
     },
     projects: {
       title: 'Research',
-      subtitle: 'Projects, publications, and releases',
+      subtitle: 'Projects, publications, and research notes',
     },
     contact: {
       title: 'Contact',
@@ -83,7 +83,7 @@ export const translations = {
     },
     projects: {
       title: '研究',
-      subtitle: '项目、论文与代码发布',
+      subtitle: '项目、论文与研究记录',
     },
     contact: {
       title: '联系方式',

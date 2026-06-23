@@ -49,8 +49,8 @@ export default function ContactPage() {
           </div>
           <p className="max-w-2xl text-base leading-7 text-gray-600 dark:text-gray-300">
             {lang === 'zh'
-              ? '如果你对医学影像、生物年龄、视网膜表型、可解释表征或论文代码发布感兴趣，欢迎联系。我也很愿意交流基础医学训练与计算方法结合时遇到的具体问题。'
-              : 'I am happy to talk about medical imaging, biological age, retinal phenotypes, interpretable representations, and manuscript companion code releases.'}
+              ? '如果你对临床医学中的 Agentic AI、self-evolving agents、AI co-scientist，或 AI 与真实世界医学和生物学的结合感兴趣，欢迎联系。'
+              : 'I am happy to talk about agentic AI for clinical medicine, self-evolving agents, AI co-scientist workflows, and how AI can connect with real-world medicine and biology.'}
           </p>
         </div>
       </section>

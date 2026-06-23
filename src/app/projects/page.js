@@ -56,8 +56,8 @@ export default function ProjectsPage() {
             </h1>
             <p className="max-w-2xl text-base leading-7 text-gray-600 dark:text-gray-300">
               {lang === 'zh'
-                ? '这里先给出项目名称和基本归属；点击项目后再查看研究问题、代码状态、链接和可复现边界。'
-                : 'This page starts with project names and affiliations. Open each project to see the research question, code status, links, and reproducibility notes.'}
+                ? '这里先给出项目名称和基本归属；点击项目后再查看研究问题、代码状态、数据说明和相关链接。'
+                : 'This page starts with project names and affiliations. Open each project to see the research question, code status, data notes, and related links.'}
             </p>
           </div>
         </div>
@@ -137,7 +137,7 @@ export default function ProjectsPage() {
                                 </div>
                                 <div className="panel p-4">
                                   <p className="text-xs font-semibold text-primary dark:text-teal-300">
-                                    {lang === 'zh' ? '公开内容' : 'Public release'}
+                                    {lang === 'zh' ? '项目内容' : 'Project contents'}
                                   </p>
                                   <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
                                     {lang === 'zh'
@@ -147,12 +147,12 @@ export default function ProjectsPage() {
                                 </div>
                                 <div className="panel p-4">
                                   <p className="text-xs font-semibold text-primary dark:text-teal-300">
-                                    {lang === 'zh' ? '复现边界' : 'Reproducibility'}
+                                    {lang === 'zh' ? '数据说明' : 'Data access'}
                                   </p>
                                   <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
                                     {lang === 'zh'
-                                      ? '公开示例用于说明数据结构和运行入口；完整训练与验证依赖受限研究队列。'
-                                      : 'Public examples document data shape and entry points; full training and validation still depend on restricted cohorts.'}
+                                      ? '示例用于说明数据结构和运行入口；完整队列分析依赖受限研究数据。'
+                                      : 'Examples document data shape and entry points; full cohort-level analyses require restricted research data.'}
                                   </p>
                                 </div>
                               </div>
