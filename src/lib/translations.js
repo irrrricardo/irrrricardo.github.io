@@ -65,7 +65,7 @@ export const translations = {
       aboutTitle: '背景',
       aboutDesc: '基础医学、经济学双学位与研究兴趣。',
       projectsTitle: '研究',
-      projectsDesc: '研究系统、论文阶段发布和进行中项目。',
+      projectsDesc: '研究系统、论文阶段工作和进行中问题。',
       blogTitle: '博客',
       blogDesc: '记录学习、研究和技术思考。',
       langHint: '切换语言/主题',

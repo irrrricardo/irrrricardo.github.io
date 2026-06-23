@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
+  currentDirections,
   profile,
   projects,
   publications,
@@ -122,9 +123,9 @@ export default function Home() {
 
       <section className="border-b border-gray-200 bg-white py-16 dark:border-gray-800 dark:bg-gray-950">
         <div className="section-shell">
-          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
             <div>
-              <p className="eyebrow">{lang === 'zh' ? '当前主线' : 'Current Thread'}</p>
+              <p className="eyebrow">{lang === 'zh' ? '当前方向' : 'Current Direction'}</p>
               <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
                 {lang === 'zh' ? '把 AI 系统放回真实医学和生物学语境' : 'Putting AI systems back into real medical and biological contexts'}
               </h2>
@@ -132,6 +133,47 @@ export default function Home() {
                 {lang === 'zh'
                   ? 'PODE 是一个基本完成的论文阶段项目。接下来我更想沿着临床医学 Agentic AI、self-evolving agents 和 co-scientist 的方向，思考 AI 如何真正进入医学和生物研究。'
                   : 'PODE is now largely a manuscript-stage project. I am moving toward agentic AI systems for clinical medicine, self-evolving agents, and co-scientist workflows, with the broader question of how AI can genuinely enter medicine and biology.'}
+              </p>
+              <Link href="/projects" className="mt-6 inline-flex text-sm font-semibold text-primary hover:underline dark:text-teal-300">
+                {lang === 'zh' ? '查看项目与实验入口' : 'Open projects and experiments'}
+              </Link>
+            </div>
+
+            <div className="grid gap-4">
+              {currentDirections.map((item, index) => (
+                <article key={text(item.title, 'en')} className="panel p-5 transition-colors hover:border-primary dark:hover:border-teal-300">
+                  <div className="grid gap-4 sm:grid-cols-[56px_1fr]">
+                    <p className="text-sm font-semibold text-secondary dark:text-rose-300">
+                      {String(index + 1).padStart(2, '0')}
+                    </p>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
+                        {text(item.title, lang)}
+                      </h3>
+                      <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
+                        {text(item.question, lang)}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-paper py-16 dark:bg-gray-950">
+        <div className="section-shell">
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
+            <div>
+              <p className="eyebrow">{lang === 'zh' ? '阶段性成果' : 'Staged Work'}</p>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
+                {lang === 'zh' ? 'PODE 作为一个研究故事入口' : 'PODE as one research story'}
+              </h2>
+              <p className="mt-5 text-base leading-7 text-gray-600 dark:text-gray-300">
+                {lang === 'zh'
+                  ? '它仍然保留在项目页中，作为我从医学影像和生物年龄进入 AI + Medicine 问题的一条具体路径。'
+                  : 'It remains on the projects page as one concrete path from medical imaging and biological age into broader AI + medicine questions.'}
               </p>
             </div>
 
@@ -143,6 +185,9 @@ export default function Home() {
                 <h3 className="mt-3 text-2xl font-semibold text-gray-950 dark:text-white">
                   {featuredProject.title}
                 </h3>
+                <p className="mt-3 text-sm font-semibold text-gray-700 dark:text-gray-200">
+                  {text(featuredProject.tldr, lang)}
+                </p>
                 <p className="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">
                   {text(featuredProject.description, lang)}
                 </p>
@@ -158,6 +203,9 @@ export default function Home() {
                 <h3 className="mt-3 text-xl font-semibold leading-7 text-gray-950 dark:text-white">
                   {featuredPublication.title}
                 </h3>
+                <p className="mt-3 text-sm font-semibold text-gray-700 dark:text-gray-200">
+                  {text(featuredPublication.tldr, lang)}
+                </p>
                 <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
                   {text(featuredPublication.description, lang)}
                 </p>
@@ -167,7 +215,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-paper py-16 dark:bg-gray-950">
+      <section className="border-y border-gray-200 bg-white py-16 dark:border-gray-800 dark:bg-gray-950">
         <div className="section-shell">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
@@ -203,7 +251,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-gray-200 bg-white py-16 dark:border-gray-800 dark:bg-gray-950">
+      <section className="bg-paper py-16 dark:bg-gray-950">
         <div className="section-shell">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>

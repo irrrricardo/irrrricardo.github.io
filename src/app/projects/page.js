@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { collaborationTopics, profile, projects, publications } from '@/lib/profile';
+import { collaborationTopics, profile, projects, publications, smallSystems } from '@/lib/profile';
 import { translations } from '@/lib/translations';
 
 function useLanguage() {
@@ -105,6 +105,9 @@ function ProjectDossier({ project, lang, isOpen, onToggle }) {
                 <p className="text-sm leading-6 text-gray-600 dark:text-gray-300">
                   {text(project.description, lang)}
                 </p>
+                <p className="mt-4 border-l border-gray-300 pl-4 text-sm font-semibold leading-6 text-gray-700 dark:border-gray-700 dark:text-gray-200">
+                  {text(project.tldr, lang)}
+                </p>
                 {project.title === 'PODE' && (
                   <div className="mt-5 grid gap-3 sm:grid-cols-3">
                     <div className="panel-accent p-4">
@@ -167,6 +170,29 @@ function ProjectDossier({ project, lang, isOpen, onToggle }) {
   );
 }
 
+function SmallSystemCard({ system, lang }) {
+  return (
+    <article className="panel p-6 transition-colors hover:border-primary dark:hover:border-teal-300">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <p className="text-sm font-semibold text-secondary dark:text-rose-300">
+            {text(system.status, lang)}
+          </p>
+          <h3 className="mt-2 text-xl font-semibold leading-tight text-gray-950 dark:text-white">
+            {system.title}
+          </h3>
+        </div>
+      </div>
+      <p className="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">
+        {text(system.description, lang)}
+      </p>
+      <div className="mt-5">
+        <TagList tags={system.tags} compact />
+      </div>
+    </article>
+  );
+}
+
 export default function ProjectsPage() {
   const lang = useLanguage();
   const t = translations[lang].projects;
@@ -194,7 +220,7 @@ export default function ProjectsPage() {
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
             <div>
-              <p className="eyebrow">{lang === 'zh' ? '项目索引' : 'Project Index'}</p>
+              <p className="eyebrow">{lang === 'zh' ? '研究系统' : 'Research Systems'}</p>
               <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
                 {lang === 'zh' ? '研究项目与阶段性工作' : 'Research projects and staged work'}
               </h2>
@@ -228,6 +254,29 @@ export default function ProjectsPage() {
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
             <div>
+              <p className="eyebrow">{lang === 'zh' ? '小实验' : 'Small Experiments'}</p>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
+                {lang === 'zh' ? '小系统与研究实验' : 'Small systems and research experiments'}
+              </h2>
+              <p className="mt-4 text-base leading-7 text-gray-600 dark:text-gray-300">
+                {lang === 'zh'
+                  ? '这部分借鉴“研究者主页中的小项目货架”：先把想法、原型和阶段性系统放在同一个地方，后续有成熟版本再给独立入口。'
+                  : 'A shelf for small systems, prototypes, and research experiments. Mature versions can later receive their own dedicated pages.'}
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {smallSystems.map((system) => (
+                <SmallSystemCard key={system.title} system={system} lang={lang} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-gray-200 bg-paper py-16 dark:border-gray-800 dark:bg-gray-950">
+        <div className="section-shell">
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
+            <div>
               <p className="eyebrow">{lang === 'zh' ? '论文与研究记录' : 'Publications and Notes'}</p>
               <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
                 {lang === 'zh' ? '当前公开成果' : 'Current public outputs'}
@@ -247,6 +296,9 @@ export default function ProjectsPage() {
                   </p>
                   <p className="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">
                     {text(publication.description, lang)}
+                  </p>
+                  <p className="mt-4 border-l border-gray-300 pl-4 text-sm font-semibold leading-6 text-gray-700 dark:border-gray-700 dark:text-gray-200">
+                    {text(publication.tldr, lang)}
                   </p>
                   <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <TagList tags={publication.tags} />
