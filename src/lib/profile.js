@@ -88,6 +88,16 @@ export const researchDirections = [
       zh: '以视网膜影像和生物年龄作为一个具体研究线索，同时追问更大的问题：AI 如何真正连接真实世界的医学和生物学。',
     },
   },
+  {
+    title: {
+      en: 'AI4Med/Bio Industry and Venture Building',
+      zh: 'AI4Med/Bio 创业、投资与行业发展',
+    },
+    description: {
+      en: 'Trying to understand how biomedical AI moves through startups, investment, industry strategy, and clinical adoption; open to internship opportunities in this space.',
+      zh: '希望了解生物医学 AI 如何进入创业、投资、行业战略和临床采用，也愿意参与这一方向的相关实习。',
+    },
+  },
 ];
 
 export const currentDirections = [
@@ -119,6 +129,16 @@ export const currentDirections = [
     question: {
       en: 'What should remain with the human researcher when AI systems become more capable at reading, writing, coding, and analysis?',
       zh: '当 AI 更擅长阅读、写作、编码和分析时，人的研究者应当保留怎样的判断和位置？',
+    },
+  },
+  {
+    title: {
+      en: 'AI4Med/Bio Industry and Venture Building',
+      zh: 'AI4Med/Bio 创业、投资与行业发展',
+    },
+    question: {
+      en: 'How do biomedical AI ideas move from research prototypes into companies, capital decisions, clinical adoption, and real-world products?',
+      zh: '生物医学 AI 的想法如何从研究原型走向公司、资本判断、临床采用和真实产品？',
     },
   },
 ];
@@ -341,6 +361,10 @@ export const collaborationTopics = [
   {
     en: 'Connecting AI with real-world medicine and biology',
     zh: 'AI 与真实世界医学、生物学的结合',
+  },
+  {
+    en: 'AI4Med/Bio startups, investment, industry development, and internship opportunities',
+    zh: 'AI4Med/Bio 创业、投资、行业发展，以及相关实习机会',
   },
 ];
 

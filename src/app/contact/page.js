@@ -49,8 +49,8 @@ export default function ContactPage() {
           </div>
           <p className="max-w-2xl text-base leading-7 text-gray-600 dark:text-gray-300">
             {lang === 'zh'
-              ? '如果你对临床医学中的 Agentic AI、self-evolving agents、AI co-scientist，或 AI 与真实世界医学和生物学的结合感兴趣，欢迎联系。'
-              : 'I am happy to talk about agentic AI for clinical medicine, self-evolving agents, AI co-scientist workflows, and how AI can connect with real-world medicine and biology.'}
+              ? '如果你对临床医学中的 Agentic AI、self-evolving agents、AI co-scientist，或 AI 与真实世界医学和生物学的结合感兴趣，欢迎联系。我也希望了解 AI4Med/Bio 的创业、投资与行业发展，并愿意参与相关实习。'
+              : 'I am happy to talk about agentic AI for clinical medicine, self-evolving agents, AI co-scientist workflows, and how AI can connect with real-world medicine and biology. I am also interested in AI4Med/Bio startups, investment, and industry development, and open to relevant internship opportunities.'}
           </p>
         </div>
       </section>
