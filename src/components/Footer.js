@@ -10,14 +10,9 @@ export default function Footer() {
   useEffect(() => {
     const savedLang = localStorage.getItem('lang') || 'en';
     setLang(savedLang);
-
-    const handleLangChange = () => {
-      setLang(localStorage.getItem('lang') || 'en');
-    };
-
+    const handleLangChange = () => setLang(localStorage.getItem('lang') || 'en');
     window.addEventListener('storage', handleLangChange);
     window.addEventListener('langChange', handleLangChange);
-
     return () => {
       window.removeEventListener('storage', handleLangChange);
       window.removeEventListener('langChange', handleLangChange);
@@ -34,21 +29,11 @@ export default function Footer() {
           <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{t.copyright}</p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm">
-          <a className="text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-teal-300" href={`mailto:${profile.email}`}>
-            Email
-          </a>
-          <span className="text-gray-600 dark:text-gray-300">
-            WeChat: {profile.wechat}
-          </span>
-          <a className="text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-teal-300" href={profile.github} target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <a className="text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-teal-300" href={profile.linkedin} target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-          <a className="text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-teal-300" href={profile.resumePdf} target="_blank" rel="noopener noreferrer">
-            CV
-          </a>
+          <a className="text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-blue-300" href={`mailto:${profile.email}`}>Email</a>
+          <span className="text-gray-600 dark:text-gray-300">WeChat: {profile.wechat}</span>
+          <a className="text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-blue-300" href={profile.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a className="text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-blue-300" href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a className="text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-blue-300" href={profile.resumePdf} target="_blank" rel="noopener noreferrer">CV</a>
         </div>
       </div>
     </footer>

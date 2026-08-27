@@ -30,7 +30,7 @@ export default function ResumePage() {
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link
             href="/"
-            className="text-sm font-semibold text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-teal-300"
+            className="text-sm font-semibold text-gray-600 transition-colors hover:text-primary dark:text-gray-300 dark:hover:text-blue-300"
           >
             {lang === 'zh' ? '返回首页' : 'Back to Home'}
           </Link>

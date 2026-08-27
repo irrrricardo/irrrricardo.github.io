@@ -11,7 +11,7 @@ export const translations = {
     home: {
       title: 'Renxiang (Ricardo) Chu',
       subtitle: 'Peking University | Basic Medical Sciences',
-      description: 'Medical imaging, biological aging, and interpretable representation learning.',
+      description: 'AI for biological design, scientific discovery, and multiscale modeling.',
       contactBtn: 'Contact',
       resumeBtn: 'Download Resume',
       explore: 'Explore',
@@ -36,7 +36,7 @@ export const translations = {
     },
     projects: {
       title: 'Research',
-      subtitle: 'Projects, publications, and research notes',
+      subtitle: 'Projects and research notes',
     },
     contact: {
       title: 'Contact',
@@ -58,7 +58,7 @@ export const translations = {
     home: {
       title: 'Renxiang (Ricardo) Chu',
       subtitle: '北京大学 | 基础医学',
-      description: '医学影像、生物年龄与可解释表征学习。',
+      description: '面向生物设计、科学发现与多尺度建模的人工智能。',
       contactBtn: '联系我',
       resumeBtn: '下载简历',
       explore: '探索',
@@ -83,7 +83,7 @@ export const translations = {
     },
     projects: {
       title: '研究',
-      subtitle: '项目、论文与研究记录',
+      subtitle: '项目与研究记录',
     },
     contact: {
       title: '联系方式',
