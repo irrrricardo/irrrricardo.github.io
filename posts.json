@@ -1,1 +1,1 @@
-{"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","request_id":"238287e6-0374-4c1d-b2cc-63f6d5bc4779"}
+{"object":"error","status":401,"code":"unauthorized","message":"API token is invalid.","additional_data":{"reason":"token_invalid"},"request_id":"3db72e3c-6e7c-44ce-8b52-a8d6c2bf7a88"}
