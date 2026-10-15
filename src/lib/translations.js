@@ -40,7 +40,7 @@ export const translations = {
     },
     contact: {
       title: 'Contact',
-      subtitle: 'Research conversations and collaboration',
+      subtitle: 'Research, collaboration, and AI for Science',
     },
     footer: {
       copyright: '© 2026. Academic portfolio and research notes.',
@@ -87,7 +87,7 @@ export const translations = {
     },
     contact: {
       title: '联系方式',
-      subtitle: '研究交流与合作',
+      subtitle: '研究、合作与 AI for Science',
     },
     footer: {
       copyright: '© 2026. 学术主页与研究笔记。',

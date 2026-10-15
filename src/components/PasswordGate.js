@@ -40,10 +40,10 @@ export default function PasswordGate({ children }) {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-paper px-4 dark:bg-gray-950">
-        <div className="w-full max-w-md border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+      <div className="soft-section flex min-h-screen items-center justify-center px-4">
+        <div className="panel w-full max-w-md p-8 shadow-soft">
           <div className="text-center mb-8">
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center border border-primary/25 bg-primary/10 text-sm font-semibold text-primary dark:text-teal-300">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/25 bg-primary/10 text-sm font-semibold text-primary dark:text-blue-300">
               Blog
             </div>
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
@@ -67,7 +67,7 @@ export default function PasswordGate({ children }) {
                   setPassword(e.target.value);
                   setError(false);
                 }}
-                className={`w-full px-4 py-3 rounded-lg border ${
+                className={`w-full rounded-lg border px-4 py-3 transition duration-200 ${
                   error
                     ? 'border-red-500 focus:ring-red-500'
                     : 'border-gray-300 dark:border-gray-600'
@@ -84,7 +84,7 @@ export default function PasswordGate({ children }) {
 
             <button
               type="submit"
-              className="w-full py-3 px-4 bg-primary hover:bg-primary/90 text-white font-medium transition-colors focus:ring-2 focus:ring-primary/50 focus:outline-none"
+              className="button-primary w-full"
             >
               Access Blog
             </button>

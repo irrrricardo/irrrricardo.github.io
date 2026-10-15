@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { education, profile, researchApproach, researchDirections } from '@/lib/profile';
+import { education, industryExperience, profile, researchApproach, researchDirections } from '@/lib/profile';
 import { translations } from '@/lib/translations';
 
 function useLanguage() {
@@ -32,24 +32,24 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="bg-white pt-20 pb-16 dark:bg-gray-950">
+      <section className="bg-white pb-20 pt-24 dark:bg-gray-950">
         <div className="section-shell grid gap-10 lg:grid-cols-[320px_1fr] lg:items-center">
-          <div className="relative mx-auto h-[370px] w-full max-w-[280px] overflow-hidden border border-gray-200 bg-gray-100 shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:mx-0">
-            <Image src="/images/github_selfie.jpeg" alt={profile.name} fill className="object-cover" sizes="280px" priority />
+          <div className="relative mx-auto h-[370px] w-full max-w-[280px] overflow-hidden rounded-2xl border border-gray-200 bg-gray-100 shadow-soft dark:border-gray-800 dark:bg-gray-900 lg:mx-0">
+            <Image src="/images/github_selfie.jpeg" alt={profile.name} fill className="object-cover transition duration-700 ease-out hover:scale-[1.025]" sizes="280px" priority />
           </div>
           <div>
             <p className="eyebrow">{t.subtitle}</p>
             <h1 className="mt-3 text-4xl font-semibold leading-tight text-gray-950 dark:text-white sm:text-5xl">{t.title}</h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-600 dark:text-gray-300">{text(profile.intro, lang)}</p>
             <div className="mt-7 flex flex-wrap gap-3 text-sm">
-              <span className="border border-gray-200 bg-paper px-3 py-2 text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300">{text(profile.affiliation, lang)}</span>
-              <span className="border border-gray-200 bg-paper px-3 py-2 text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300">{text(profile.location, lang)}</span>
+              <span className="rounded-full border border-gray-200 bg-paper px-3.5 py-2 text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300">{text(profile.affiliation, lang)}</span>
+              <span className="rounded-full border border-gray-200 bg-paper px-3.5 py-2 text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-300">{text(profile.location, lang)}</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-gray-200 bg-paper py-16 dark:border-gray-800 dark:bg-gray-950">
+      <section className="soft-section border-y border-gray-200 py-20 dark:border-gray-800">
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
@@ -78,7 +78,38 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 dark:bg-gray-950">
+      <section className="bg-white py-20 dark:bg-gray-950">
+        <div className="section-shell">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <p className="eyebrow">{lang === 'zh' ? '行业经历' : 'Industry Experience'}</p>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">{lang === 'zh' ? 'AI for Biology 投资研究' : 'AI for Biology investment research'}</h2>
+              <p className="mt-4 text-base leading-7 text-gray-600 dark:text-gray-300">
+                {lang === 'zh'
+                  ? '一级市场工作让我从技术、产品与商业化路径三个层面理解 AI4Bio 初创公司，也为科研问题提供了不同于实验室的观察视角。'
+                  : 'Private-market work gives me a complementary view of AI4Bio startups across technology, product development, and commercialization.'}
+              </p>
+            </div>
+            <div className="space-y-4">
+              {industryExperience.map((item) => (
+                <article key={item.place} className="panel-accent p-6">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-950 dark:text-white">{text(item.role, lang)}</h3>
+                      <p className="mt-2 text-sm font-medium text-primary dark:text-blue-300">{item.place}</p>
+                    </div>
+                    <p className="text-sm font-semibold text-gray-500 dark:text-gray-400">{item.period}</p>
+                  </div>
+                  <p className="mt-5 text-sm leading-6 text-gray-600 dark:text-gray-300">{text(item.summary, lang)}</p>
+                  <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">{text(item.detail, lang)}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="soft-section border-y border-gray-200 py-20 dark:border-gray-800">
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
@@ -97,7 +128,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="border-t border-gray-200 bg-paper py-16 dark:border-gray-800 dark:bg-gray-950">
+      <section className="bg-white py-20 dark:bg-gray-950">
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <div>

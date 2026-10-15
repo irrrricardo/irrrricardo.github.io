@@ -27,7 +27,8 @@ export default function ContactPage() {
   const lang = useLanguage();
   const t = translations[lang].contact;
   const links = [
-    { label: 'Email', href: `mailto:${profile.email}`, value: profile.email },
+    { label: lang === 'zh' ? '北大邮箱' : 'PKU Email', href: `mailto:${profile.email}`, value: profile.email },
+    { label: lang === 'zh' ? '个人邮箱' : 'Personal Email', href: `mailto:${profile.personalEmail}`, value: profile.personalEmail },
     { label: lang === 'zh' ? '微信' : 'WeChat', value: profile.wechat },
     { label: 'GitHub', href: profile.github, value: 'github.com/irrrricardo' },
     { label: 'LinkedIn', href: profile.linkedin, value: 'linkedin.com/in/renxiang-chu' },
@@ -36,7 +37,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="bg-white pt-20 pb-16 dark:bg-gray-950">
+      <section className="bg-white pb-20 pt-24 dark:bg-gray-950">
         <div className="section-shell grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
             <p className="eyebrow">{t.subtitle}</p>
@@ -45,19 +46,19 @@ export default function ContactPage() {
           <div className="max-w-2xl space-y-4 text-base leading-7 text-gray-600 dark:text-gray-300">
             <p>
               {lang === 'zh'
-                ? '如果你从事蛋白质、RNA 或分子设计，LLM/智能体辅助科学发现，或从分子到细胞、组织、器官与患者尺度的生物系统建模，欢迎联系。我正在准备 2027 Fall 博士及研究型硕士项目申请。'
-                : 'I welcome conversations about AI for protein, RNA, and molecular design; LLM- or agent-assisted scientific discovery; and biological modeling from molecules to cells, tissues, organs, and patients. I am preparing applications to PhD and research-oriented master’s programs for Fall 2027.'}
+                ? '如果你从事蛋白质、RNA 或分子生成，智能体辅助科学发现，或从细胞扰动到患者轨迹的生物系统建模，欢迎联系。我正在准备 2027 Fall 博士项目申请。'
+                : 'I welcome conversations about generative AI for proteins, RNA, and molecules; agent-assisted scientific discovery; and biological modeling from cellular perturbations to patient trajectories. I am preparing applications to PhD programs for Fall 2027.'}
             </p>
             <p>
               {lang === 'zh'
-                ? '除学术研究外，我也关注 AI 与 AI for Science 相关的一级市场投资和初创公司，并在寻找相关的投资研究或创业团队实习机会。'
-                : 'Alongside academic research, I am interested in private-market investing and startups in AI and AI for Science, and am open to relevant internships in investment research or startup teams.'}
+                ? '我目前在华盖资本医疗器械与科技团队实习，关注 AI for Biology 与前沿生物技术的行业研究和技术尽调；也欢迎交流相关的初创公司、投资研究与后续实习机会。'
+                : 'I currently intern with Huagai Capital’s Medical Devices & Technology team, focusing on industry research and technical diligence in AI for biology and frontier biotechnology. I also welcome conversations about related startups, investment research, and future internships.'}
             </p>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-gray-200 bg-paper py-16 dark:border-gray-800 dark:bg-gray-950">
+      <section className="soft-section border-y border-gray-200 py-20 dark:border-gray-800">
         <div className="section-shell grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
             <p className="eyebrow">{lang === 'zh' ? '联系信息' : 'Contact Links'}</p>
@@ -66,7 +67,7 @@ export default function ContactPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {links.map((link) => link.href ? (
-              <a key={link.label} href={link.href} target={link.href.startsWith('http') || link.href.endsWith('.pdf') ? '_blank' : undefined} rel={link.href.startsWith('http') || link.href.endsWith('.pdf') ? 'noopener noreferrer' : undefined} className="panel group block p-6 transition-colors hover:border-primary dark:hover:border-blue-300">
+              <a key={link.label} href={link.href} target={link.href.startsWith('http') || link.href.endsWith('.pdf') ? '_blank' : undefined} rel={link.href.startsWith('http') || link.href.endsWith('.pdf') ? 'noopener noreferrer' : undefined} className="panel group block p-6 hover:-translate-y-1 hover:border-primary dark:hover:border-blue-300">
                 <p className="text-sm font-semibold text-primary dark:text-blue-300">{link.label}</p>
                 <p className="mt-3 break-words text-lg font-semibold text-gray-950 group-hover:text-primary dark:text-white dark:group-hover:text-blue-300">{link.value}</p>
               </a>
@@ -80,7 +81,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 dark:bg-gray-950">
+      <section className="bg-white py-20 dark:bg-gray-950">
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
@@ -96,7 +97,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="border-t border-gray-200 bg-paper py-16 dark:border-gray-800 dark:bg-gray-950">
+      <section className="soft-section border-t border-gray-200 py-20 dark:border-gray-800">
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <div>

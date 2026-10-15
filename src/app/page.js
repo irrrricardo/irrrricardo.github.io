@@ -39,27 +39,27 @@ export default function Home() {
   return (
     <>
       <section className="relative overflow-hidden bg-gray-950 text-white">
-        <Image src="/images/background.jpg" alt="Peking University campus" fill className="object-cover" priority sizes="100vw" />
-        <div className="absolute inset-0 bg-slate-950/75" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950 to-transparent" />
+        <Image src="/images/background.jpg" alt="Peking University campus" fill className="scale-[1.025] object-cover blur-[1px]" priority sizes="100vw" />
+        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(2,6,23,0.92)_0%,rgba(2,6,23,0.76)_54%,rgba(15,23,42,0.55)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
 
         <div className="section-shell relative z-10 min-h-[92svh] pt-28 pb-10">
           <div className="grid min-h-[68svh] items-center gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
             <div className="max-w-4xl">
               <p className="eyebrow text-blue-200">{text(profile.status, lang)}</p>
-              <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">{profile.name}</h1>
+              <h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-[1.04] sm:text-6xl lg:text-7xl">{profile.name}</h1>
               <p className="mt-5 max-w-3xl text-xl leading-8 text-gray-100 sm:text-2xl">{text(profile.headline, lang)}</p>
               <p className="mt-6 max-w-3xl text-base leading-8 text-gray-300">{text(profile.intro, lang)}</p>
-              <p className="mt-5 inline-flex border border-blue-200/45 bg-blue-200/10 px-3 py-2 text-sm font-medium text-blue-100">{text(profile.seeking, lang)}</p>
+              <p className="mt-5 inline-flex rounded-full border border-blue-200/30 bg-blue-100/[0.08] px-4 py-2 text-sm font-medium text-blue-100 backdrop-blur-md">{text(profile.seeking, lang)}</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/projects" className="focus-ring inline-flex min-h-11 items-center justify-center border border-blue-200 bg-blue-200 px-5 py-2.5 text-sm font-semibold text-gray-950 transition-colors hover:bg-white">{lang === 'zh' ? '查看研究项目' : 'View Research'}</Link>
-                <a href={profile.resumePdf} target="_blank" rel="noopener noreferrer" className="focus-ring inline-flex min-h-11 items-center justify-center border border-white/35 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10">{lang === 'zh' ? '下载简历' : 'Download CV'}</a>
+                <Link href="/projects" className="button-hero-primary">{lang === 'zh' ? '查看研究项目' : 'View Research'} <span aria-hidden="true">→</span></Link>
+                <a href={profile.resumePdf} target="_blank" rel="noopener noreferrer" className="button-hero-secondary">{lang === 'zh' ? '下载简历' : 'Download CV'}</a>
               </div>
             </div>
 
-            <aside className="border border-white/20 bg-white/10 p-4 shadow-2xl backdrop-blur-md">
-              <div className="relative h-[320px] overflow-hidden border border-white/20 bg-gray-900 sm:h-[360px]">
-                <Image src="/images/github_selfie.jpeg" alt={profile.name} fill className="object-cover" sizes="360px" priority />
+            <aside className="glass-panel p-4">
+              <div className="relative h-[320px] overflow-hidden rounded-xl border border-white/15 bg-gray-900 sm:h-[360px]">
+                <Image src="/images/github_selfie.jpeg" alt={profile.name} fill className="object-cover transition duration-700 ease-out hover:scale-[1.025]" sizes="360px" priority />
               </div>
               <div className="mt-5 border-l border-blue-200/60 pl-4">
                 <p className="text-sm font-semibold text-white">{text(profile.affiliation, lang)}</p>
@@ -68,9 +68,9 @@ export default function Home() {
             </aside>
           </div>
 
-          <div className="mt-10 grid gap-3 border-t border-white/15 pt-6 sm:grid-cols-2">
+          <div className="mt-10 grid gap-4 border-t border-white/15 pt-6 sm:grid-cols-2">
             {quickStats.map((item) => (
-              <div key={item.value} className="flex items-start gap-3">
+              <div key={item.value} className="flex items-start gap-3 rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 backdrop-blur-sm">
                 <span className="mt-2 h-px w-8 bg-blue-200" />
                 <div><p className="text-lg font-semibold text-white">{item.value}</p><p className="mt-1 text-sm leading-5 text-gray-300">{text(item.label, lang)}</p></div>
               </div>
@@ -79,22 +79,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b border-gray-200 bg-white py-16 dark:border-gray-800 dark:bg-gray-950">
+      <section className="border-b border-gray-200 bg-white py-20 dark:border-gray-800 dark:bg-gray-950">
         <div className="section-shell">
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
             <div>
               <p className="eyebrow">{lang === 'zh' ? '当前工作' : 'Current Work'}</p>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">{lang === 'zh' ? 'AI 科学智能体与虚拟细胞' : 'AI co-scientists and virtual cells'}</h2>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">{lang === 'zh' ? 'AI 科学智能体、虚拟细胞与模型评价' : 'AI co-scientists, virtual cells, and model evaluation'}</h2>
               <p className="mt-5 text-base leading-7 text-gray-600 dark:text-gray-300">
                 {lang === 'zh'
-                  ? '我目前主要在构建 AI co-scientist，并开始系统学习虚拟细胞。前者关注科学记忆、证据组织与研究工作流；后者关注单细胞表征、扰动响应预测，以及分子干预与细胞状态之间的联系。'
-                  : 'I am currently building AI co-scientist systems and beginning focused work on virtual cells. The former centers on scientific memory, evidence organization, and research workflows; the latter on single-cell representations, perturbation-response prediction, and links between molecular interventions and cellular states.'}
+                  ? '我目前主要研究 AI co-scientist 的科学记忆与证据组织，并探索智能体如何结合单细胞和虚拟细胞模型开展扰动推理与实验选择。同时，我参与临床世界模型的反事实能力与外部试验评价。'
+                  : 'I currently study scientific memory and evidence organization for AI co-scientists, while exploring how agents can work with single-cell and virtual-cell models for perturbation reasoning and experiment selection. I also evaluate counterfactual behavior in clinical world models against external trials.'}
               </p>
               <Link href="/projects" className="mt-6 inline-flex text-sm font-semibold text-primary hover:underline dark:text-blue-300">{lang === 'zh' ? '查看项目详情' : 'View project details'}</Link>
             </div>
             <div className="grid gap-4">
               {currentDirections.map((item, index) => (
-                <article key={text(item.title, 'en')} className="panel p-5 transition-colors hover:border-primary dark:hover:border-blue-300">
+                <article key={text(item.title, 'en')} className="panel p-5 hover:-translate-y-1 hover:border-primary dark:hover:border-blue-300">
                   <div className="grid gap-4 sm:grid-cols-[56px_1fr]">
                     <p className="text-sm font-semibold text-secondary">{String(index + 1).padStart(2, '0')}</p>
                     <div><h3 className="text-lg font-semibold text-gray-950 dark:text-white">{text(item.title, lang)}</h3><p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">{text(item.question, lang)}</p></div>
@@ -106,7 +106,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-paper py-16 dark:bg-gray-950">
+      <section className="soft-section py-20">
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
             <div>
@@ -127,7 +127,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-gray-200 bg-white py-16 dark:border-gray-800 dark:bg-gray-950">
+      <section className="border-y border-gray-200 bg-white py-20 dark:border-gray-800 dark:bg-gray-950">
         <div className="section-shell">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
@@ -147,7 +147,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-paper py-16 dark:bg-gray-950">
+      <section className="soft-section py-20">
         <div className="section-shell">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div><p className="eyebrow">{lang === 'zh' ? '长期研究目标' : 'Long-term Research Goal'}</p><h2 className="mt-3 text-3xl font-semibold text-gray-950 dark:text-white">{lang === 'zh' ? '从分子设计到多尺度生物系统' : 'From molecular design to multiscale biological systems'}</h2></div>
@@ -155,13 +155,13 @@ export default function Home() {
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {researchDirections.map((direction) => (
-              <article key={text(direction.title, 'en')} className="panel min-h-[210px] p-6"><h3 className="text-lg font-semibold text-gray-950 dark:text-white">{text(direction.title, lang)}</h3><p className="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">{text(direction.description, lang)}</p></article>
+              <article key={text(direction.title, 'en')} className="panel min-h-[210px] p-6 hover:-translate-y-1"><h3 className="text-lg font-semibold text-gray-950 dark:text-white">{text(direction.title, lang)}</h3><p className="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">{text(direction.description, lang)}</p></article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16 dark:bg-gray-950">
+      <section className="bg-white py-20 dark:bg-gray-950">
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.2fr]">
             <div><p className="eyebrow">{lang === 'zh' ? '写作与笔记' : 'Writing'}</p><h2 className="mt-3 text-3xl font-semibold text-gray-950 dark:text-white">{lang === 'zh' ? '科研之外的学习记录' : 'Notes beyond the lab'}</h2></div>

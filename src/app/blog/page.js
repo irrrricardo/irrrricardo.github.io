@@ -49,14 +49,14 @@ export default function BlogPage() {
 
   return (
     <PasswordGate>
-      <section className="bg-white py-16 dark:bg-gray-950">
+      <section className="bg-white pb-20 pt-24 dark:bg-gray-950">
         <div className="section-shell">
           <p className="eyebrow">{t.subtitle}</p>
           <h1 className="mt-3 text-4xl font-semibold text-gray-950 dark:text-white sm:text-5xl">{t.title}</h1>
         </div>
       </section>
 
-      <section className="border-t border-gray-200 bg-paper py-16 dark:border-gray-800 dark:bg-gray-950 min-h-screen">
+      <section className="soft-section min-h-screen border-t border-gray-200 py-20 dark:border-gray-800">
         <div className="section-shell max-w-3xl">
           {posts.length === 0 ? (
             <p className="text-center text-gray-500 py-20">{t.noPosts}</p>

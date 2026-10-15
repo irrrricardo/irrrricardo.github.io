@@ -44,11 +44,11 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-gray-950/90 backdrop-blur-md">
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-slate-950/80 shadow-[0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-xl supports-[backdrop-filter]:bg-slate-950/70">
       <nav className="section-shell h-14 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 text-white focus-ring rounded-sm">
-          <span className="flex h-7 w-7 items-center justify-center border border-white/25 text-xs font-semibold">RC</span>
-          <span className="text-sm font-semibold">Renxiang Chu</span>
+        <Link href="/" className="focus-ring group flex items-center gap-3 rounded-lg text-white">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/20 bg-white/[0.07] text-[11px] font-semibold tracking-wide transition duration-200 group-hover:border-white/35 group-hover:bg-white/10">RC</span>
+          <span className="text-sm font-semibold tracking-[-0.01em]">Renxiang Chu</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-1">
@@ -56,10 +56,10 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className={`rounded-sm px-3 py-2 text-sm font-medium transition-colors focus-ring ${
+              className={`focus-ring rounded-lg px-3 py-2 text-sm font-medium transition duration-200 ${
                 pathname === link.href || (link.href !== '/' && pathname?.startsWith(link.href))
-                  ? 'bg-white/10 text-white'
-                  : 'text-white/70 hover:bg-white/10 hover:text-white'
+                  ? 'bg-white/[0.12] text-white shadow-sm'
+                  : 'text-white/65 hover:bg-white/[0.07] hover:text-white'
               }`}
             >
               {link.label}
@@ -68,22 +68,22 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-3">
-          <button onClick={toggleLang} className="focus-ring rounded-sm border border-white/15 px-2.5 py-1.5 text-xs font-semibold text-white/75 transition-colors hover:bg-white/10 hover:text-white" title="Toggle language">
+          <button onClick={toggleLang} className="focus-ring rounded-lg border border-white/15 bg-white/[0.03] px-2.5 py-1.5 text-xs font-semibold text-white/75 transition duration-200 hover:border-white/25 hover:bg-white/10 hover:text-white" title="Toggle language">
             {lang === 'en' ? '中' : 'EN'}
           </button>
-          <button onClick={toggleTheme} className="focus-ring rounded-sm border border-white/15 px-2.5 py-1.5 text-xs font-semibold text-white/75 transition-colors hover:bg-white/10 hover:text-white" title="Toggle theme">
+          <button onClick={toggleTheme} className="focus-ring rounded-lg border border-white/15 bg-white/[0.03] px-2.5 py-1.5 text-xs font-semibold text-white/75 transition duration-200 hover:border-white/25 hover:bg-white/10 hover:text-white" title="Toggle theme">
             {isDark ? 'Light' : 'Dark'}
           </button>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="focus-ring rounded-sm border border-white/15 px-2.5 py-1.5 text-sm font-semibold text-white/75 transition-colors hover:bg-white/10 hover:text-white md:hidden" aria-label="Toggle menu">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="focus-ring rounded-lg border border-white/15 bg-white/[0.03] px-2.5 py-1.5 text-sm font-semibold text-white/75 transition duration-200 hover:border-white/25 hover:bg-white/10 hover:text-white md:hidden" aria-label="Toggle menu">
             {isMenuOpen ? '✕' : '☰'}
           </button>
         </div>
       </nav>
 
       {isMenuOpen && (
-        <div className="border-t border-white/10 bg-gray-950 md:hidden">
+        <div className="border-t border-white/10 bg-slate-950/95 backdrop-blur-xl md:hidden">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} onClick={() => setIsMenuOpen(false)} className={`block px-5 py-3 text-sm font-medium transition-colors ${pathname === link.href ? 'bg-white/10 text-white' : 'text-white/70 hover:bg-white/10 hover:text-white'}`}>
+            <Link key={link.href} href={link.href} onClick={() => setIsMenuOpen(false)} className={`block px-5 py-3 text-sm font-medium transition-colors ${pathname === link.href ? 'bg-white/10 text-white' : 'text-white/70 hover:bg-white/[0.07] hover:text-white'}`}>
               {link.label}
             </Link>
           ))}

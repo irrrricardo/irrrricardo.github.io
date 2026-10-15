@@ -17,8 +17,11 @@ module.exports = {
         mist: '#d9e0e5',
       },
       fontFamily: {
-        sans: ['Inter', 'Arial', 'Helvetica', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'Arial', 'Helvetica', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'system-ui', 'sans-serif'],
+        display: ['Georgia', 'Times New Roman', 'serif'],
+      },
+      boxShadow: {
+        soft: '0 18px 55px -28px rgba(15, 23, 42, 0.35)',
       },
     },
   },

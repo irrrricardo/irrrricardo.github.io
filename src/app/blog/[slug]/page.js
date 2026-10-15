@@ -93,7 +93,7 @@ function BlogPostContent({ slug }) {
   }
 
   return (
-    <article className="py-16 px-4 bg-gray-50 dark:bg-gray-900 min-h-screen">
+    <article className="soft-section min-h-screen px-4 py-20">
       <div className="max-w-3xl mx-auto">
         <Link href="/blog" className="inline-flex items-center gap-2 text-primary hover:underline mb-8 font-medium">
           ← Back to Blog
@@ -107,7 +107,7 @@ function BlogPostContent({ slug }) {
               </span>
             ))}
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900 dark:text-white">{post.title}</h1>
+          <h1 className="mb-4 text-3xl font-semibold text-gray-900 dark:text-white sm:text-4xl">{post.title}</h1>
           <time className="text-gray-500 dark:text-gray-400">
             {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </time>

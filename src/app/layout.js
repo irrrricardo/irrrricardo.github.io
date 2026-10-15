@@ -7,7 +7,7 @@ export const metadata = {
     default: 'Renxiang Chu | AI for Biological Design and Discovery',
     template: '%s | Renxiang Chu',
   },
-  description: 'Renxiang Chu is a Peking University undergraduate researcher interested in AI for protein, RNA, and molecular design, scientific discovery agents, and multiscale biological modeling.',
+  description: 'Renxiang Chu is a Peking University undergraduate researcher working on scientific memory, biological representation learning, clinical world-model evaluation, and AI for Science.',
   keywords: [
     'Renxiang Chu',
     'AI for medicine',
@@ -25,7 +25,7 @@ export const metadata = {
   authors: [{ name: 'Renxiang Chu', url: 'https://irrrricardo.github.io/' }],
   openGraph: {
     title: 'Renxiang Chu | AI for Biological Design and Discovery',
-    description: 'AI for biomolecular design, scientific discovery agents, and multiscale biological modeling.',
+    description: 'Scientific memory, generative biomolecular AI, clinical world-model evaluation, and AI for Science.',
     url: 'https://irrrricardo.github.io/',
     siteName: 'Renxiang Chu',
     type: 'website',
