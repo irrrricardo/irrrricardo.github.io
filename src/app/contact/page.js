@@ -54,6 +54,11 @@ export default function ContactPage() {
                 ? '我目前在华盖资本医疗器械与科技团队实习，关注 AI for Biology 与前沿生物技术的行业研究和技术尽调；也欢迎交流相关的初创公司、投资研究与后续实习机会。'
                 : 'I currently intern with Huagai Capital’s Medical Devices & Technology team, focusing on industry research and technical diligence in AI for biology and frontier biotechnology. I also welcome conversations about related startups, investment research, and future internships.'}
             </p>
+            <p>
+              {lang === 'zh'
+                ? '也欢迎交朋友，想聊什么都可以。'
+                : 'Open to friends—feel free to reach out about anything.'}
+            </p>
           </div>
         </div>
       </section>
