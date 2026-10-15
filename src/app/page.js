@@ -168,7 +168,7 @@ export default function Home() {
             <div className="divide-y divide-gray-200 border-y border-gray-200 dark:divide-gray-800 dark:border-gray-800">
               {writing.map((post) => (
                 <Link key={post.href} href={post.href} className="group flex flex-col gap-2 py-5 sm:flex-row sm:items-center sm:justify-between">
-                  <div><p className="text-sm text-gray-500 dark:text-gray-400">{post.topic}</p><h3 className="mt-1 text-lg font-semibold text-gray-950 group-hover:text-primary dark:text-white dark:group-hover:text-blue-300">{post.title}</h3></div>
+                  <div><p className="text-sm text-gray-500 dark:text-gray-400">{text(post.topic, lang)}</p><h3 className="mt-1 text-lg font-semibold text-gray-950 group-hover:text-primary dark:text-white dark:group-hover:text-blue-300">{text(post.title, lang)}</h3></div>
                   <time className="text-sm text-gray-500 dark:text-gray-400">{post.date}</time>
                 </Link>
               ))}

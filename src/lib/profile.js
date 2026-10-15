@@ -323,6 +323,22 @@ export const industryExperience = [
 ];
 
 export const writing = [
-  { title: 'Deep Learning Getting Started Guide', href: '/blog/deep-learning-guide', date: '2024-03-20', topic: 'AI' },
-  { title: 'My Journey at Peking University', href: '/blog/beijing-university-life', date: '2024-03-15', topic: 'Life' },
+  {
+    title: { en: 'Cash flows, expectations, and risk', zh: '现金流、预期与风险' },
+    href: '/blog/cash-flows-expectations-and-risk',
+    date: '2026-10-16',
+    topic: { en: 'Course note', zh: '课程笔记' },
+  },
+  {
+    title: { en: 'Changing fields without erasing the road behind', zh: '转向，不等于否定来路' },
+    href: '/blog/changing-fields-without-erasing-the-past',
+    date: '2026-10-09',
+    topic: { en: 'Life', zh: '生活' },
+  },
+  {
+    title: { en: 'Astrology as a language for uncertainty', zh: '把玄学当作一种面对不确定性的语言' },
+    href: '/blog/astrology-as-a-language-for-uncertainty',
+    date: '2026-10-05',
+    topic: { en: 'Small mysticism', zh: '一点玄学' },
+  },
 ];
