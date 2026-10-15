@@ -40,8 +40,8 @@ export default function ContactPage() {
       <section className="bg-white pb-20 pt-24 dark:bg-gray-950">
         <div className="section-shell grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
-            <p className="eyebrow">{t.subtitle}</p>
-            <h1 className="mt-3 text-4xl font-semibold leading-tight text-gray-950 dark:text-white sm:text-5xl">{t.title}</h1>
+            {t.subtitle && <p className="eyebrow">{t.subtitle}</p>}
+            <h1 className="text-4xl font-semibold leading-tight text-gray-950 dark:text-white sm:text-5xl">{t.title}</h1>
           </div>
           <div className="max-w-2xl space-y-4 text-base leading-7 text-gray-600 dark:text-gray-300">
             <p>

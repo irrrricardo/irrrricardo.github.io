@@ -43,8 +43,8 @@ export const translations = {
       subtitle: 'Projects and research notes',
     },
     contact: {
-      title: 'Contact',
-      subtitle: 'Research, collaboration, and AI for Science',
+      title: 'Like to connect!',
+      subtitle: '',
     },
     footer: {
       copyright: '© 2026. Academic portfolio and research notes.',
@@ -94,8 +94,8 @@ export const translations = {
       subtitle: '项目与研究记录',
     },
     contact: {
-      title: '联系方式',
-      subtitle: '研究、合作与 AI for Science',
+      title: 'Like to connect!',
+      subtitle: '',
     },
     footer: {
       copyright: '© 2026. 学术主页与研究笔记。',
