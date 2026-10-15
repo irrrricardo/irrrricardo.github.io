@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { education, industryExperience, profile, researchApproach, researchDirections } from '@/lib/profile';
+import { beyondWork, education, industryExperience, profile, researchApproach, researchDirections } from '@/lib/profile';
 import { translations } from '@/lib/translations';
 
 function useLanguage() {
@@ -140,6 +140,35 @@ export default function AboutPage() {
                 <article key={text(item.title, 'en')} className="border-l border-gray-300 pl-5 dark:border-gray-700">
                   <h3 className="text-lg font-semibold text-gray-950 dark:text-white">{text(item.title, lang)}</h3>
                   <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-300">{text(item.body, lang)}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="soft-section border-t border-gray-200 py-20 dark:border-gray-800">
+        <div className="section-shell">
+          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <p className="eyebrow">{lang === 'zh' ? '研究与工作之外' : 'Beyond research and work'}</p>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">
+                {lang === 'zh' ? '不同节奏里的生活' : 'A life with different tempos'}
+              </h2>
+              <p className="mt-5 max-w-xl text-base leading-7 text-gray-600 dark:text-gray-300">
+                {lang === 'zh'
+                  ? '我喜欢让生活保持一些不同的节奏：有时去运动和户外，有时听音乐、弹琴或唱歌，也会读书、写一点不太成熟的东西，做饭，或者和朋友慢慢喝一杯。'
+                  : 'I like keeping several tempos in life: sport and the outdoors; listening, playing, and singing; books and not-yet-very-good drafts; cooking; and an occasional drink shared slowly with friends.'}
+              </p>
+            </div>
+            <div className="grid gap-x-8 gap-y-9 sm:grid-cols-2">
+              {beyondWork.map((interest) => (
+                <article key={interest.number} className="border-t border-gray-300 pt-4 dark:border-gray-700">
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-xs font-semibold tracking-[0.14em] text-secondary">{interest.number}</span>
+                    <h3 className="text-lg font-semibold text-gray-950 dark:text-white">{text(interest.title, lang)}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-300">{text(interest.description, lang)}</p>
                 </article>
               ))}
             </div>

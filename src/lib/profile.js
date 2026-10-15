@@ -322,6 +322,41 @@ export const industryExperience = [
   },
 ];
 
+export const beyondWork = [
+  {
+    number: '01',
+    title: { en: 'Movement and the outdoors', zh: '运动与户外' },
+    description: {
+      en: 'Skiing, football, strength training, and hiking—activities that move at very different speeds but all clear the mind.',
+      zh: '滑雪、足球、力量训练和徒步——节奏完全不同，却都能让头脑重新变得清楚。',
+    },
+  },
+  {
+    number: '02',
+    title: { en: 'Music', zh: '音乐' },
+    description: {
+      en: 'Pop music, piano, and a cappella. I enjoy both listening closely and making music with other people.',
+      zh: '流行音乐、钢琴和阿卡贝拉；既喜欢认真听，也喜欢和别人一起把声音做出来。',
+    },
+  },
+  {
+    number: '03',
+    title: { en: 'Reading and writing', zh: '阅读与写作' },
+    description: {
+      en: 'Literature, and occasional attempts at writing—enthusiasm still exceeds craft, which has not stopped me yet.',
+      zh: '文学阅读，以及偶尔并不高明的创作；目前热情仍然明显多于技巧，但这还没有阻止我继续写。',
+    },
+  },
+  {
+    number: '04',
+    title: { en: 'Around the table', zh: '餐桌周围' },
+    description: {
+      en: 'Cooking, trying new dishes, and the occasional good drink—preferably with an unhurried conversation.',
+      zh: '做饭、尝试新的菜式，也喜欢偶尔喝一杯；如果还能配上一场不赶时间的谈话，就更好。',
+    },
+  },
+];
+
 export const writing = [
   {
     title: { en: 'Cash flows, expectations, and risk', zh: '现金流、预期与风险' },
