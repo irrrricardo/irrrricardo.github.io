@@ -19,14 +19,14 @@ export const tools = [
       en: ['Agent Skill', 'SVG', 'PowerPoint'],
       zh: ['Agent Skill', 'SVG', 'PowerPoint'],
     },
-    image: '/images/tools/fig-cos-biomni.png',
+    image: '/images/tools/fig-cos-hero.png',
     imageAlt: {
-      en: 'A biomedical figure reconstructed by fig-cos as editable PowerPoint objects.',
-      zh: '由 fig-cos 重建为可编辑 PowerPoint 对象的生物医学科研图。',
+      en: 'fig-cos promotional artwork showing a reference becoming an editable SVG and PowerPoint figure.',
+      zh: 'fig-cos 宣传图：将参考图转化为可编辑的 SVG 与 PowerPoint 科研图。',
     },
     imageCaption: {
-      en: 'Historical PowerPoint reconstruction. Adapted from Huang et al., Biomni, Figure 1 (CC BY 4.0); full source and asset credits are documented in the gallery.',
-      zh: '历史 PowerPoint 重建结果。改编自 Huang 等人的 Biomni Figure 1（CC BY 4.0）；完整原图来源及素材署名详见 Gallery。',
+      en: 'Current fig-cos project artwork: bring a reference, keep editing the text, colors, components, and layout.',
+      zh: '当前 fig-cos 项目宣传图：从一张参考图出发，继续编辑文字、颜色、组件与版式。',
     },
     links: [
       {
@@ -36,10 +36,6 @@ export const tools = [
       {
         label: { en: 'Installation guide', zh: '安装与使用' },
         href: 'https://github.com/irrrricardo/fig-cos#quick-start--install-the-skill',
-      },
-      {
-        label: { en: 'Image credits', zh: '图片署名' },
-        href: 'https://github.com/irrrricardo/fig-cos/blob/main/docs/GALLERY.md',
       },
     ],
   },
