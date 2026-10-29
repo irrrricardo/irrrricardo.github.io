@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Changing fields without erasing the road behind</title>
+  <desc id="desc">A branching path connects prior training with increasingly precise research questions.</desc>
+  <rect width="1200" height="720" fill="#edf2f2"/>
+  <rect x="76" y="68" width="1048" height="584" rx="30" fill="#fbfdfc" stroke="#cedbd8" stroke-width="2"/>
+  <text x="122" y="132" fill="#56716b" font-family="Arial, sans-serif" font-size="18" letter-spacing="3">A CONTINUING LINE OF QUESTIONS</text>
+  <path d="M150 520 C280 500 326 420 424 400 C540 376 558 440 664 380 C786 310 805 205 1035 178" fill="none" stroke="#315f85" stroke-width="12" stroke-linecap="round"/>
+  <path d="M420 401 C514 340 500 251 604 212" fill="none" stroke="#9daeb1" stroke-width="7" stroke-linecap="round"/>
+  <path d="M662 380 C770 422 825 507 1002 522" fill="none" stroke="#b8794d" stroke-width="7" stroke-linecap="round"/>
+  <g fill="#fbfdfc" stroke="#315f85" stroke-width="6">
+    <circle cx="150" cy="520" r="18"/><circle cx="424" cy="400" r="18"/><circle cx="664" cy="380" r="18"/><circle cx="1035" cy="178" r="18"/>
+  </g>
+  <g fill="#27383d" font-family="Georgia, serif" font-size="27">
+    <text x="120" y="574">medicine</text><text x="370" y="452">questions</text><text x="604" y="435">models</text><text x="906" y="142">design</text>
+  </g>
+</svg>

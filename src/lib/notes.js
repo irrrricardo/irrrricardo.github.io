@@ -2,14 +2,19 @@ export const notes = [
   {
     slug: 'cash-flows-expectations-and-risk',
     date: '2026-10-16',
+    cover: '/images/notes/cash-flows.svg',
+    coverAlt: {
+      en: 'A line drawing connecting cash flow, expectation, risk, and time.',
+      zh: '连接现金流、预期、风险与时间的线条图。',
+    },
     category: { en: 'Course note', zh: '课程笔记' },
     title: {
       en: 'Cash flows, expectations, and risk',
       zh: '现金流、预期与风险：货币银行学的一条主线',
     },
     description: {
-      en: 'A compact map of how present value, interest rates, term structure, and information fit together.',
-      zh: '用一条简洁的线索串起现值、利率、期限结构与市场信息。',
+      en: 'Four lectures, one stubborn question: what is a future payment worth before the future arrives?',
+      zh: '四讲内容，其实都在追问一个问题：未来尚未来临时，一笔未来付款今天值多少？',
     },
     tags: {
       en: ['Money & Banking', 'Economics'],
@@ -17,20 +22,20 @@ export const notes = [
     },
     readTime: { en: '4 min read', zh: '阅读约 4 分钟' },
     deck: {
-      en: 'The first four lectures of Money and Banking look like separate topics. They become easier to remember when treated as different views of the same object: uncertain future cash flows.',
-      zh: '货币银行学的前几讲看起来主题分散。如果把它们都理解成对“不确定的未来现金流”的不同观察，许多概念会自然地连在一起。',
+      en: 'The first four Money and Banking lectures initially felt like a drawer full of unrelated labels. Then one thread pulled them together: each is a different way of looking at uncertain future cash flows.',
+      zh: '货币银行学的前四讲，最初像抽屉里一堆彼此无关的标签。后来有一条线把它们串了起来：它们都是在用不同方式观察“不确定的未来现金流”。',
     },
     sections: [
       {
         heading: { en: 'Begin with the object, not the formula', zh: '先看对象，再看公式' },
         paragraphs: {
           en: [
-            'A bond, a stock, and a bank loan all exchange value across time. Present value asks what a future payment is worth today. Yield to maturity compresses a bond\'s promised cash flows and current price into one rate. Holding-period return instead records what an investor actually earns over a chosen interval. They answer different questions and should not be used interchangeably.',
-            'This distinction is useful beyond exams. Whenever a quoted rate appears, I now ask: Is it a contractual rate, a discount rate, an expected return, or a realized return? Much confusion disappears once the object being measured is named precisely.',
+            'Put a bond, a stock, and a bank loan on the same desk and they look nothing alike. Strip away the paperwork, however, and each is moving value across time. Present value asks what a future payment is worth today. Yield to maturity squeezes a bond\'s promised cash flows and current price into one rate. Holding-period return records what an investor actually earned over a chosen stretch of time. The labels are close; the questions are not.',
+            'This became my small anti-confusion habit. Whenever a rate appears, I stop and ask: contractual, discount, expected, or realized? Naming the object first often clears the fog before any algebra begins.',
           ],
           zh: [
-            '债券、股票和银行贷款，都在交换不同时点的价值。现值回答未来付款今天值多少；到期收益率把债券承诺的现金流与当前价格压缩成一个利率；持有期回报则记录投资者在某一实际持有区间内赚了多少。它们回答的是不同问题，不能混用。',
-            '这个区分并不只服务于考试。以后看到一个“利率”，我会先问：它是合同利率、贴现率、预期回报，还是已实现回报？只要先说明被测量的对象，很多争论就会自动消失。',
+            '把债券、股票和银行贷款摆在同一张桌上，它们看起来毫不相干；剥掉合同和名称之后，却都在做同一件事：让价值跨越时间。现值问未来付款今天值多少；到期收益率把债券承诺的现金流与当前价格压成一个数字；持有期回报则老老实实记录一段时间里真正赚了多少。名字很像，问题并不一样。',
+            '我也因此多了一个防止混乱的小习惯：每次看见“利率”，先停下来问——合同利率、贴现率、预期回报，还是已实现回报？对象一旦说清，很多雾气会在动笔算式之前散掉。',
           ],
         },
       },
@@ -65,14 +70,19 @@ export const notes = [
   {
     slug: 'comparative-advantage-is-relative',
     date: '2026-10-13',
+    cover: '/images/notes/comparative-advantage.svg',
+    coverAlt: {
+      en: 'Two production frontiers connected by an exchange line.',
+      zh: '由交换线连接的两条生产可能性边界。',
+    },
     category: { en: 'Course note', zh: '课程笔记' },
     title: {
       en: 'Comparative advantage is relative—not destiny',
       zh: '比较优势是相对关系，不是命运',
     },
     description: {
-      en: 'Three distinctions from international trade: absolute versus comparative advantage, aggregate gains versus distribution, and RCA versus productivity.',
-      zh: '国际贸易课中的三个关键区分：绝对优势与比较优势、总体收益与分配，以及 RCA 与生产率。',
+      en: 'Trade class kept punishing one intuition: being better at everything does not mean making everything yourself.',
+      zh: '贸易课反复惩罚一种直觉：即使什么都做得更好，也不意味着什么都该自己做。',
     },
     tags: {
       en: ['International Trade', 'Models'],
@@ -80,19 +90,19 @@ export const notes = [
     },
     readTime: { en: '5 min read', zh: '阅读约 5 分钟' },
     deck: {
-      en: 'Trade theory is most useful when it prevents intuitive but incorrect shortcuts. A country can be better at producing everything and still import something; trade can raise aggregate welfare while hurting particular workers; export specialization is evidence, but not a direct measurement of technology.',
-      zh: '贸易理论最有用的时候，是它阻止我们沿着直觉走向错误结论：一个国家可以在所有商品上都更高效，却仍然进口其中一些；贸易可以提高总体福利，同时让部分劳动者受损；出口专业化是证据，却不是技术水平的直接测量。',
+      en: 'Trade theory earns its keep by catching the shortcuts that sound obvious. A country may be better at producing everything and still import something; trade may enlarge the pie while shrinking one person\'s slice; an export pattern may reveal specialization without revealing its cause.',
+      zh: '贸易理论最有用的地方，是专门抓住那些“听上去理所当然”的捷径：一个国家可以什么都做得更好，却仍然进口；贸易可以把蛋糕做大，同时让某个人分到的那一块变小；出口结构可以暴露专业化，却未必解释它从何而来。',
     },
     sections: [
       {
         heading: { en: 'Opportunity cost decides the direction', zh: '贸易方向由机会成本决定' },
         paragraphs: {
           en: [
-            'In the Ricardian model, the question is not who can produce more with one worker in isolation. It is what each country gives up when labor moves between sectors. A country with an absolute productivity advantage in both goods can still have a comparative advantage in only one.',
+            'The Ricardian model asks a less boastful question than “who can make more?” It asks what each country gives up when a worker crosses from one sector to another. A country may win every absolute-productivity contest and still hold a comparative advantage in only one good.',
             'This relative logic is why specialization can expand consumption possibilities. Trade becomes a form of indirect production: export what is relatively cheaper to make, then exchange it for more of another good than domestic production would have yielded.',
           ],
           zh: [
-            '在李嘉图模型中，关键不是孤立地比较“一名工人能生产多少”，而是劳动从一个行业转向另一个行业时，各国分别放弃了什么。即使一个国家在两种商品上都有绝对生产率优势，它也可能只在其中一种商品上具有比较优势。',
+            '李嘉图模型问的不是一个很爱炫耀的问题——“谁做得更多？”它问的是：一名工人从一个行业走向另一个行业时，各国分别放弃了什么。即使一个国家赢下所有绝对生产率的比赛，也可能只在一种商品上拥有比较优势。',
             '正因为这种相对逻辑，专业化才可能扩展消费集合。贸易可以被看成一种间接生产：出口相对更便宜的商品，再换回比国内直接生产更多的另一种商品。',
           ],
         },
@@ -128,14 +138,19 @@ export const notes = [
   {
     slug: 'changing-fields-without-erasing-the-past',
     date: '2026-10-09',
+    cover: '/images/notes/changing-fields.svg',
+    coverAlt: {
+      en: 'A path branching from medicine and questions toward models and design.',
+      zh: '一条从医学与问题出发、通向模型与设计的分岔路径。',
+    },
     category: { en: 'Life', zh: '生活' },
     title: {
       en: 'Changing fields without erasing the road behind',
       zh: '转向，不等于否定来路',
     },
     description: {
-      en: 'A note on moving from biomedical applications toward model-building without pretending that the transition is already complete.',
-      zh: '从生物医学应用走向模型方法：不否定过去，也不假装转向已经完成。',
+      en: 'Changing direction is less like deleting a folder and more like discovering what the old files were trying to say.',
+      zh: '改变方向不像删除一个文件夹，更像终于读懂旧文件一直想说什么。',
     },
     tags: {
       en: ['Life', 'Research training'],
@@ -143,19 +158,19 @@ export const notes = [
     },
     readTime: { en: '4 min read', zh: '阅读约 4 分钟' },
     deck: {
-      en: 'I used to frame my interests as a list of domains: medicine, biological design, agents, world models. A more honest thread is methodological: I want to understand how models learn useful representations, use evidence and feedback, and support decisions in complex systems.',
-      zh: '我曾把兴趣写成一串领域标签：医学、生物设计、智能体、世界模型。更诚实的一条主线其实是方法：我想理解模型如何学到有用表征，如何利用证据与反馈，又如何在复杂系统中支持决策。',
+      en: 'I once introduced my interests as a crowded list—medicine, biological design, agents, world models. The list was accurate but not illuminating. The quieter thread underneath is methodological: how can a model learn a useful representation, revise it with evidence and feedback, and act inside a complicated system?',
+      zh: '我曾用一串拥挤的标签介绍兴趣：医学、生物设计、智能体、世界模型。它们没有错，却也没有真正解释什么。更安静、也更持久的主线其实是方法：模型如何学到有用表征，如何根据证据与反馈修正它，又如何在复杂系统中行动？',
     },
     sections: [
       {
         heading: { en: 'The previous field can remain a source of questions', zh: '过去的领域仍然可以提供问题' },
         paragraphs: {
           en: [
-            'Basic medicine trained me to notice partial observation, heterogeneity, feedback, and multiple biological scales. Economics added incentives, counterfactuals, and the difference between aggregate outcomes and individual effects. These are not substitutes for technical depth in machine learning, but they shape the questions I find worth asking.',
+            'Basic medicine taught me to distrust a single clean snapshot: biology is partially observed, heterogeneous, feedback-heavy, and stubbornly multiscale. Economics added incentives, counterfactuals, and the awkward distance between an average effect and an individual life. None of this substitutes for technical depth in machine learning. It does decide which technical questions keep me awake.',
             'Keeping that background does not require staying forever in “AI as a tool for medicine.” It can instead provide difficult test beds for representation learning, generation, intervention modeling, and scientific agents.',
           ],
           zh: [
-            '基础医学让我不断注意到部分可观测、异质性、反馈以及不同生物尺度；经济学又补充了激励、反事实，以及总体结果与个体效应的差异。这些训练不能替代机器学习方法上的深度，却会影响我认为哪些问题值得研究。',
+            '基础医学让我很难再相信一张干净的截面图：生物系统总是部分可观测、充满异质性和反馈，还顽固地横跨多个尺度。经济学又补上了激励、反事实，以及“平均效应”与“一个具体的人”之间那段尴尬的距离。这些当然不能替代机器学习方法上的深度，却决定了哪些技术问题会让我睡不着。',
             '保留这段背景，并不意味着永远停留在“用 AI 做医学应用”。它也可以为表征学习、生成、干预建模和科学智能体提供足够困难的试验场。',
           ],
         },
@@ -191,14 +206,19 @@ export const notes = [
   {
     slug: 'astrology-as-a-language-for-uncertainty',
     date: '2026-10-05',
+    cover: '/images/notes/uncertainty.svg',
+    coverAlt: {
+      en: 'A compass and constellation used as metaphors rather than forecasts.',
+      zh: '作为隐喻而非预测的罗盘与星图。',
+    },
     category: { en: 'Small mysticism', zh: '一点玄学' },
     title: {
       en: 'Astrology as a language for uncertainty',
       zh: '把玄学当作一种面对不确定性的语言',
     },
     description: {
-      en: 'Why symbolic systems can feel useful during uncertain periods—and why they should not be allowed to make the decision.',
-      zh: '象征系统为何会在不确定时期提供安慰，以及为什么不该让它替我们作决定。',
+      en: 'Sometimes a metaphor helps me breathe. It still does not get a vote in the decision.',
+      zh: '有时一个隐喻能让人喘口气，但它仍然没有替我投票的权利。',
     },
     tags: {
       en: ['Mysticism', 'Reflection'],
@@ -206,8 +226,8 @@ export const notes = [
     },
     readTime: { en: '3 min read', zh: '阅读约 3 分钟' },
     deck: {
-      en: 'During an application season, silence easily turns into a story about the whole future. A symbolic reading can interrupt that story. I find it useful as metaphor and reflection—not as evidence about what will happen.',
-      zh: '申请季里，几次沉默很容易被大脑改写成关于整个人生的故事。象征性的解读有时能打断这种推演。对我而言，它适合用作隐喻和反思，却不能作为未来会怎样的证据。',
+      en: 'Application season has a strange alchemy: three quiet inbox days can become a prophecy about the rest of one\'s life. A symbolic reading sometimes interrupts that spiral. I keep it as metaphor and reflection—not as evidence about what happens next.',
+      zh: '申请季有一种奇怪的炼金术：邮箱安静三天，大脑就能把它炼成对余生的预言。象征性的解读有时会打断这条螺旋。对我而言，它可以是隐喻和反思，却不能成为下一步会发生什么的证据。',
     },
     sections: [
       {

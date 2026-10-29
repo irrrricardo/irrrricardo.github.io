@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">A language for uncertainty</title>
+  <desc id="desc">A compass-like circle and a small constellation suggest reflection without prediction.</desc>
+  <rect width="1200" height="720" fill="#f1eef2"/>
+  <rect x="76" y="68" width="1048" height="584" rx="30" fill="#fcfafc" stroke="#ded5df" stroke-width="2"/>
+  <text x="122" y="132" fill="#745f76" font-family="Arial, sans-serif" font-size="18" letter-spacing="3">METAPHOR, NOT FORECAST</text>
+  <g transform="translate(410 362)">
+    <circle r="190" fill="none" stroke="#b9abbc" stroke-width="3"/>
+    <circle r="126" fill="none" stroke="#ded5df" stroke-width="2"/>
+    <path d="M0 -150 L32 -18 L0 34 L-32 -18 Z" fill="#315f85"/>
+    <path d="M0 150 L32 18 L0 -34 L-32 18 Z" fill="#b8794d" opacity=".78"/>
+    <circle r="16" fill="#fcfafc" stroke="#745f76" stroke-width="4"/>
+  </g>
+  <g fill="#745f76">
+    <circle cx="745" cy="236" r="7"/><circle cx="844" cy="190" r="10"/><circle cx="934" cy="274" r="6"/><circle cx="826" cy="344" r="7"/><circle cx="994" cy="405" r="9"/>
+  </g>
+  <g fill="none" stroke="#b9abbc" stroke-width="3">
+    <path d="M745 236 L844 190 L934 274 L826 344 L994 405"/>
+  </g>
+  <text x="735" y="506" fill="#27383d" font-family="Georgia, serif" font-size="31">return to the next step</text>
+</svg>

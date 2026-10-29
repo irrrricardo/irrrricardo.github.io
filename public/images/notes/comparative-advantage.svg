@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Comparative advantage is relative</title>
+  <desc id="desc">Two production frontiers and an exchange line show that trade is about relative cost.</desc>
+  <rect width="1200" height="720" fill="#f2f0eb"/>
+  <rect x="78" y="68" width="1044" height="584" rx="30" fill="#fffdfa" stroke="#ddd6c9" stroke-width="2"/>
+  <text x="124" y="132" fill="#735d4b" font-family="Arial, sans-serif" font-size="18" letter-spacing="3">RELATIVE COSTS</text>
+  <g transform="translate(175 198)">
+    <path d="M0 310 H350 M0 310 V0" stroke="#9b9287" stroke-width="3"/>
+    <path d="M0 40 L320 310" fill="none" stroke="#315f85" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="130" cy="150" r="12" fill="#315f85"/>
+    <text x="70" y="365" fill="#3d4950" font-family="Georgia, serif" font-size="28">Country A</text>
+  </g>
+  <g transform="translate(675 198)">
+    <path d="M0 310 H350 M0 310 V0" stroke="#9b9287" stroke-width="3"/>
+    <path d="M0 90 L250 310" fill="none" stroke="#b8794d" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="92" cy="171" r="12" fill="#b8794d"/>
+    <text x="70" y="365" fill="#3d4950" font-family="Georgia, serif" font-size="28">Country B</text>
+  </g>
+  <path d="M514 350 C560 315 608 315 654 350" fill="none" stroke="#77868d" stroke-width="4" stroke-dasharray="9 12"/>
+  <path d="M635 332 l24 18 -24 18" fill="none" stroke="#77868d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

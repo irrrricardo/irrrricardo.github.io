@@ -164,7 +164,7 @@ export default function Home() {
       <section className="bg-white py-20 dark:bg-gray-950">
         <div className="section-shell">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.2fr]">
-            <div><p className="eyebrow">{lang === 'zh' ? '写作与笔记' : 'Writing'}</p><h2 className="mt-3 text-3xl font-semibold text-gray-950 dark:text-white">{lang === 'zh' ? '科研之外的学习记录' : 'Notes beyond the lab'}</h2></div>
+            <div><p className="eyebrow">{lang === 'zh' ? '笔记与工具' : 'Notes & tools'}</p><h2 className="mt-3 text-3xl font-semibold text-gray-950 dark:text-white">{lang === 'zh' ? '值得记住，也值得复用' : 'Things worth remembering—and reusing'}</h2></div>
             <div className="divide-y divide-gray-200 border-y border-gray-200 dark:divide-gray-800 dark:border-gray-800">
               {writing.map((post) => (
                 <Link key={post.href} href={post.href} className="group flex flex-col gap-2 py-5 sm:flex-row sm:items-center sm:justify-between">

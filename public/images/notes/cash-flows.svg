@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Cash flows, expectations, and risk</title>
+  <desc id="desc">A quiet editorial diagram connecting cash flows, time, rates, and uncertainty.</desc>
+  <rect width="1200" height="720" fill="#eef3f5"/>
+  <rect x="76" y="68" width="1048" height="584" rx="30" fill="#fbfcfc" stroke="#ccd8dd" stroke-width="2"/>
+  <path d="M170 480 C330 456 380 298 545 326 S785 480 1030 212" fill="none" stroke="#315f85" stroke-width="7" stroke-linecap="round"/>
+  <path d="M170 524 H1030" stroke="#9fb1ba" stroke-width="2"/>
+  <g fill="#315f85">
+    <circle cx="170" cy="480" r="11"/><circle cx="378" cy="353" r="11"/><circle cx="545" cy="326" r="11"/><circle cx="740" cy="421" r="11"/><circle cx="1030" cy="212" r="11"/>
+  </g>
+  <g fill="#5d707a" font-family="Arial, sans-serif" font-size="22">
+    <text x="143" y="566">now</text><text x="980" y="566">later</text>
+    <text x="118" y="128" font-size="18" letter-spacing="3">VALUE ACROSS TIME</text>
+  </g>
+  <g fill="#22313a" font-family="Georgia, serif">
+    <text x="170" y="430" font-size="30">cash flow</text>
+    <text x="432" y="274" font-size="30">expectation</text>
+    <text x="778" y="396" font-size="30">risk</text>
+  </g>
+  <path d="M960 152 l30 24 -30 24" fill="none" stroke="#b8794d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

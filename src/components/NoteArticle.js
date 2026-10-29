@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { localized } from '@/lib/notes';
 
 export default function NoteArticle({ note }) {
@@ -46,6 +47,18 @@ export default function NoteArticle({ note }) {
           <p className="mt-7 max-w-3xl border-l-2 border-primary/70 pl-5 text-lg leading-8 text-gray-600 dark:border-blue-300/70 dark:text-gray-300">
             {localized(note.deck, lang)}
           </p>
+          {note.cover && (
+            <div className="relative mt-10 aspect-[5/3] overflow-hidden rounded-2xl border border-gray-200 bg-gray-100 shadow-sm dark:border-gray-800 dark:bg-gray-900">
+              <Image
+                src={note.cover}
+                alt={localized(note.coverAlt, lang)}
+                fill
+                priority
+                sizes="(min-width: 1024px) 896px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          )}
         </div>
       </header>
 
