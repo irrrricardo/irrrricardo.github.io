@@ -35,7 +35,7 @@ export default function AboutPage() {
       <section className="bg-white pb-20 pt-24 dark:bg-gray-950">
         <div className="section-shell grid gap-10 lg:grid-cols-[320px_1fr] lg:items-center">
           <div className="relative mx-auto h-[370px] w-full max-w-[280px] overflow-hidden rounded-2xl border border-gray-200 bg-gray-100 shadow-soft dark:border-gray-800 dark:bg-gray-900 lg:mx-0">
-            <Image src="/images/github_selfie.jpeg" alt={profile.name} fill className="object-cover transition duration-700 ease-out hover:scale-[1.025]" sizes="280px" priority />
+            <Image src="/images/ricardo-portrait-illustration.jpg" alt={`Illustrated portrait of ${profile.name}`} fill className="object-cover transition duration-700 ease-out hover:scale-[1.025]" sizes="280px" priority />
           </div>
           <div>
             <p className="eyebrow">{t.subtitle}</p>

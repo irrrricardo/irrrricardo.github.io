@@ -59,7 +59,7 @@ export default function Home() {
 
             <aside className="glass-panel p-4">
               <div className="relative h-[320px] overflow-hidden rounded-xl border border-white/15 bg-gray-900 sm:h-[360px]">
-                <Image src="/images/github_selfie.jpeg" alt={profile.name} fill className="object-cover transition duration-700 ease-out hover:scale-[1.025]" sizes="360px" priority />
+                <Image src="/images/ricardo-portrait-illustration.jpg" alt={`Illustrated portrait of ${profile.name}`} fill className="object-cover transition duration-700 ease-out hover:scale-[1.025]" sizes="360px" priority />
               </div>
               <div className="mt-5 border-l border-blue-200/60 pl-4">
                 <p className="text-sm font-semibold text-white">{text(profile.affiliation, lang)}</p>
