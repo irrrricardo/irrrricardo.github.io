@@ -83,11 +83,11 @@ export default function AboutPage() {
           <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
               <p className="eyebrow">{lang === 'zh' ? '行业经历' : 'Industry Experience'}</p>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">{lang === 'zh' ? 'AI for Biology 投资研究' : 'AI for Biology investment research'}</h2>
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-gray-950 dark:text-white">{lang === 'zh' ? 'AI for Biology 科研与投资' : 'AI for Biology across research and investing'}</h2>
               <p className="mt-4 text-base leading-7 text-gray-600 dark:text-gray-300">
                 {lang === 'zh'
-                  ? '一级市场工作让我从技术、产品与商业化路径三个层面理解 AI4Bio 初创公司，也为科研问题提供了不同于实验室的观察视角。'
-                  : 'Private-market work gives me a complementary view of AI4Bio startups across technology, product development, and commercialization.'}
+                  ? '我同时参与早期 AI4S 初创公司的模型研究，并在一级市场关注 AI for Biology。这两段经历让我从科研、产品与商业化路径等不同角度理解技术如何落地。'
+                  : 'I work with an early-stage AI4S startup while studying AI for biology in the private market. Together, these experiences offer complementary views of research, product development, and commercialization.'}
               </p>
             </div>
             <div className="space-y-4">

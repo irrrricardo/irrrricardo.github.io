@@ -51,8 +51,8 @@ export default function ContactPage() {
             </p>
             <p>
               {lang === 'zh'
-                ? '我目前在华盖资本医疗器械与科技团队实习，关注 AI for Biology 与前沿生物技术的行业研究和技术尽调；也欢迎交流相关的初创公司、投资研究与后续实习机会。'
-                : 'I currently intern with Huagai Capital’s Medical Devices & Technology team, focusing on industry research and technical diligence in AI for biology and frontier biotechnology. I also welcome conversations about related startups, investment research, and future internships.'}
+                ? '我目前在格原万维参与跨尺度人脑基础模型相关工作，同时在华盖资本医疗器械与科技团队实习，关注 AI for Biology 与前沿生物技术的行业研究和技术尽调；也欢迎交流相关的初创公司、投资研究与后续实习机会。'
+                : 'I currently intern at LattixOrigin, working on cross-scale human-brain foundation models, and with Huagai Capital’s Medical Devices & Technology team, focusing on industry research and technical diligence in AI for biology and frontier biotechnology. I also welcome conversations about related startups, investment research, and future internships.'}
             </p>
             <p>
               {lang === 'zh'

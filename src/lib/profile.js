@@ -20,8 +20,8 @@ export const profile = {
     zh: '构建能够跨分子、细胞与患者尺度理解、模拟并设计生物系统的 AI。',
   },
   intro: {
-    en: 'I study Basic Medical Sciences at Peking University and pursue a dual degree in Economics. My research spans scientific memory for AI co-scientists, representation learning for biological aging, and evaluation of clinical world models. I am also exploring agents for single-cell and virtual-cell discovery and working as a venture capital intern on AI for biology.',
-    zh: '我就读于北京大学医学部基础医学专业，同时修读经济学双学位。研究工作涉及 AI co-scientist 的科学记忆、生物衰老表征学习与临床世界模型评估；目前也在探索面向单细胞和虚拟细胞研究的智能体，并从事 AI for Biology 相关的一级市场实习。',
+    en: 'I study Basic Medical Sciences at Peking University and pursue a dual degree in Economics. My research spans scientific memory for AI co-scientists, representation learning for biological aging, and evaluation of clinical world models. I am also exploring agents for single-cell and virtual-cell discovery, interning at the early-stage AI4S startup LattixOrigin, and working in venture capital on AI for biology.',
+    zh: '我就读于北京大学医学部基础医学专业，同时修读经济学双学位。研究工作涉及 AI co-scientist 的科学记忆、生物衰老表征学习与临床世界模型评估；目前也在探索面向单细胞和虚拟细胞研究的智能体，并在 AI4S 初创公司格原万维及华盖资本开展实习。',
   },
   seeking: {
     en: 'Applying to Fall 2027 PhD programs in generative biomolecular AI and AI for Science',
@@ -318,6 +318,19 @@ export const industryExperience = [
     detail: {
       en: 'Conducted on-site diligence and founder interviews to assess technical differentiation, product roadmaps, and commercialization paths.',
       zh: '通过现场尽调与创始人访谈，评估技术差异、产品路线和商业化路径。',
+    },
+  },
+  {
+    period: '2026 - Present',
+    role: { en: 'Intern', zh: '实习生' },
+    place: 'LattixOrigin · 格原万维',
+    summary: {
+      en: 'Contribute to research and model development for cross-scale human-brain foundation models at an early-stage AI4S startup.',
+      zh: '在一家早期 AI4S 初创公司参与跨尺度人脑基础模型的研究与模型开发。',
+    },
+    detail: {
+      en: 'This work is conducted in parallel with my research in the LM Lab.',
+      zh: '这项工作与我在 LM Lab 的研究同期开展。',
     },
   },
 ];
